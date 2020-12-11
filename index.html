@@ -18,8 +18,8 @@
             <div class="navigation"></div>
             <img class="logo" src="images/logo.svg" />
             <div class="nav">
-                <div class="nav-item valign-text-middle border-class-5" onclick="scrollToTop(6655, 6455)">contact</div>
-                <div class="nav-item valign-text-middle border-class-5" onclick="scrollToTop(1219)">about</div>
+                <a href="#contact" class="nav-item valign-text-middle border-class-5">contact</a>
+                <a href="#about" class="nav-item valign-text-middle border-class-5">about</a>
             </div>
         </header>
 
@@ -44,7 +44,7 @@
             </div>
         </section>
 
-        <section style="height: 790px;">
+        <section id="about" style="height: 790px;">
             <div class="frame-title valign-text-middle font-class-6 border-class-7">260만 중고등학생의 고민해결사</div>
             <div class="frame-1">
                 <div class="auto-flex"></div>
@@ -242,7 +242,7 @@
             </div>
         </section>
 
-        <footer>
+        <footer id="contact">
             <div class="third_block">
                 <div class="contact-title">Contact</div>
                 <div class="contact-subtitle font-class-1 border-class-4">학학이가 더 궁금하다면<br />언제든지 연락주세요.</div>
@@ -273,7 +273,7 @@
                 </div>
             </div>
         </footer>
-        <div id="scroll-to-top" class="scroll-to-top valign-text-middle" onclick="scrollToTop(0)">
+        <div id="scroll-to-top" class="scroll-to-top valign-text-middle" onclick="scrollToTop()">
             <svg style="width:55px; height:55px; margin: 10px;" viewBox="0 0 24 24">
                 <path fill="currentColor" d="M14,20H10V11L6.5,14.5L4.08,12.08L12,4.16L19.92,12.08L17.5,14.5L14,11V20Z" />
             </svg>
@@ -281,9 +281,9 @@
         <script>
             const device = navigator.userAgent.toLowerCase();
             
-            function scrollToTop(number, spare) {
+            function scrollToTop() {
                 window.scrollTo({
-                    top: spare && window.innerWidth <= 900 ? spare : number,
+                    top: 0,
                     behavior: 'smooth'
                 });
             }

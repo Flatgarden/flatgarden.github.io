@@ -39,6 +39,7 @@
 * {
     box-sizing: border-box;
     white-space: nowrap;
+    text-decoration: none;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
