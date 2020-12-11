@@ -1253,6 +1253,7 @@
     bottom: 3%;
     width: 75px;
     height: 75px;
+    z-index: 13;
     border-radius: 50%;
     text-align: center;
     color: white;

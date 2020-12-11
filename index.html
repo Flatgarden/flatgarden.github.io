@@ -18,7 +18,7 @@
             <div class="navigation"></div>
             <img class="logo" src="images/logo.svg" />
             <div class="nav">
-                <div class="nav-item valign-text-middle border-class-5" onclick="scrollToTop(6655)">contact</div>
+                <div class="nav-item valign-text-middle border-class-5" onclick="scrollToTop(6655, 6455)">contact</div>
                 <div class="nav-item valign-text-middle border-class-5" onclick="scrollToTop(1219)">about</div>
             </div>
         </header>
@@ -279,9 +279,11 @@
             </svg>
         </div>
         <script>
-            function scrollToTop(number) {
+            const device = navigator.userAgent.toLowerCase();
+            
+            function scrollToTop(number, spare) {
                 window.scrollTo({
-                    top: number,
+                    top: spare && window.innerWidth <= 900 ? spare : number,
                     behavior: 'smooth'
                 });
             }
@@ -291,8 +293,6 @@
                 document.getElementsByClassName('selected-box')[0].setAttribute('class', 'none-selected-box')
                 document.getElementById('selected-box-' + number).setAttribute('class', 'selected-box')
             }
-
-            const device = navigator.userAgent.toLowerCase();
 
             function goTo(type) {
                 if (device.indexOf('android') > -1) {
