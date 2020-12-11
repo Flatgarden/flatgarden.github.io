@@ -1317,7 +1317,7 @@
 }
 
 @media (max-width: 900px) {
-    .body #content-box {
+    .body .content-box {
         height: 490px;
         width: 553px;
     }
@@ -1535,7 +1535,7 @@
         display: none;
     }
 
-    .body #content-box {
+    .body .content-box {
         height: 385px;
         width: 434.5px;
     }
