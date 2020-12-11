@@ -888,7 +888,7 @@
     height: 517px;
     position: absolute;
     width: 100%;
-    background: url('images/third_gradient.svg') no-repeat;
+    background: url('images/third_gradient.svg');
 }
 
 .body .second_gradient {
@@ -911,7 +911,7 @@
 .body .first-block {
     height: 470px;
     width: 100%;
-    background: url('images/first_block.svg') no-repeat;
+    background: url('images/first_block.svg');
     background-position: center;
 }
 
@@ -952,41 +952,32 @@
     width: 182px;
 }
 
-.body .content-box-1 {
+.body .content-box {
+    background-size: 100% 100%;
+    border-radius: 15.9px;
+    height: 700px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 496px;
+    width: 790px;
+}
+
+.body #content-box-1 {
     background: url(images/1.png) no-repeat;
-    background-size: 100% 100%;
-    border-radius: 15.9px;
-    height: 700px;
-    position: relative;
-    margin: 0 auto;
-    top: 496px;
-    width: 790px;
 }
 
-.body .content-box-2 {
+.body #content-box-2 {
     background: url(images/2.png) no-repeat;
-    background-size: 100% 100%;
-    border-radius: 15.9px;
-    height: 700px;
-    position: relative;
-    margin: 0 auto;
-    top: 496px;
-    width: 790px;
 }
 
-.body .content-box-3 {
+.body #content-box-3 {
     background: url(images/3.png) no-repeat;
-    background-size: 100% 100%;
-    border-radius: 15.9px;
-    height: 700px;
-    position: relative;
-    margin: 0 auto;
-    top: 496px;
-    width: 790px;
 }
 
 .body .first_gradient {
-    background: url(images/first_gradient.svg) no-repeat;
+    background: url(images/first_gradient.svg);
     height: 546px;
     left: 0px;
     position: absolute;

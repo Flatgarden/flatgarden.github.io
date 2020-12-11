@@ -118,7 +118,9 @@
                     <div class="select-box-text valign-text-middle font-class-7 border-class-3">정확한 입시</div>
                 </div>
             </div>
-            <div id="content-box" class="content-box-1"></div>
+            <div id="content-box-1" class="content-box" style="display: block"></div>
+            <div id="content-box-2" class="content-box" style="display: none"></div>
+            <div id="content-box-3" class="content-box" style="display: none"></div>
         </section>
 
         <section class="first-block">
@@ -289,7 +291,10 @@
             }
 
             function select(number) {
-                document.getElementById('content-box').setAttribute('class', 'content-box-' + number)
+                document.getElementsByClassName('content-box')[0].setAttribute('style', 'display: none')
+                document.getElementsByClassName('content-box')[1].setAttribute('style', 'display: none')
+                document.getElementsByClassName('content-box')[2].setAttribute('style', 'display: none')
+                document.getElementById('content-box-' + number).setAttribute('style', 'display: block')
                 document.getElementsByClassName('selected-box')[0].setAttribute('class', 'none-selected-box')
                 document.getElementById('selected-box-' + number).setAttribute('class', 'selected-box')
             }
