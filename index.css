@@ -279,7 +279,7 @@
 }
 
 .body .mentor-bg {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7));
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -294,68 +294,79 @@
 }
 
 .body .mentor-box-1 {
-    background-image: url(https://anima-uploads.s3.amazonaws.com/projects/5fbdd5cac86f731689607690/releases/5fbdd652c86f731689607691/img/rectangle-472@2x.svg);
+    background-image: url('https://hakhak-user-pofile.s3.ap-northeast-2.amazonaws.com/%EB%B9%A0%EB%B0%A4-%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90-Mon%20Aug%2031%202020%2016%3A27%3A34%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
+    background-size: cover;
     left: -11px;
     top: 159px;
 }
 
 .body .mentor-box-2 {
-    background-image: url(https://anima-uploads.s3.amazonaws.com/projects/5fbdd5cac86f731689607690/releases/5fbdd652c86f731689607691/img/rectangle-472-4@2x.svg);
+    background-image: url('https://hakhak-user-pofile.s3.amazonaws.com/%EB%B0%95%EC%A0%95%EC%9B%90-%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90-Sat%20Jul%2011%202020%2020%3A06%3A55%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
+    background-size: cover;
     left: 179px;
     top: 129px;
 }
 
 .body .mentor-box-3 {
-    background-image: url(https://anima-uploads.s3.amazonaws.com/projects/5fbdd5cac86f731689607690/releases/5fbdd652c86f731689607691/img/rectangle-472@2x.jpg);
+    background-image: url('https://hakhak-user-pofile.s3.ap-northeast-2.amazonaws.com/%EC%9C%84%EB%84%88-%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90-Mon%20Aug%2031%202020%2016%3A43%3A28%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
+    background-size: cover;
     left: 369px;
     top: 190px;
 }
 
 .body .mentor-box-4 {
-    background-image: url(https://anima-uploads.s3.amazonaws.com/projects/5fbdd5cac86f731689607690/releases/5fbdd652c86f731689607691/img/rectangle-472-9@2x.svg);
+    background-image: url('https://hakhak-user-pofile.s3.amazonaws.com/%EB%82%98%EC%9C%A4-%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90-Mon%20Jul%2013%202020%2013%3A18%3A31%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
+    background-size: cover;
     left: 559px;
     top: 150px;
 }
 
 .body .mentor-box-5 {
-    background-image: url(https://anima-uploads.s3.amazonaws.com/projects/5fbdd5cac86f731689607690/releases/5fbdd652c86f731689607691/img/rectangle-472-11@2x.svg);
+    background-image: url('https://hakhak-user-pofile.s3.ap-northeast-2.amazonaws.com/도도-성균관대학교-Wed+Aug+05+2020+15%3A11%3A19+GMT%2B0900+(Korean+Standard+Time)');
+    background-size: cover;
     left: 749px;
     top: 190px;
 }
 
 .body .mentor-box-6 {
-    background-image: url(https://anima-uploads.s3.amazonaws.com/projects/5fbdd5cac86f731689607690/releases/5fbdd652c86f731689607691/img/rectangle-472-13@2x.svg);
+    background-image: url('https://hakhak-user-pofile.s3.amazonaws.com/%EB%B0%8D%EA%B5%AC-%EA%B2%BD%EC%9D%B8%EA%B5%90%EC%9C%A1%EB%8C%80%ED%95%99%EA%B5%90-Wed%20Aug%2005%202020%2015%3A17%3A49%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
+    background-size: cover;
     left: 939px;
     top: 119px;
 }
 
 .body .mentor-box-7 {
-    background-image: url(https://anima-uploads.s3.amazonaws.com/projects/5fbdd5cac86f731689607690/releases/5fbdd652c86f731689607691/img/rectangle-472-15@2x.svg);
+    background-image: url('https://hakhak-user-pofile.s3.amazonaws.com/%EA%B5%AC%EB%AF%B8-%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90-Mon%20Aug%2031%202020%2015%3A45%3A58%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
+    background-size: cover;
     left: 1129px;
     top: 179px;
 }
 
 .body .mentor-box-8 {
 
-    background-image: url(https://anima-uploads.s3.amazonaws.com/projects/5fbdd5cac86f731689607690/releases/5fbdd652c86f731689607691/img/rectangle-472-17@2x.svg);
+    background-image: url('https://hakhak-user-pofile.s3.ap-northeast-2.amazonaws.com/%EA%B9%80%ED%95%98%EC%A7%84-%ED%95%9C%EC%96%91%EB%8C%80%ED%95%99%EA%B5%90%28%EC%84%9C%EC%9A%B8%29-Wed%20Aug%2026%202020%2017%3A55%3A57%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
+    background-size: cover;
     left: 1319px;
     top: 129px;
 }
 
 .body .mentor-box-9 {
-    background-image: url(https://anima-uploads.s3.amazonaws.com/projects/5fbdd5cac86f731689607690/releases/5fbdd652c86f731689607691/img/rectangle-472-21@2x.svg);
+    background-image: url('https://hakhak-user-pofile.s3.ap-northeast-2.amazonaws.com/%EB%B0%B1%EB%B3%B4%EC%84%B1-%EC%97%B0%EC%84%B8%EB%8C%80%ED%95%99%EA%B5%90-Wed%20Aug%2026%202020%2019%3A33%3A04%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
+    background-size: cover;
     left: 1509px;
     top: 179px;
 }
 
 .body .mentor-box-10 {
-    background-image: url(https://anima-uploads.s3.amazonaws.com/projects/5fbdd5cac86f731689607690/releases/5fbdd652c86f731689607691/img/rectangle-472@2x.svg);
+    background-image: url('https://hakhak-user-pofile.s3.ap-northeast-2.amazonaws.com/%EC%86%8C%EB%9D%BC-%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90-Mon%20Aug%2031%202020%2016%3A20%3A16%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
+    background-size: cover;
     left: 1699px;
     top: 159px;
 }
 
 .body .mentor-box-11 {
-    background-image: url(https://anima-uploads.s3.amazonaws.com/projects/5fbdd5cac86f731689607690/releases/5fbdd652c86f731689607691/img/rectangle-472-4@2x.svg);
+    background-image: url('https://hakhak-user-pofile.s3.ap-northeast-2.amazonaws.com/%EB%B9%A0%EB%B0%A4-%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90-Mon%20Aug%2031%202020%2016%3A27%3A34%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
+    background-size: cover;
     left: 1889px;
     top: 187px;
 }
@@ -588,6 +599,7 @@
 }
 
 .body .mentor-dep {
+    font-size: 12px;
     height: auto;
     left: 8px;
     position: absolute;
