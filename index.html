@@ -363,7 +363,7 @@
                     else alert('문의 내용을 입력해주세요!');
                 else alert('이메일을 입력해주세요!');
             }
-            
+
             function numberCounter(target_frame, target_number) {
                 this.count = 0
                 this.diff = 0
@@ -377,14 +377,16 @@
                 let self = this
                 this.diff = this.target_count - this.count
 
-                if(this.diff > 0) {
+                if (this.diff > 0) {
                     self.count += Math.ceil(this.diff / 5)
                 }
 
                 this.target_frame.innerHTML = this.count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 
-                if(this.count < this.target_count) {
-                    this.timer = setTimeout(function() { self.counter() }, 100);
+                if (this.count < this.target_count) {
+                    this.timer = setTimeout(function() {
+                        self.counter()
+                    }, 100);
                 } else {
                     clearTimeout(this.timer)
                 }
@@ -396,30 +398,30 @@
                 if (device.indexOf('android') == -1 && device.indexOf('iphone') == -1 && device.indexOf('ipad') == -1 && device.indexOf('ipod') == -1 && document.body.scrollTop >= 1219) {
                     document.getElementById('scroll-to-top').style.display = 'inherit'
                 } else document.getElementById('scroll-to-top').style.display = 'none'
-                
+
                 if (!frame_title && document.body.scrollTop >= 1306 - window.innerHeight) {
                     frame_title = true
                     new numberCounter('frame-title', 260)
                 }
-                
-                if (window.innerWidth > 900) {
-                    const height = window.innerHeight
-                } else if (window.innerWidth > 600) {
-                    const height = window.innerHeight - 210
-                } else {
-                    const height = window.innerHeight - 315
+
+                let height = window.innerHeight
+
+                if (window.innerWidth <= 900) {
+                    height = window.innerHeight - 210
+                } else if (window.innerWidth <= 600) {
+                    height = window.innerHeight - 315
                 }
-                
+
                 if (!letters_1 && document.body.scrollTop >= 4502 - height) {
                     letters_1 = true
                     new numberCounter('letters-1', 6713);
                 }
-                
+
                 if (!letters_2 && document.body.scrollTop >= 4765 - height) {
                     letters_2 = true
                     new numberCounter('letters-2', 544);
                 }
-                
+
                 if (!ellips && document.body.scrollTop >= 5429 - height) {
                     ellips = true
                     new numberCounter('ellips-1', 6235);
