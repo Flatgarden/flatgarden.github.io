@@ -287,7 +287,7 @@
 
 @keyframes mentor-list {
     0% { left: 0px; }
-    100% { left: -1889px; }
+    100% { left: calc(100% - 3758px); }
 }
 
 .body .mentor-list {
