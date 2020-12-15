@@ -285,90 +285,142 @@
     border-radius: 10px;
 }
 
+@keyframes mentor-list {
+    0% { left: 0px; }
+    100% { left: -1889px; }
+}
+
+.body .mentor-list {
+    animation: mentor-list 120s infinite linear alternate;
+    position: absolute;
+}
+
 .body .mentor-box {
-    background-size: 100% 100%;
     border-radius: 10px;
     height: 170px;
     width: 170px;
     position: absolute;
+    background-size: cover;
 }
 
 .body .mentor-box-1 {
     background-image: url('https://hakhak-user-pofile.s3.ap-northeast-2.amazonaws.com/%EB%B9%A0%EB%B0%A4-%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90-Mon%20Aug%2031%202020%2016%3A27%3A34%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
-    background-size: cover;
     left: -11px;
     top: 159px;
 }
 
 .body .mentor-box-2 {
     background-image: url('https://hakhak-user-pofile.s3.amazonaws.com/%EB%B0%95%EC%A0%95%EC%9B%90-%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90-Sat%20Jul%2011%202020%2020%3A06%3A55%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
-    background-size: cover;
     left: 179px;
     top: 129px;
 }
 
 .body .mentor-box-3 {
     background-image: url('https://hakhak-user-pofile.s3.ap-northeast-2.amazonaws.com/%EC%9C%84%EB%84%88-%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90-Mon%20Aug%2031%202020%2016%3A43%3A28%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
-    background-size: cover;
     left: 369px;
     top: 190px;
 }
 
 .body .mentor-box-4 {
     background-image: url('https://hakhak-user-pofile.s3.amazonaws.com/%EB%82%98%EC%9C%A4-%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90-Mon%20Jul%2013%202020%2013%3A18%3A31%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
-    background-size: cover;
     left: 559px;
     top: 150px;
 }
 
 .body .mentor-box-5 {
     background-image: url('https://hakhak-user-pofile.s3.ap-northeast-2.amazonaws.com/도도-성균관대학교-Wed+Aug+05+2020+15%3A11%3A19+GMT%2B0900+(Korean+Standard+Time)');
-    background-size: cover;
     left: 749px;
     top: 190px;
 }
 
 .body .mentor-box-6 {
     background-image: url('https://hakhak-user-pofile.s3.amazonaws.com/%EB%B0%8D%EA%B5%AC-%EA%B2%BD%EC%9D%B8%EA%B5%90%EC%9C%A1%EB%8C%80%ED%95%99%EA%B5%90-Wed%20Aug%2005%202020%2015%3A17%3A49%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
-    background-size: cover;
     left: 939px;
     top: 119px;
 }
 
 .body .mentor-box-7 {
     background-image: url('https://hakhak-user-pofile.s3.amazonaws.com/%EA%B5%AC%EB%AF%B8-%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90-Mon%20Aug%2031%202020%2015%3A45%3A58%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
-    background-size: cover;
     left: 1129px;
     top: 179px;
 }
 
 .body .mentor-box-8 {
-
     background-image: url('https://hakhak-user-pofile.s3.ap-northeast-2.amazonaws.com/%EA%B9%80%ED%95%98%EC%A7%84-%ED%95%9C%EC%96%91%EB%8C%80%ED%95%99%EA%B5%90%28%EC%84%9C%EC%9A%B8%29-Wed%20Aug%2026%202020%2017%3A55%3A57%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
-    background-size: cover;
     left: 1319px;
     top: 129px;
 }
 
 .body .mentor-box-9 {
     background-image: url('https://hakhak-user-pofile.s3.ap-northeast-2.amazonaws.com/%EB%B0%B1%EB%B3%B4%EC%84%B1-%EC%97%B0%EC%84%B8%EB%8C%80%ED%95%99%EA%B5%90-Wed%20Aug%2026%202020%2019%3A33%3A04%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
-    background-size: cover;
     left: 1509px;
-    top: 179px;
+    top: 150px;
 }
 
 .body .mentor-box-10 {
     background-image: url('https://hakhak-user-pofile.s3.ap-northeast-2.amazonaws.com/%EC%86%8C%EB%9D%BC-%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90-Mon%20Aug%2031%202020%2016%3A20%3A16%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
-    background-size: cover;
     left: 1699px;
-    top: 159px;
+    top: 190px;
 }
 
 .body .mentor-box-11 {
     background-image: url('https://hakhak-user-pofile.s3.ap-northeast-2.amazonaws.com/%EB%B9%A0%EB%B0%A4-%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90-Mon%20Aug%2031%202020%2016%3A27%3A34%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
-    background-size: cover;
     left: 1889px;
-    top: 187px;
+    top: 159px;
+}
+
+.body .mentor-box-12 {
+    background-image: url('https://hakhak-user-pofile.s3.amazonaws.com/%EB%B0%95%EC%A0%95%EC%9B%90-%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90-Sat%20Jul%2011%202020%2020%3A06%3A55%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
+    left: 2079px;
+    top: 129px;
+}
+
+.body .mentor-box-13 {
+    background-image: url('https://hakhak-user-pofile.s3.ap-northeast-2.amazonaws.com/%EC%9C%84%EB%84%88-%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90-Mon%20Aug%2031%202020%2016%3A43%3A28%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
+    left: 2269px;
+    top: 190px;
+}
+
+.body .mentor-box-14 {
+    background-image: url('https://hakhak-user-pofile.s3.amazonaws.com/%EB%82%98%EC%9C%A4-%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90-Mon%20Jul%2013%202020%2013%3A18%3A31%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
+    left: 2459px;
+    top: 150px;
+}
+
+.body .mentor-box-15 {
+    background-image: url('https://hakhak-user-pofile.s3.ap-northeast-2.amazonaws.com/도도-성균관대학교-Wed+Aug+05+2020+15%3A11%3A19+GMT%2B0900+(Korean+Standard+Time)');
+    left: 2649px;
+    top: 190px;
+}
+
+.body .mentor-box-16 {
+    background-image: url('https://hakhak-user-pofile.s3.amazonaws.com/%EB%B0%8D%EA%B5%AC-%EA%B2%BD%EC%9D%B8%EA%B5%90%EC%9C%A1%EB%8C%80%ED%95%99%EA%B5%90-Wed%20Aug%2005%202020%2015%3A17%3A49%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
+    left: 2839px;
+    top: 119px;
+}
+
+.body .mentor-box-17 {
+    background-image: url('https://hakhak-user-pofile.s3.amazonaws.com/%EA%B5%AC%EB%AF%B8-%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90-Mon%20Aug%2031%202020%2015%3A45%3A58%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
+    left: 3029px;
+    top: 179px;
+}
+
+.body .mentor-box-18 {
+    background-image: url('https://hakhak-user-pofile.s3.ap-northeast-2.amazonaws.com/%EA%B9%80%ED%95%98%EC%A7%84-%ED%95%9C%EC%96%91%EB%8C%80%ED%95%99%EA%B5%90%28%EC%84%9C%EC%9A%B8%29-Wed%20Aug%2026%202020%2017%3A55%3A57%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
+    left: 3219px;
+    top: 129px;
+}
+
+.body .mentor-box-19 {
+    background-image: url('https://hakhak-user-pofile.s3.ap-northeast-2.amazonaws.com/%EB%B0%B1%EB%B3%B4%EC%84%B1-%EC%97%B0%EC%84%B8%EB%8C%80%ED%95%99%EA%B5%90-Wed%20Aug%2026%202020%2019%3A33%3A04%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
+    left: 3409px;
+    top: 150px;
+}
+
+.body .mentor-box-20 {
+    background-image: url('https://hakhak-user-pofile.s3.ap-northeast-2.amazonaws.com/%EC%86%8C%EB%9D%BC-%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90-Mon%20Aug%2031%202020%2016%3A20%3A16%20GMT%2B0900%20%28Korean%20Standard%20Time%29');
+    left: 3599px;
+    top: 190px;
 }
 
 .body .contact-title {
@@ -716,7 +768,7 @@
 .body .first-download-title {
     border: 2.2px solid transparent;
     color: var(--mine-shaft);
-    font-family: "SpoqaHanSans", Helvetica, Arial, serif;
+    font-family: 'Spoqa Han Sans', Helvetica, Arial, serif;
     font-size: 30px;
     height: 88px;
     top: 41px;
@@ -751,7 +803,7 @@
 }
 
 .body .first_block_text {
-    font-family: "SpoqaHanSans", Helvetica, Arial, serif;
+    font-family: 'Spoqa Han Sans', Helvetica, Arial, serif;
     font-size: 20px;
     height: auto;
     line-height: 30px;
@@ -802,7 +854,7 @@
 
 .body .letters-block-1 {
     color: rgba(110, 65, 32);
-    font-family: "SpoqaHanSans", Helvetica, Arial, serif;
+    font-family: 'Spoqa Han Sans', Helvetica, Arial, serif;
     font-size: 30px;
     height: auto;
     left: 106.6px;
@@ -816,7 +868,7 @@
 
 .body .letters-now-2 {
     color: rgba(137, 105, 82);
-    font-family: 'SpoqaHanSans', Helvetica, Arial, serif;
+    font-family: 'Spoqa Han Sans', Helvetica, Arial, serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -833,7 +885,7 @@
 
 .body .letters-now-1 {
     color: rgba(137, 105, 82);
-    font-family: 'SpoqaHanSans', Helvetica, Arial, serif;
+    font-family: 'Spoqa Han Sans', Helvetica, Arial, serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -1232,7 +1284,7 @@
 .body .second-download-title {
     border: 2.2px solid transparent;
     color: var(--mine-shaft);
-    font-family: "SpoqaHanSans", Helvetica, Arial, serif;
+    font-family: 'Spoqa Han Sans', Helvetica, Arial, serif;
     font-size: 30px;
     height: 88px;
     left: 18px;
@@ -1244,6 +1296,7 @@
 }
 
 .body .frame-title {
+    text-align: center;
     height: 52px;
     position: absolute;
     top: 87px;
