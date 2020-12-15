@@ -393,7 +393,7 @@
             let frame_title, letters_1, letters_2, ellips
 
             window.addEventListener('scroll', () => {
-                if (device.indexOf('android') == -1 || device.indexOf('iphone') == -1 || device.indexOf('ipad') == -1 || device.indexOf('ipod') == -1 && document.body.scrollTop >= 1219) {
+                if (device.indexOf('android') == -1 && device.indexOf('iphone') == -1 && device.indexOf('ipad') == -1 && device.indexOf('ipod') == -1 && document.body.scrollTop >= 1219) {
                     document.getElementById('scroll-to-top').style.display = 'inherit'
                 } else document.getElementById('scroll-to-top').style.display = 'none'
                 
@@ -402,17 +402,25 @@
                     new numberCounter('frame-title', 260)
                 }
                 
-                if (!letters_1 && document.body.scrollTop >= 4502 - window.innerHeight) {
+                if (window.innerWidth > 900) {
+                    const height = window.innerHeight
+                } else if (window.innerWidth > 600) {
+                    const height = window.innerHeight - 210
+                } else {
+                    const height = window.innerHeight - 315
+                }
+                
+                if (!letters_1 && document.body.scrollTop >= 4502 - height) {
                     letters_1 = true
                     new numberCounter('letters-1', 6713);
                 }
                 
-                if (!letters_2 && document.body.scrollTop >= 4765 - window.innerHeight) {
+                if (!letters_2 && document.body.scrollTop >= 4765 - height) {
                     letters_2 = true
                     new numberCounter('letters-2', 544);
                 }
                 
-                if (!ellips && document.body.scrollTop >= 5429 - window.innerHeight) {
+                if (!ellips && document.body.scrollTop >= 5429 - height) {
                     ellips = true
                     new numberCounter('ellips-1', 6235);
                     new numberCounter('ellips-2', 23);
