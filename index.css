@@ -1345,6 +1345,62 @@
     }
 }
 
+@media (max-width: 1250px) {
+    .body .contact-title {
+        top: 79px;
+        left: 50px;
+    }
+
+    .body .contact-subtitle {
+        top: 157px;
+        left: 50px;
+    }
+    
+    .body .footer-logo {
+        left: 50px;
+    }
+
+    .body .footer-rep {
+        left: 240px;
+    }
+
+    .body .footer-addr {
+        left: 240px;
+    }
+
+    .body .footer-tou {
+        left: 240px;
+    }
+
+    .body .footer-policy {
+        left: 357px;
+    }
+
+    .body .footer-number {
+        left: 328px;
+    }
+    
+    .body .contact-email {
+        left: -125px;
+    }
+
+    .body .contact-email-box {
+        left: -125px;
+    }
+
+    .body .contact-text {
+        left: -125px;
+    }
+
+    .body .contact-text-box {
+        left: -125px;
+    }
+
+    .body .contact-btn {
+        left: -125px;
+    }
+}
+
 @media (max-width: 995px) {
     .body .letters-background {
         background: url(images/letters-background-nr.svg) no-repeat;
