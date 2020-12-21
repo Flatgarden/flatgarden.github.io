@@ -604,11 +604,10 @@
     height: 29px;
     justify-content: flex-end;
     right: 453.13px;
-    min-width: 113px;
     padding: 3.0px 11.6px;
     position: absolute;
     top: 140.65px;
-    width: auto;
+    width: 113px;
 }
 
 .body .nubbang {
@@ -738,6 +737,7 @@
 }
 
 .body .ellips-box-title {
+    line-height: 52px;
     height: 104px;
     position: absolute;
     top: 817px;
@@ -1212,6 +1212,7 @@
     color: rgba(48, 48, 48);
     font-family: 'Spoqa Han Sans', Helvetica, Arial, serif;
     font-style: normal;
+    line-height: 44.4px;
     font-weight: 400;
 }
 
@@ -1225,6 +1226,7 @@
 .body .second-download-first-text {
     color: rgba(48, 48, 48);
     font-family: 'Spoqa Han Sans', Helvetica, Arial, serif;
+    line-height: 44px;
     font-style: normal;
     font-weight: 400;
 }
