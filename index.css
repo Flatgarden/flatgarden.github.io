@@ -237,7 +237,7 @@
 .body .second-app-store {
     cursor: pointer;
     height: 54px;
-    right: 0;
+    right: 0px;
     position: absolute;
     top: 287px;
     width: 182px;
@@ -246,22 +246,17 @@
 .body .first-app-store {
     cursor: pointer;
     height: 60px;
-    right: 0;
+    right: 0px;
     position: absolute;
     top: 177px;
     width: 204px;
 }
 
 .body .auto-flex {
-    align-items: flex-start;
-    display: inline-flex;
-    flex-direction: row;
-    flex-shrink: 0;
     height: 40px;
-    justify-content: flex-start;
-    margin-right: 0.0px;
-    min-width: 200px;
-    width: auto;
+    left: 90px;
+    right: 90px;
+    width: 200px;
     background: url(images/stars.svg);
 }
 
@@ -514,8 +509,17 @@
     width: auto;
 }
 
+@keyframes frame-list {
+    0% { left: 0px; }
+    100% { left: calc(100% - 3560px); }
+}
 
-.body .frame-1 {
+.body .frame-list {
+    animation: frame-list 240s infinite linear alternate;
+    position: absolute;
+}
+
+.body .frame {
     align-items: center;
     background-color: var(--alabaster);
     border-radius: 10px;
@@ -524,75 +528,46 @@
     flex-direction: column;
     height: auto;
     justify-content: flex-start;
-    left: -50px;
     padding: 30px 33px;
     position: absolute;
     top: 223px;
     width: 380px;
+}
+
+.body .frame-1 {
+    left: -50px;
 }
 
 .body .frame-2 {
-    align-items: center;
-    background-color: var(--alabaster);
-    border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(194, 194, 194, 0.25);
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    justify-content: flex-start;
     left: 360px;
-    padding: 30px 33px;
-    position: absolute;
-    top: 223px;
-    width: 380px;
 }
 
 .body .frame-3 {
-    align-items: center;
-    background-color: var(--alabaster);
-    border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(194, 194, 194, 0.25);
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    justify-content: flex-start;
     left: 770px;
-    padding: 30.0px 33px;
-    position: absolute;
-    top: 223px;
-    width: 380px;
 }
 
 .body .frame-4 {
-    align-items: center;
-    background-color: var(--alabaster);
-    border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(194, 194, 194, 0.25);
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    justify-content: flex-start;
     left: 1180px;
-    padding: 30.0px 33px;
-    position: absolute;
-    top: 223px;
-    width: 380px;
 }
 
 .body .frame-5 {
-    align-items: center;
-    background-color: var(--alabaster);
-    border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(194, 194, 194, 0.25);
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    justify-content: flex-start;
     left: 1590px;
-    padding: 30.0px 33px;
-    position: absolute;
-    top: 223px;
-    width: 380px;
+}
+
+.body .frame-6 {
+    left: 2000px;
+}
+
+.body .frame-7 {
+    left: 2410px;
+}
+
+.body .frame-8 {
+    left: 2820px;
+}
+
+.body .frame-9 {
+    left: 3230px;
 }
 
 .body .nubbang-text-box {
@@ -634,7 +609,7 @@
 .body .second-google-play {
     cursor: pointer;
     height: 54px;
-    left: 0;
+    left: 0px;
     position: absolute;
     top: 287px;
     width: 181px;
@@ -643,7 +618,7 @@
 .body .first-google-play {
     cursor: pointer;
     height: 60px;
-    left: 0;
+    left: 0px;
     position: absolute;
     top: 177px;
     width: 203px;
@@ -1020,8 +995,8 @@
     border-radius: 15.9px;
     height: 700px;
     position: absolute;
-    left: 0;
-    right: 0;
+    left: 0px;
+    right: 0px;
     margin: 0 auto;
     top: 496px;
     width: 790px;
@@ -1232,13 +1207,13 @@
 }
 
 .body .first-download {
-    right: 69.95;
+    right: 69.95px;
     width: 428.05px;
     position: absolute;
 }
 
 .body .second-download {
-    left: 14;
+    left: 14px;
     width: 382px;
     position: absolute;
 }
@@ -1380,11 +1355,11 @@
     }
 
     .body .letters {
-        right: 0;
+        right: 0px;
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 925px) {
     .body .content-box {
         height: 490px;
         width: 553px;
@@ -1413,38 +1388,38 @@
     .body .contact-email {
         top: 306;
         text-align: center;
-        left: 0;
-        right: 0;
+        left: 0px;
+        right: 0px;
     }
 
     .body .contact-email-box {
         top: 347;
         display: block;
         margin: 0 auto;
-        left: 0;
-        right: 0;
+        left: 0px;
+        right: 0px;
     }
 
     .body .contact-text {
         top: 421;
         text-align: center;
-        left: 0;
-        right: 0;
+        left: 0px;
+        right: 0px;
     }
 
     .body .contact-text-box {
         top: 462;
         display: block;
         margin: 0 auto;
-        left: 0;
-        right: 0;
+        left: 0px;
+        right: 0px;
     }
 
     .body .contact-btn {
         top: 644;
         margin: 0 auto;
-        left: 0;
-        right: 0;
+        left: 0px;
+        right: 0px;
     }
 
     .body .section-4 {
@@ -1466,56 +1441,56 @@
     .body .contact-title {
         margin: 0 auto;
         top: 79px;
-        left: 0;
-        right: 0;
+        left: 0px;
+        right: 0px;
     }
 
     .body .contact-subtitle {
         top: 157px;
         margin: 0 auto;
         text-align: center;
-        left: 0;
-        right: 0;
+        left: 0px;
+        right: 0px;
     }
 
     .body .footer-box {
         position: absolute;
         margin: 0 auto;
-        top: 811;
-        left: 0;
-        right: 0;
-        height: 109;
-        width: 471;
+        top: 811px;
+        left: 0px;
+        right: 0px;
+        height: 109px;
+        width: 471px;
     }
 
     .body .footer-logo {
-        top: 0;
-        left: 0;
+        top: 0px;
+        left: 0px;
     }
 
     .body .footer-rep {
-        top: 11;
-        left: 190;
+        top: 11px;
+        left: 190px;
     }
 
     .body .footer-addr {
-        top: 36;
-        left: 190;
+        top: 36px;
+        left: 190px;
     }
 
     .body .footer-tou {
-        top: 62;
-        left: 190;
+        top: 62px;
+        left: 190px;
     }
 
     .body .footer-policy {
-        top: 62;
-        left: 307;
+        top: 62px;
+        left: 307px;
     }
 
     .body .footer-number {
-        top: 11;
-        left: 278;
+        top: 11px;
+        left: 278px;
     }
 
     .body .ignore {
@@ -1535,20 +1510,20 @@
     }
 
     .body .first-download-title {
-        left: 0;
-        right: 0;
+        left: 0px;
+        right: 0px;
         margin: 0 auto;
     }
 
     .body .second-download-title {
-        left: 0;
-        right: 0;
+        left: 0px;
+        right: 0px;
         margin: 0 auto;
     }
 
     .body .first-download {
-        right: 0;
-        left: 0;
+        left: 0px;
+        right: 0px;
         margin: 0 auto;
         position: absolute;
     }
@@ -1567,15 +1542,15 @@
     }
 
     .body .nubbang-box {
-        right: 0;
-        left: 0;
+        left: 0px;
+        right: 0px;
         margin: 0 auto;
         width: 450.4;
         position: absolute;
     }
 
     .body .nubbang {
-        left: 0;
+        left: 0px;
     }
 
     .body .nubbang-text-box {
@@ -1583,8 +1558,8 @@
     }
 
     .body .second-download {
-        right: 0;
-        left: 0;
+        left: 0px;
+        right: 0px;
         margin: 0 auto;
         position: absolute;
     }
