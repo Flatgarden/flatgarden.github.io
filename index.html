@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -12,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="index.css" />
 </head>
 
-<body>
+<body id="body">
     <div class="body">
         <header>
             <div class="navigation"></div>
@@ -332,8 +333,8 @@
                 <img class="footer-logo" src="images/flatgarden.svg" />
                 <div class="footer-rep font-class-1 border-class-3">대표 박정원</div>
                 <p class="footer-addr font-class-1 border-class-3">서울특별시 관악구 봉천동 856-6 3층</p>
-                <div class="footer-tou font-class-4 border-class-3">서비스이용약관</div>
-                <div class="footer-policy font-class-4 border-class-3">개인정보처리방침</div>
+                <div class="footer-tou font-class-4 border-class-3" onclick="touAndPolicy('tou')">서비스이용약관</div>
+                <div class="footer-policy font-class-4 border-class-3" onclick="touAndPolicy('policy')">개인정보처리방침</div>
                 <div class="footer-number font-class-1 border-class-3">사업자 등록번호 3948801300</div>
             </div>
             <div class="third_block">
@@ -350,8 +351,8 @@
                     <img class="footer-logo" src="images/flatgarden.svg" />
                     <div class="footer-rep font-class-1 border-class-3">대표 박정원</div>
                     <p class="footer-addr font-class-1 border-class-3">서울특별시 관악구 봉천동 856-6 3층</p>
-                    <div class="footer-tou font-class-4 border-class-3">서비스이용약관</div>
-                    <div class="footer-policy font-class-4 border-class-3">개인정보처리방침</div>
+                    <div class="footer-tou font-class-4 border-class-3" onclick="touAndPolicy('tou')">서비스이용약관</div>
+                    <div class="footer-policy font-class-4 border-class-3" onclick="touAndPolicy('policy')">개인정보처리방침</div>
                     <div class="footer-number font-class-1 border-class-3">사업자 등록번호 3948801300</div>
                 </div>
             </div>
@@ -406,6 +407,26 @@
                 this.timer = null
                 this.counter()
             };
+
+            function touAndPolicy(name) {
+                if (name == 'tou') {
+                    document.getElementById('tou-and-policy-title').innerHTML = '서비스이용약관'
+                    document.getElementById('tou-and-policy-policy').setAttribute('style', 'display: none')
+                    document.getElementById('tou-and-policy-tou').setAttribute('style', 'display: block')
+                } else if (name == 'policy') {
+                    document.getElementById('tou-and-policy-title').innerHTML = '개인정보처리방침'
+                    document.getElementById('tou-and-policy-tou').setAttribute('style', 'display: none')
+                    document.getElementById('tou-and-policy-policy').setAttribute('style', 'display: block')
+                }
+
+                if (name == 'close') {
+                    document.getElementById('background').setAttribute('style', 'display: none')
+                    document.getElementById('body').setAttribute('style', 'overflow: none')
+                } else {
+                    document.getElementById('background').setAttribute('style', 'display: block')
+                    document.getElementById('body').setAttribute('style', 'overflow: hidden')
+                }
+            }
 
             numberCounter.prototype.counter = function() {
                 let self = this
@@ -463,5 +484,13 @@
                 }
             })
         </script>
+    </div>
+    <div id="background">
+        <div id="tou-and-policy">
+            <div id="tou-and-policy-close" class="font-class-4 valign-text-middle" onclick="touAndPolicy('close')">X</div>
+            <div id="tou-and-policy-title" class="font-class-4"></div>
+            <iframe id="tou-and-policy-tou" class="tou-and-policy-content" src="tou.html"></iframe>
+            <iframe id="tou-and-policy-policy" class="tou-and-policy-content" src="policy.html"></iframe>
+        </div>
     </div>
 </body></html>
