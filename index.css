@@ -964,6 +964,12 @@
     width: 586px;
 }
 
+.body .selected-box:hover {
+    transition: background-color 0.2s ease 0s;
+    opacity: 0.75;
+    background-color: white;
+}
+
 .body .selected-box {
     cursor: pointer;
     display: inline-block;
@@ -976,6 +982,13 @@
     left: 7.5px;
     top: 7.5px;
     width: 182px;
+    box-shadow: rgba(20, 20, 20, 0.04) 3px 6px 12px 0px, rgba(20, 20, 20, 0.1) 0px 1px 4px 0px;
+}
+
+.body .none-selected-box:hover {
+    transition: background-color 0.2s ease 0s;
+    opacity: 0.5;
+    background-color: white;
 }
 
 .body .none-selected-box {
@@ -1442,14 +1455,14 @@
     }
 
     .body .contact-email {
-        top: 306;
+        top: 306px;
         text-align: center;
         left: 0px;
         right: 0px;
     }
 
     .body .contact-email-box {
-        top: 347;
+        top: 347px;
         display: block;
         margin: 0 auto;
         left: 0px;
@@ -1457,14 +1470,14 @@
     }
 
     .body .contact-text {
-        top: 421;
+        top: 421px;
         text-align: center;
         left: 0px;
         right: 0px;
     }
 
     .body .contact-text-box {
-        top: 462;
+        top: 462px;
         display: block;
         margin: 0 auto;
         left: 0px;
@@ -1472,7 +1485,7 @@
     }
 
     .body .contact-btn {
-        top: 644;
+        top: 644px;
         margin: 0 auto;
         left: 0px;
         right: 0px;
