@@ -1,6 +1,12 @@
 <template>
-  <v-app-bar fixed flat color="transparent" style="backdrop-filter: blur(3px)">
-    <v-app-bar fixed flat color="transparent" class="container pa-0">
+  <v-app-bar
+    fixed
+    flat
+    dense
+    color="transparent"
+    style="backdrop-filter: blur(3px)"
+  >
+    <v-app-bar fixed flat dense color="transparent" class="container pa-0">
       <v-img
         alt="Flatgarden Logo"
         class="shrink"
