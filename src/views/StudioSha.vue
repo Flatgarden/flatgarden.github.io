@@ -45,5 +45,9 @@ export default Vue.extend({
       .querySelector("meta[name='theme-color']")
       ?.setAttribute("content", "#f5f5f5");
   },
+
+  mounted() {
+    window.scrollTo(0, 0);
+  },
 });
 </script>
