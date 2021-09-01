@@ -1,16 +1,20 @@
 <template>
   <v-main>
-    <v-sheet height="100vh" color="#7fefd3">
+    <v-sheet height="100vh" color="#f5f5f5">
       <v-parallax
         :src="require('@/assets/studiosha.jpg')"
         style="height: 100vh"
       >
         <v-container fill-height>
           <v-layout fill-height align-center>
-            <div style="color: #313131">
+            <v-sheet
+              color="transparent"
+              :height="$vuetify.breakpoint.xsOnly ? '400' : null"
+              style="color: #313131"
+            >
               <h1 class="font-weight-black">입시의 끝에서 웃는 그날까지</h1>
               <h1 class="font-weight-black">스튜디오샤</h1>
-            </div>
+            </v-sheet>
           </v-layout>
         </v-container>
       </v-parallax>
