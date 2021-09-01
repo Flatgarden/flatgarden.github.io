@@ -12,7 +12,14 @@
               :height="$vuetify.breakpoint.xsOnly ? '400' : null"
               style="color: #313131"
             >
-              <h1 class="font-weight-black">입시의 끝에서 웃는 그날까지</h1>
+              <div class="hidden-sm-and-up">
+                <h1 class="font-weight-black">입시의 끝에서 웃는</h1>
+                <h1 class="font-weight-black">그날까지</h1>
+              </div>
+              <h1 class="font-weight-black hidden-xs-only">
+                입시의 끝에서 웃는 그날까지
+              </h1>
+
               <h1 class="font-weight-black">스튜디오샤</h1>
             </v-sheet>
           </v-layout>
