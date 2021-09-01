@@ -26,5 +26,14 @@ import Vue from "vue";
 
 export default Vue.extend({
   name: "HakHak",
+
+  beforeCreate() {
+    document
+      .querySelector("body")
+      ?.setAttribute("style", "background: #ffd600");
+    document
+      .querySelector("meta[name='theme-color']")
+      ?.setAttribute("content", "#ffd600");
+  },
 });
 </script>

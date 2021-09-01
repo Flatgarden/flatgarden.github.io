@@ -36,5 +36,14 @@ import Vue from "vue";
 
 export default Vue.extend({
   name: "StudioSha",
+
+  beforeCreate() {
+    document
+      .querySelector("body")
+      ?.setAttribute("style", "background: #f5f5f5");
+    document
+      .querySelector("meta[name='theme-color']")
+      ?.setAttribute("content", "#f5f5f5");
+  },
 });
 </script>

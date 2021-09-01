@@ -26,5 +26,14 @@ import Vue from "vue";
 
 export default Vue.extend({
   name: "Home",
+
+  beforeCreate() {
+    document
+      .querySelector("body")
+      ?.setAttribute("style", "background: #7ff0d4");
+    document
+      .querySelector("meta[name='theme-color']")
+      ?.setAttribute("content", "#7ff0d4");
+  },
 });
 </script>
