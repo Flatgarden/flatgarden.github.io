@@ -6,7 +6,7 @@
           <v-layout fill-height align-center>
             <v-sheet
               color="transparent"
-              :height="$vuetify.breakpoint.xsOnly ? '400' : null"
+              :height="$vuetify.breakpoint.xsOnly ? '375' : null"
               style="color: #313131"
             >
               <h1 class="font-weight-black">입시가 궁금할 땐</h1>

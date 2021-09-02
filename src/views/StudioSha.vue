@@ -9,7 +9,7 @@
           <v-layout fill-height align-center>
             <v-sheet
               color="transparent"
-              :height="$vuetify.breakpoint.xsOnly ? '400' : null"
+              :height="$vuetify.breakpoint.xsOnly ? '375' : null"
               style="color: #313131"
             >
               <div class="hidden-sm-and-up">
