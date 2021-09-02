@@ -17,7 +17,6 @@
       </v-parallax>
     </v-sheet>
     <v-sheet height="100vh"></v-sheet>
-    <v-sheet height="273px" color="#f5f4f4"></v-sheet>
   </v-main>
 </template>
 

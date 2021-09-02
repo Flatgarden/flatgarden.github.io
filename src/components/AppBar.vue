@@ -10,7 +10,6 @@
       <router-link to="/">
         <v-img
           alt="Flatgarden Logo"
-          class="shrink"
           contain
           :src="require('@/assets/logo.svg')"
           transition="scale-transition"
@@ -31,7 +30,7 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  name: "HelloWorld",
+  name: "AppBar",
 
   data: () => ({
     //
