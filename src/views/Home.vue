@@ -26,7 +26,7 @@
       >
         <v-card
           to="/hakhak"
-          style="top: -100px"
+          style="top: -110px"
           :class="$vuetify.breakpoint.smAndDown ? 'ma-2' : 'my-2 mx-4'"
           width="284px"
           elevation="6"
@@ -41,7 +41,7 @@
         </v-card>
         <v-card
           to="/studiosha"
-          style="top: -100px"
+          style="top: -110px"
           :class="$vuetify.breakpoint.smAndDown ? 'ma-2' : 'my-2 mx-4'"
           width="284px"
           elevation="6"
