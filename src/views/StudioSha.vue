@@ -12,15 +12,10 @@
               :height="$vuetify.breakpoint.xsOnly ? '375' : null"
               style="color: #313131"
             >
-              <div class="hidden-sm-and-up">
-                <h1 class="font-weight-black">입시의 끝에서 웃는</h1>
-                <h1 class="font-weight-black">그날까지</h1>
-              </div>
-              <h1 class="font-weight-black hidden-xs-only">
-                입시의 끝에서 웃는 그날까지
+              <h1 class="font-weight-black">
+                <span v-html="title" />
+                <span :style="blink ? 'visibility: hidden' : null">|</span>
               </h1>
-
-              <h1 class="font-weight-black">스튜디오샤</h1>
             </v-sheet>
           </v-layout>
         </v-container>
@@ -36,6 +31,12 @@ import Vue from "vue";
 export default Vue.extend({
   name: "StudioSha",
 
+  data: () => ({
+    text: "입시의 끝에서 웃는\n그날까지\n스튜디오샤",
+    title: "",
+    blink: false,
+  }),
+
   beforeCreate() {
     document
       .querySelector("body")
@@ -47,6 +48,20 @@ export default Vue.extend({
 
   mounted() {
     window.scrollTo(0, 0);
+
+    let index = 0;
+    const interval = setInterval(() => {
+      let char = this.text[index++];
+      this.title += char === "\n" ? "<br/>" : char;
+
+      if (index >= this.text.length) {
+        clearInterval(interval);
+
+        setInterval(() => {
+          this.blink = !this.blink;
+        }, 500);
+      }
+    }, Math.floor(Math.random() * 100) + 100);
   },
 });
 </script>

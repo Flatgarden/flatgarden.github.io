@@ -20,10 +20,6 @@ export default Vue.extend({
     AppBar,
     Footer,
   },
-
-  data: () => ({
-    //
-  }),
 });
 </script>
 

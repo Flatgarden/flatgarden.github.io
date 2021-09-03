@@ -9,8 +9,10 @@
               :height="$vuetify.breakpoint.xsOnly ? '375' : null"
               style="color: #313131"
             >
-              <h1 class="font-weight-black">입시가 궁금할 땐</h1>
-              <h1 class="font-weight-black">학학이에게 물어봐</h1>
+              <h1 class="font-weight-black">
+                <span v-html="title" />
+                <span :style="blink ? 'visibility: hidden' : null">|</span>
+              </h1>
             </v-sheet>
           </v-layout>
         </v-container>
@@ -26,6 +28,12 @@ import Vue from "vue";
 export default Vue.extend({
   name: "HakHak",
 
+  data: () => ({
+    text: "입시가 궁금할 땐\n학학이에게 물어봐",
+    title: "",
+    blink: false,
+  }),
+
   beforeCreate() {
     document
       .querySelector("body")
@@ -37,6 +45,20 @@ export default Vue.extend({
 
   mounted() {
     window.scrollTo(0, 0);
+
+    let index = 0;
+    const interval = setInterval(() => {
+      let char = this.text[index++];
+      this.title += char === "\n" ? "<br/>" : char;
+
+      if (index >= this.text.length) {
+        clearInterval(interval);
+
+        setInterval(() => {
+          this.blink = !this.blink;
+        }, 500);
+      }
+    }, Math.floor(Math.random() * 100) + 100);
   },
 });
 </script>
