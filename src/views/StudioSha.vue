@@ -35,6 +35,7 @@
             :aspect-ratio="16 / 8.9"
             v-if="item.snippet.thumbnails.high"
             :src="item.snippet.thumbnails.high.url"
+            :lazy-src="item.snippet.thumbnails.default.url"
           />
         </v-card>
       </v-row>
