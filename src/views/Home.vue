@@ -54,7 +54,36 @@
         </v-card>
       </v-row>
     </v-sheet>
-    <v-sheet height="100vh"></v-sheet>
+    <v-sheet height="100vh" class="py-16">
+      <v-container :class="$vuetify.breakpoint.xsOnly ? 'py-16' : 'pa-16'">
+        <v-card flat class="my-16">
+          <v-card-subtitle class="pb-0" style="color: #00b9ae">
+            <b>플랫가든 Spirit</b>
+          </v-card-subtitle>
+          <v-card-title class="pt-0">
+            입시의 주체가 학생이 되는 그날까지 플랫가든이 함께 하겠습니다.
+          </v-card-title>
+          <v-card-text style="color: #313131">
+            <ul>
+              <li>플랫가든은 10대를 위한 목소리를 냅니다.</li>
+              <li>학생들이 즐길 수 있는 입시 콘텐츠를 만듭니다.</li>
+              <li>
+                교육 콘텐츠를 무료로, 혹은 저렴하게 공유할 수 있는 방법에 대해
+                연구합니다.
+              </li>
+              <li>
+                다양한 사람들과의 협업으로, 기술과 데이터로, 혹은 아예 새로운
+                방식으로 가능하게 합니다.
+              </li>
+              <li>
+                새로운 선생님들, 대학생들, 선배들, 그리고 무엇보다 가장
+                힘들어하고 있을 학생들과 함께합니다.
+              </li>
+            </ul>
+          </v-card-text>
+        </v-card>
+      </v-container>
+    </v-sheet>
   </v-main>
 </template>
 
