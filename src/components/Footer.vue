@@ -14,17 +14,15 @@
         <v-row :class="$vuetify.breakpoint.xsOnly ? 'ma-1' : 'ml-8'">
           <v-col cols="12">
             <b>문의하기</b>
-            <span class="ml-4 text-decoration-underline">메일로 문의</span>
-            <span class="ml-4 text-decoration-underline">
-              카카오 플러스친구로 문의
+            <span class="ml-4"><u>메일로 문의</u></span>
+            <span class="ml-4">
+              <u>카카오 플러스친구로 문의</u>
             </span>
           </v-col>
           <v-col cols="12">
             <b>정책정보</b>
-            <span class="ml-4 text-decoration-underline">서비스 이용약관</span>
-            <span class="ml-4 text-decoration-underline">
-              개인정보처리방침
-            </span>
+            <span class="ml-4"><u>서비스 이용약관</u></span>
+            <span class="ml-4"><u>개인정보처리방침</u></span>
           </v-col>
           <v-col cols="12">
             서울특별시 관악구 호암로 597 DIGICO KT Open Lap 4층 402호
@@ -36,7 +34,7 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from "vue"
 
 export default Vue.extend({
   name: "Footer",
@@ -44,5 +42,5 @@ export default Vue.extend({
   data: () => ({
     //
   }),
-});
+})
 </script>
