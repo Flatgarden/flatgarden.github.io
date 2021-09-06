@@ -54,9 +54,11 @@
         </v-card>
       </v-row>
     </v-sheet>
-    <v-sheet height="100vh" class="py-16">
-      <v-container :class="$vuetify.breakpoint.xsOnly ? 'py-16' : 'pa-16'">
-        <v-card flat class="my-16">
+    <v-sheet class="pt-16">
+      <v-container
+        :class="$vuetify.breakpoint.xsOnly ? 'py-16' : 'pt-16 py-16'"
+      >
+        <v-card flat class="mt-16">
           <v-card-subtitle class="pb-0" style="color: #00b9ae">
             <b>플랫가든 Spirit</b>
           </v-card-subtitle>
