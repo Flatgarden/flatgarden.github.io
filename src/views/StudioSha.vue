@@ -1,25 +1,49 @@
 <template>
   <v-main>
-    <v-sheet height="100vh" color="#f5f5f5">
-      <v-parallax
-        :src="require('@/assets/studiosha.jpg')"
-        style="height: 100vh"
-      >
-        <v-container fill-height>
-          <v-layout fill-height align-center>
-            <v-sheet
-              color="transparent"
-              :height="$vuetify.breakpoint.xsOnly ? '375' : null"
-              style="color: #313131"
-            >
-              <h1 class="font-weight-black">
-                <span v-html="title" />
-                <span :style="blink ? 'visibility: hidden' : null">|</span>
-              </h1>
-            </v-sheet>
-          </v-layout>
-        </v-container>
-      </v-parallax>
+    <v-sheet>
+      <v-sheet height="100vh" color="#f5f5f5">
+        <v-parallax
+          :src="require('@/assets/studiosha.jpg')"
+          style="height: 100vh"
+        >
+          <v-container fill-height>
+            <v-layout fill-height align-center>
+              <v-sheet
+                color="transparent"
+                :height="$vuetify.breakpoint.xsOnly ? '375' : null"
+                style="color: #313131"
+              >
+                <h1 class="font-weight-black">
+                  <span v-html="title" />
+                  <span :style="blink ? 'visibility: hidden' : null">|</span>
+                </h1>
+              </v-sheet>
+            </v-layout>
+          </v-container>
+        </v-parallax>
+      </v-sheet>
+      <v-row justify="center" no-gutters>
+        <v-card
+          to="/hakhak"
+          style="top: -110px"
+          :class="$vuetify.breakpoint.smAndDown ? 'ma-2' : 'my-2 mx-4'"
+          width="584px"
+          elevation="6"
+        >
+          <v-card-title class="headline" style="color: #313131">
+            <b>관악산 영상공방</b>
+          </v-card-title>
+          <v-card-text style="color: #313131">
+            스튜디오 샤는 생생한 대학생들의 이야기를 통해 입시를 준비하는
+            중고생들에게 정보를 전달하거나, 동기부여를 함으로써 긴 입시를 즐겁게
+            버틸 수 있도록 함께하는 유튜브 채널입니다.
+            <br />
+            서울대학교 안의 다양한 이야기들을 영상을 통해 재미있게 전달함으로써
+            입시에 대한 유익한 정보는 물론 재미까지 제공할 수 있는 채널이 되고자
+            합니다.
+          </v-card-text>
+        </v-card>
+      </v-row>
     </v-sheet>
     <v-sheet>
       <v-row no-gutters class="ma-4">
