@@ -59,7 +59,7 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from "vue"
 
 export default Vue.extend({
   name: "Home",
@@ -71,30 +71,28 @@ export default Vue.extend({
   }),
 
   beforeCreate() {
-    document
-      .querySelector("body")
-      ?.setAttribute("style", "background: #7ff0d4");
+    document.querySelector("body")?.setAttribute("style", "background: #7ff0d4")
     document
       .querySelector("meta[name='theme-color']")
-      ?.setAttribute("content", "#7ff0d4");
+      ?.setAttribute("content", "#7ff0d4")
   },
 
   mounted() {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0)
 
-    let index = 0;
+    let index = 0
     const interval = setInterval(() => {
-      let char = this.text[index++];
-      this.title += char === "\n" ? "<br/>" : char;
+      let char = this.text[index++]
+      this.title += char === "\n" ? "<br/>" : char
 
       if (index >= this.text.length) {
-        clearInterval(interval);
+        clearInterval(interval)
 
         setInterval(() => {
-          this.blink = !this.blink;
-        }, 500);
+          this.blink = !this.blink
+        }, 500)
       }
-    }, Math.floor(Math.random() * 100) + 100);
+    }, Math.floor(Math.random() * 100) + 100)
   },
-});
+})
 </script>

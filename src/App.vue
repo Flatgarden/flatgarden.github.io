@@ -9,9 +9,9 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import AppBar from "@/components/AppBar.vue";
-import Footer from "@/components/Footer.vue";
+import Vue from "vue"
+import AppBar from "@/components/AppBar.vue"
+import Footer from "@/components/Footer.vue"
 
 export default Vue.extend({
   name: "App",
@@ -20,7 +20,7 @@ export default Vue.extend({
     AppBar,
     Footer,
   },
-});
+})
 </script>
 
 <style lang="scss">

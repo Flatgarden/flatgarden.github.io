@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import Vue from "vue";
+import Vue from "vue"
 
 export default Vue.extend({
   name: "StudioSha",
@@ -57,14 +57,12 @@ export default Vue.extend({
   }),
 
   beforeCreate() {
-    document
-      .querySelector("body")
-      ?.setAttribute("style", "background: #f5f5f5");
+    document.querySelector("body")?.setAttribute("style", "background: #f5f5f5")
     document
       .querySelector("meta[name='theme-color']")
-      ?.setAttribute("content", "#f5f5f5");
+      ?.setAttribute("content", "#f5f5f5")
 
-    const gapi = window.gapi;
+    const gapi = window.gapi
 
     const start = () => {
       gapi.client
@@ -83,34 +81,34 @@ export default Vue.extend({
         )
         .then(
           (response) => {
-            this.items = response.result.items;
-            console.log(this.items);
+            this.items = response.result.items
+            console.log(this.items)
           },
           (reason) => {
-            console.log("Error: " + reason.result.error.message);
+            console.log("Error: " + reason.result.error.message)
           }
-        );
-    };
+        )
+    }
 
-    gapi.load("client", start);
+    gapi.load("client", start)
   },
 
   mounted() {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0)
 
-    let index = 0;
+    let index = 0
     const interval = setInterval(() => {
-      let char = this.text[index++];
-      this.title += char === "\n" ? "<br/>" : char;
+      let char = this.text[index++]
+      this.title += char === "\n" ? "<br/>" : char
 
       if (index >= this.text.length) {
-        clearInterval(interval);
+        clearInterval(interval)
 
         setInterval(() => {
-          this.blink = !this.blink;
-        }, 500);
+          this.blink = !this.blink
+        }, 500)
       }
-    }, Math.floor(Math.random() * 100) + 100);
+    }, Math.floor(Math.random() * 100) + 100)
   },
-});
+})
 </script>
