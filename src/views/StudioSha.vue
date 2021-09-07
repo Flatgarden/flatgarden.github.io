@@ -86,6 +86,30 @@
         </v-card>
       </div>
     </v-sheet>
+    <v-sheet class="py-16">
+      <v-container :class="$vuetify.breakpoint.xsOnly ? '' : 'px-16'">
+        <v-row v-for="item in thirdItems" :key="item.etag" class="pa-4">
+          <v-col cols="12" sm="4" md="6">
+            <v-card outlined>
+              <v-img
+                :aspect-ratio="16 / 8.9"
+                v-if="item.snippet.thumbnails.high"
+                :src="item.snippet.thumbnails.high.url"
+                :lazy-src="item.snippet.thumbnails.default.url"
+              />
+            </v-card>
+          </v-col>
+          <v-col cols="12" sm="8" md="6">
+            <v-card-title class="pt-0">
+              <b>{{ item.snippet.title }}</b>
+            </v-card-title>
+            <v-card-subtitle>
+              {{ item.snippet.description.slice(0, 100) }}...
+            </v-card-subtitle>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-sheet>
   </v-main>
 </template>
 
@@ -101,6 +125,7 @@ export default Vue.extend({
     blink: false,
     firstItems: [],
     secondItems: [],
+    thirdItems: [],
   }),
 
   beforeCreate() {
@@ -128,9 +153,10 @@ export default Vue.extend({
         )
         .then(
           (response) => {
-            this.firstItems = response.result.items.sort(
-              () => Math.random() - 0.5
-            )
+            const items = response.result.items
+            console.log(items)
+            this.thirdItems = items.slice(0, 3)
+            this.firstItems = items.slice(3).sort(() => Math.random() - 0.5)
             this.secondItems = this.firstItems.slice().reverse()
           },
           (reason) => {
