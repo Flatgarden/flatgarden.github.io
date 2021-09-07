@@ -56,9 +56,9 @@
     </v-sheet>
     <v-sheet class="pt-16">
       <v-container
-        :class="$vuetify.breakpoint.xsOnly ? 'py-16' : 'pt-16 py-16'"
+        :class="$vuetify.breakpoint.xsOnly ? 'pt-16' : 'pt-16 px-16'"
       >
-        <v-card flat class="mt-16">
+        <v-card flat :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'">
           <v-card-subtitle class="pb-0" style="color: #00b9ae">
             <b>플랫가든 Spirit</b>
           </v-card-subtitle>
@@ -82,6 +82,20 @@
                 힘들어하고 있을 학생들과 함께합니다.
               </li>
             </ul>
+          </v-card-text>
+        </v-card>
+      </v-container>
+    </v-sheet>
+    <v-sheet>
+      <v-container
+        :class="$vuetify.breakpoint.xsOnly ? 'py-16' : 'py-16 px-16'"
+      >
+        <v-card flat :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'">
+          <v-card-subtitle class="pb-0" style="color: #00b9ae">
+            <b>고객사 및 협력사</b>
+          </v-card-subtitle>
+          <v-card-text style="color: #313131" class="pt-6">
+            <v-img :src="require('@/assets/brand_logo.jpg')" />
           </v-card-text>
         </v-card>
       </v-container>
