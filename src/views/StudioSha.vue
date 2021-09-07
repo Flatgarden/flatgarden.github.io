@@ -30,7 +30,7 @@
           width="584px"
           elevation="6"
         >
-          <v-card-title class="headline" style="color: #313131">
+          <v-card-title class="headline">
             <b>관악산 영상공방</b>
           </v-card-title>
           <v-card-text style="color: #313131">
@@ -45,24 +45,46 @@
         </v-card>
       </v-row>
     </v-sheet>
-    <v-sheet>
-      <v-row no-gutters class="ma-4">
+    <v-sheet class="mb-16">
+      <v-container :class="$vuetify.breakpoint.xsOnly ? '' : 'px-16'">
+        <v-card-title>
+          <b>스튜디오 샤가 만드는 영상</b>
+        </v-card-title>
+      </v-container>
+      <div class="d-flex" style="position: relative; left: -150px">
         <v-card
           v-show="item.snippet.title !== 'Private video'"
-          v-for="item in items"
+          v-for="item in firstItems"
           :key="item.etag"
-          class="ma-4"
-          width="200px"
+          class="ma-2"
           elevation="6"
         >
           <v-img
+            width="250px"
             :aspect-ratio="16 / 8.9"
             v-if="item.snippet.thumbnails.high"
             :src="item.snippet.thumbnails.high.url"
             :lazy-src="item.snippet.thumbnails.default.url"
           />
         </v-card>
-      </v-row>
+      </div>
+      <div class="d-flex" style="position: relative; left: -16px">
+        <v-card
+          v-show="item.snippet.title !== 'Private video'"
+          v-for="item in secondItems"
+          :key="item.etag"
+          class="ma-2"
+          elevation="6"
+        >
+          <v-img
+            width="250px"
+            :aspect-ratio="16 / 8.9"
+            v-if="item.snippet.thumbnails.high"
+            :src="item.snippet.thumbnails.high.url"
+            :lazy-src="item.snippet.thumbnails.default.url"
+          />
+        </v-card>
+      </div>
     </v-sheet>
   </v-main>
 </template>
@@ -77,7 +99,8 @@ export default Vue.extend({
     text: "입시의 끝에서 웃는\n그날까지\n스튜디오샤",
     title: "",
     blink: false,
-    items: {},
+    firstItems: [],
+    secondItems: [],
   }),
 
   beforeCreate() {
@@ -105,8 +128,10 @@ export default Vue.extend({
         )
         .then(
           (response) => {
-            this.items = response.result.items
-            console.log(this.items)
+            this.firstItems = response.result.items.sort(
+              () => Math.random() - 0.5
+            )
+            this.secondItems = this.firstItems.slice().reverse()
           },
           (reason) => {
             console.log("Error: " + reason.result.error.message)

@@ -27,7 +27,7 @@
           width="584px"
           elevation="6"
         >
-          <v-card-title class="headline" style="color: #313131">
+          <v-card-title class="headline">
             <b>학학이는 뭔가요?</b>
           </v-card-title>
           <v-card-text style="color: #313131">

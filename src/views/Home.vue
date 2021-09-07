@@ -63,7 +63,9 @@
             <b>플랫가든 Spirit</b>
           </v-card-subtitle>
           <v-card-title class="pt-0">
-            입시의 주체가 학생이 되는 그날까지 플랫가든이 함께 하겠습니다.
+            <b>
+              입시의 주체가 학생이 되는 그날까지 플랫가든이 함께 하겠습니다.
+            </b>
           </v-card-title>
           <v-card-text style="color: #313131">
             <ul>
