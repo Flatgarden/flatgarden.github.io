@@ -24,7 +24,6 @@
       </v-sheet>
       <v-row justify="center" no-gutters>
         <v-card
-          to="/hakhak"
           style="top: -110px"
           :class="$vuetify.breakpoint.smAndDown ? 'ma-2' : 'my-2 mx-4'"
           width="584px"
