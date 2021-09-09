@@ -14,10 +14,14 @@
         <v-row :class="$vuetify.breakpoint.xsOnly ? 'ma-1' : 'ml-8'">
           <v-col cols="12">
             <b>문의하기</b>
-            <span class="ml-4"><u>메일로 문의</u></span>
-            <span class="ml-4">
-              <u>카카오 플러스친구로 문의</u>
-            </span>
+            <a href="mailto:superman@test.com" target="_blank">
+              <span class="ml-4"><u>메일로 문의</u></span>
+            </a>
+            <a href="https://pf.kakao.com/_vcxeYT/chat" target="_blank">
+              <span class="ml-4">
+                <u>카카오 플러스친구로 문의</u>
+              </span>
+            </a>
           </v-col>
           <v-col cols="12">
             <b>정책정보</b>
