@@ -53,7 +53,7 @@
       <div class="d-flex" style="position: relative; left: -150px">
         <v-card
           v-show="item.snippet.title !== 'Private video'"
-          v-for="item in firstItems"
+          v-for="item in items.first"
           :key="item.etag"
           class="ma-2"
           elevation="6"
@@ -70,7 +70,7 @@
       <div class="d-flex" style="position: relative; left: -16px">
         <v-card
           v-show="item.snippet.title !== 'Private video'"
-          v-for="item in secondItems"
+          v-for="item in items.second"
           :key="item.etag"
           class="ma-2"
           elevation="6"
@@ -87,7 +87,7 @@
     </v-sheet>
     <v-sheet class="py-16">
       <v-container :class="$vuetify.breakpoint.xsOnly ? '' : 'px-16'">
-        <v-row v-for="item in thirdItems" :key="item.etag" class="pa-4">
+        <v-row v-for="item in items.third" :key="item.etag" class="pa-4">
           <v-col cols="12" sm="4" md="6">
             <v-card outlined>
               <v-img
@@ -118,13 +118,14 @@ import Vue from "vue"
 export default Vue.extend({
   name: "StudioSha",
 
+  props: {
+    items: Object,
+  },
+
   data: () => ({
     text: "입시의 끝에서 웃는\n그날까지\n스튜디오샤",
     title: "",
     blink: false,
-    firstItems: [],
-    secondItems: [],
-    thirdItems: [],
   }),
 
   beforeCreate() {
@@ -132,39 +133,6 @@ export default Vue.extend({
     document
       .querySelector("meta[name='theme-color']")
       ?.setAttribute("content", "#f5f5f5")
-
-    const gapi = window.gapi
-
-    const start = () => {
-      gapi.client
-        .init({
-          apiKey: "AIzaSyAKGWz-vDUt9GIagEck0_9dzOM22V6tqdw",
-        })
-        .then(() =>
-          gapi.client.request({
-            path: "https://www.googleapis.com/youtube/v3/playlistItems",
-            params: {
-              part: "snippet",
-              playlistId: "PLhcs_k82PxkGjlDfgu68ZI3aYIRRhnfDg",
-              maxResults: 50,
-            },
-          })
-        )
-        .then(
-          (response) => {
-            const items = response.result.items
-            console.log(items)
-            this.thirdItems = items.slice(0, 3)
-            this.firstItems = items.slice(3).sort(() => Math.random() - 0.5)
-            this.secondItems = this.firstItems.slice().reverse()
-          },
-          (reason) => {
-            console.log("Error: " + reason.result.error.message)
-          }
-        )
-    }
-
-    gapi.load("client", start)
   },
 
   mounted() {
