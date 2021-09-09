@@ -25,8 +25,14 @@
           </v-col>
           <v-col cols="12">
             <b>정책정보</b>
-            <span class="ml-4"><u>서비스 이용약관</u></span>
-            <span class="ml-4"><u>개인정보처리방침</u></span>
+            <span class="ml-4" @click="$refs.dialog.open('TermsOfService')">
+              <u>서비스 이용약관</u>
+            </span>
+            <a @click="$refs.dialog.open('PrivacyPolicy')">
+              <span class="ml-4">
+                <u>개인정보처리방침</u>
+              </span>
+            </a>
           </v-col>
           <v-col cols="12">
             서울특별시 관악구 호암로 597 DIGICO KT Open Lap 4층 402호
@@ -34,17 +40,19 @@
         </v-row>
       </v-layout>
     </v-container>
+    <Dialog ref="dialog" />
   </v-sheet>
 </template>
 
 <script lang="ts">
 import Vue from "vue"
+import Dialog from "@/components/Dialog.vue"
 
 export default Vue.extend({
   name: "Footer",
 
-  data: () => ({
-    //
-  }),
+  components: {
+    Dialog,
+  },
 })
 </script>

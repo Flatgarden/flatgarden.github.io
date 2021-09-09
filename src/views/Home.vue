@@ -169,9 +169,7 @@
                     color="#00e1ab"
                     style="border: 7px solid currentColor"
                   >
-                    <b style="color: #00b9ae">
-                      자세한 채용내용 확인하러 가기
-                    </b>
+                    <b style="color: #00b9ae">자세한 채용내용 확인하러 가기</b>
                   </v-btn>
                 </a>
               </v-col>
