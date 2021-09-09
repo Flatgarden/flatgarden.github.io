@@ -54,10 +54,8 @@
         </v-card>
       </v-row>
     </v-sheet>
-    <v-sheet class="pt-16">
-      <v-container
-        :class="$vuetify.breakpoint.xsOnly ? 'pt-16' : 'pt-16 px-16'"
-      >
+    <v-sheet class="pt-16 mt-16">
+      <v-container :class="$vuetify.breakpoint.xsOnly ? 'py-8' : 'py-8 px-16'">
         <v-card flat :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'">
           <v-card-subtitle class="pb-0" style="color: #00b9ae">
             <b>플랫가든 Spirit</b>
@@ -84,6 +82,50 @@
                 힘들어하고 있을 학생들과 함께합니다.
               </li>
             </ul>
+          </v-card-text>
+        </v-card>
+      </v-container>
+    </v-sheet>
+    <v-sheet color="#f7f7f7">
+      <v-container :class="$vuetify.breakpoint.xsOnly ? 'py-8' : 'py-8 px-16'">
+        <v-card
+          flat
+          :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'"
+          color="transparent"
+        >
+          <v-card-subtitle class="pb-0" style="color: #00b9ae">
+            <b>성장스토리</b>
+          </v-card-subtitle>
+          <v-card-title class="pt-0">
+            <b>발전을 즐기는, 성장을 멈추지 않는, 끊임없이 도전하는</b>
+          </v-card-title>
+          <v-card-text style="color: #313131" class="pl-0">
+            <v-timeline dense align-top class="pt-2">
+              <v-timeline-item
+                v-for="year in years"
+                :key="year.year"
+                color="transparant"
+                icon-color="#00b9ae"
+                icon="mdi-record-circle"
+                class="pb-0"
+                right
+                small
+              >
+                <div class="pl-10">
+                  <div
+                    class="pb-2"
+                    v-for="(month, i) in year.month"
+                    :key="month.month"
+                  >
+                    <b v-if="i === 0" style="position: absolute; left: -24px">
+                      {{ year.year }}
+                    </b>
+                    {{ month.month }}
+                    <span class="pl-4">{{ month.text }}</span>
+                  </div>
+                </div>
+              </v-timeline-item>
+            </v-timeline>
           </v-card-text>
         </v-card>
       </v-container>
@@ -115,6 +157,55 @@ export default Vue.extend({
     text: "입시의 주체를\n학생으로",
     title: "",
     blink: false,
+    years: [
+      {
+        year: "2019년",
+        month: [
+          {
+            month: "10월",
+            text: "플랫가든 설립",
+          },
+          {
+            month: "12월",
+            text: "VC 스프링캠프 엑셀레이팅 프로그램 캠프파이어 2기 선정",
+          },
+        ],
+      },
+      {
+        year: "2020년",
+        month: [
+          {
+            month: "6월",
+            text: "서울대학교 SNU 해동주니어 스타트업 선정",
+          },
+        ],
+      },
+      {
+        year: "2021년",
+        month: [
+          {
+            month: "3월",
+            text: "8기 기보벤처캠프 선정",
+          },
+          {
+            month: "5월",
+            text: "VC 스프링캠프 추가 투자 유치",
+          },
+          {
+            month: "6월",
+            text: "구글 창구 프로그램 3기 선정",
+          },
+          {
+            month: "7월",
+            text: "KT DIGICO 공모전 선정 및 입주",
+          },
+          {
+            month: "8월",
+            text: "서울과학기술대학교 데이터사이언스대학원과 산학협력 체결",
+          },
+        ],
+      },
+    ],
   }),
 
   beforeCreate() {
@@ -143,3 +234,20 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style lang="scss">
+.v-timeline-item__dot {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.v-timeline:before {
+  left: calc(48px - 2px) !important;
+  width: 4px !important;
+}
+
+.v-timeline::before {
+  background: #ddd8d4 !important;
+  border-radius: 2px;
+}
+</style>
