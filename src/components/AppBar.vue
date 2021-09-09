@@ -21,7 +21,7 @@
 
       <v-btn text to="/hakhak" class="px-2"><b>학학이</b></v-btn>
 
-      <v-btn text to="/studiosha" class="px-2 ml-2"><b>스튜디오 샤</b></v-btn>
+      <v-btn text to="/studiosha" class="px-2 ml-2"><b>스튜디오샤</b></v-btn>
     </v-app-bar>
   </v-app-bar>
 </template>
