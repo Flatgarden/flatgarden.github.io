@@ -54,7 +54,7 @@
         </v-card>
       </v-row>
     </v-sheet>
-    <v-sheet class="pt-16 mt-16">
+    <v-sheet class="pt-16 pb-8 mt-16">
       <v-container :class="$vuetify.breakpoint.xsOnly ? 'py-8' : 'py-8 px-16'">
         <v-card flat :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'">
           <v-card-subtitle class="pb-0" style="color: #00b9ae">
@@ -135,6 +135,54 @@
     <v-sheet>
       <v-container
         :class="$vuetify.breakpoint.xsOnly ? 'py-16' : 'py-16 px-16'"
+      >
+        <v-card flat :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'">
+          <v-card-subtitle class="pb-0" style="color: #00b9ae">
+            <b>채용</b>
+          </v-card-subtitle>
+          <v-card-title class="pt-0">
+            <b>플랫가든과 함께할 입시파괴자를 구합니다.</b>
+          </v-card-title>
+          <v-card-text style="color: #313131" class="pt-6">
+            <v-row>
+              <v-col cols="12" sm="6" lg="5">
+                <v-card flat rounded="lg">
+                  <v-img :src="require('@/assets/employ.png')" />
+                </v-card>
+              </v-col>
+              <v-col cols="12" sm="6" lg="7">
+                <ul class="pa-4">
+                  <li>현 대한민국의 입시 제도에 할 말이 많은 사람</li>
+                  <li>
+                    입시, 공부에서 소외된 친구들에게 도움을 주고 싶은 사람
+                  </li>
+                  <li>스타트업 문화에 흥미를 가지고 있는 사람</li>
+                </ul>
+                <a
+                  href="https://www.rocketpunch.com/companies/flatgarden/jobs"
+                  target="_blank"
+                >
+                  <v-btn
+                    outlined
+                    block
+                    x-large
+                    color="#00e1ab"
+                    style="border: 7px solid currentColor"
+                  >
+                    <b style="color: #00b9ae">
+                      자세한 채용내용 확인하러 가기
+                    </b>
+                  </v-btn>
+                </a>
+              </v-col>
+            </v-row>
+          </v-card-text>
+        </v-card>
+      </v-container>
+    </v-sheet>
+    <v-sheet>
+      <v-container
+        :class="$vuetify.breakpoint.xsOnly ? 'pb-16' : 'pb-16 px-16'"
       >
         <v-card flat :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'">
           <v-card-subtitle class="pb-0" style="color: #00b9ae">
