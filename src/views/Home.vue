@@ -121,7 +121,9 @@
                       {{ year.year }}
                     </b>
                     {{ month.month }}
-                    <span class="pl-4">{{ month.text }}</span>
+                    <span :class="month.month[2] ? 'pl-3' : 'pl-5'">
+                      {{ month.text }}
+                    </span>
                   </div>
                 </div>
               </v-timeline-item>
