@@ -143,37 +143,39 @@
           <v-card-title class="pt-0">
             <b>플랫가든과 함께할 입시파괴자를 구합니다.</b>
           </v-card-title>
-          <v-card-text style="color: #313131" class="pt-6">
+          <v-card-text style="color: #313131" class="pt-4">
             <v-row>
-              <v-col cols="12" sm="6" lg="5">
+              <v-col cols="4">
                 <v-card flat rounded="lg">
-                  <v-img :src="require('@/assets/employ.png')" />
+                  <v-img :src="require('@/assets/employ_1.png')" />
                 </v-card>
               </v-col>
-              <v-col cols="12" sm="6" lg="7">
-                <ul class="pa-4">
-                  <li>현 대한민국의 입시 제도에 할 말이 많은 사람</li>
-                  <li>
-                    입시, 공부에서 소외된 친구들에게 도움을 주고 싶은 사람
-                  </li>
-                  <li>스타트업 문화에 흥미를 가지고 있는 사람</li>
-                </ul>
-                <a
-                  href="https://www.rocketpunch.com/companies/flatgarden/jobs"
-                  target="_blank"
-                >
-                  <v-btn
-                    outlined
-                    block
-                    x-large
-                    color="#00e1ab"
-                    style="border: 7px solid currentColor"
-                  >
-                    <b style="color: #00b9ae">자세한 채용내용 확인하러 가기</b>
-                  </v-btn>
-                </a>
+              <v-col cols="4">
+                <v-card flat rounded="lg">
+                  <v-img :src="require('@/assets/employ_2.png')" />
+                </v-card>
+              </v-col>
+              <v-col cols="4">
+                <v-card flat rounded="lg">
+                  <v-img :src="require('@/assets/employ_3.png')" />
+                </v-card>
               </v-col>
             </v-row>
+
+            <ul class="pa-5">
+              <li>현 대한민국의 입시 제도에 할 말이 많은 사람</li>
+              <li>입시, 공부에서 소외된 친구들에게 도움을 주고 싶은 사람</li>
+              <li>스타트업 문화에 흥미를 가지고 있는 사람</li>
+            </ul>
+
+            <a
+              href="https://www.rocketpunch.com/companies/flatgarden/jobs"
+              target="_blank"
+            >
+              <v-btn depressed block x-large color="#00ffd7">
+                <b style="color: #005f37">자세한 채용내용 확인하러 가기</b>
+              </v-btn>
+            </a>
           </v-card-text>
         </v-card>
       </v-container>
