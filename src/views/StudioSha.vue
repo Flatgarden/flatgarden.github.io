@@ -87,7 +87,11 @@
     </v-sheet>
     <v-sheet class="py-16">
       <v-container :class="$vuetify.breakpoint.xsOnly ? '' : 'px-16'">
-        <v-row v-for="item in items.third" :key="item.etag" class="pa-4">
+        <v-row
+          v-for="item in items.third"
+          :key="item.etag"
+          class="pa-4 d-flex flex-row-reverse"
+        >
           <v-col cols="12" sm="4" md="6">
             <v-card outlined>
               <v-img
