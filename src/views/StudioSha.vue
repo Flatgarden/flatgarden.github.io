@@ -93,14 +93,35 @@
           class="pa-4 d-flex flex-row-reverse"
         >
           <v-col cols="12" sm="4" md="6">
-            <v-card outlined>
-              <v-img
-                :aspect-ratio="16 / 8.9"
-                v-if="item.snippet.thumbnails.high"
-                :src="item.snippet.thumbnails.high.url"
-                :lazy-src="item.snippet.thumbnails.default.url"
-              />
-            </v-card>
+            <a
+              :href="
+                'https://www.youtube.com/watch?v=' +
+                item.snippet.resourceId.videoId
+              "
+              target="_blank"
+            >
+              <v-card outlined>
+                <v-img
+                  :aspect-ratio="16 / 8.9"
+                  v-if="item.snippet.thumbnails.high"
+                  :src="item.snippet.thumbnails.high.url"
+                  :lazy-src="item.snippet.thumbnails.default.url"
+                >
+                  <v-layout fill-height align-center justify-center>
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="#000000aa"
+                      style="pointer-events: none"
+                    >
+                      <v-icon dark large>mdi-play</v-icon>
+                    </v-btn>
+                  </v-layout>
+                </v-img>
+              </v-card>
+            </a>
           </v-col>
           <v-col cols="12" sm="8" md="6">
             <v-card-title class="pt-0">
