@@ -14,24 +14,24 @@
         <v-row :class="$vuetify.breakpoint.xsOnly ? 'ma-1' : 'ml-8'">
           <v-col cols="12">
             <b>문의하기</b>
-            <a href="mailto:superman@test.com" target="_blank">
-              <span class="ml-4"><u>메일로 문의</u></span>
+            <a class="ml-4" href="mailto:superman@test.com" target="_blank">
+              <u>메일로 문의</u>
             </a>
-            <a href="https://pf.kakao.com/_vcxeYT/chat" target="_blank">
-              <span class="ml-4">
-                <u>카카오 플러스친구로 문의</u>
-              </span>
+            <a
+              class="ml-4"
+              href="https://pf.kakao.com/_vcxeYT/chat"
+              target="_blank"
+            >
+              <u>카카오 플러스친구로 문의</u>
             </a>
           </v-col>
           <v-col cols="12">
             <b>정책정보</b>
-            <span class="ml-4" @click="$refs.dialog.open('TermsOfService')">
+            <a class="ml-4" @click="$refs.dialog.open('TermsOfService')">
               <u>서비스 이용약관</u>
-            </span>
-            <a @click="$refs.dialog.open('PrivacyPolicy')">
-              <span class="ml-4">
-                <u>개인정보처리방침</u>
-              </span>
+            </a>
+            <a class="ml-4" @click="$refs.dialog.open('PrivacyPolicy')">
+              <u>개인정보처리방침</u>
             </a>
           </v-col>
           <v-col cols="12">
