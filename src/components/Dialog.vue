@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="dialog" width="800" scrollable>
+  <v-dialog v-model="dialog" width="1000px" scrollable>
     <v-card>
       <v-app-bar flat color="white">
         <v-app-bar-title>
