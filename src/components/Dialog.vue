@@ -1,11 +1,13 @@
 <template>
-  <v-dialog v-model="dialog" width="800">
+  <v-dialog v-model="dialog" width="800" scrollable>
     <v-card>
-      <v-card-title>
-        {{ title }}
-        <v-spacer></v-spacer>
+      <v-app-bar flat color="white">
+        <v-app-bar-title>
+          {{ title }}
+        </v-app-bar-title>
+        <v-spacer />
         <v-btn color="blue" outlined @click="dialog = false">닫기</v-btn>
-      </v-card-title>
+      </v-app-bar>
 
       <v-card-text>
         <TermsOfService v-show="type === 'TermsOfService'" />
