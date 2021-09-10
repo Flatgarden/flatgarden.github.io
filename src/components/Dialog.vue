@@ -7,15 +7,21 @@
         <v-btn color="blue" outlined @click="dialog = false">닫기</v-btn>
       </v-card-title>
 
-      <v-card-text>1</v-card-text>
+      <v-card-text>
+        <TermsOfService v-show="type === 'TermsOfService'" />
+        <PrivacyPolicy v-show="type === 'PrivacyPolicy'" />
+      </v-card-text>
     </v-card>
   </v-dialog>
 </template>
 
 <script lang="ts">
 import Vue from "vue"
+import PrivacyPolicy from "./PrivacyPolicy.vue"
+import TermsOfService from "./TermsOfService.vue"
 
 export default Vue.extend({
+  components: { PrivacyPolicy, TermsOfService },
   name: "Dialog",
 
   data: () => ({
