@@ -27,7 +27,7 @@
           style="top: -110px"
           :class="$vuetify.breakpoint.smAndDown ? 'ma-2' : 'my-2 mx-4'"
           width="584px"
-          elevation="6"
+          elevation="4"
         >
           <v-card-title class="headline">
             <b>관악산 영상공방</b>

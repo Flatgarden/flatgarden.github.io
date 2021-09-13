@@ -29,7 +29,7 @@
           style="top: -110px"
           :class="$vuetify.breakpoint.smAndDown ? 'ma-2' : 'my-2 mx-4'"
           width="284px"
-          elevation="6"
+          elevation="4"
         >
           <v-img height="120px" :src="require('@/assets/hakhak_card.jpg')" />
           <v-card-title style="color: #313131">
@@ -44,7 +44,7 @@
           style="top: -110px"
           :class="$vuetify.breakpoint.smAndDown ? 'ma-2' : 'my-2 mx-4'"
           width="284px"
-          elevation="6"
+          elevation="4"
         >
           <v-img height="120px" :src="require('@/assets/studiosha_card.jpg')" />
           <v-card-title style="color: #313131"><b>스튜디오 샤</b></v-card-title>
