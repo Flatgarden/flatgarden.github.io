@@ -100,7 +100,7 @@
               "
               target="_blank"
             >
-              <v-card outlined>
+              <v-card outlined rounded="lg">
                 <v-img
                   :aspect-ratio="16 / 8.9"
                   v-if="item.snippet.thumbnails.high"
@@ -179,3 +179,9 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style lang="scss">
+.theme--light.v-sheet--outlined {
+  border: 4px solid black !important;
+}
+</style>
