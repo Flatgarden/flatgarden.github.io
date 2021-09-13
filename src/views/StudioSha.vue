@@ -90,7 +90,7 @@
         <v-row
           v-for="item in items.third"
           :key="item.etag"
-          class="pa-4 d-flex flex-row-reverse"
+          class="d-flex flex-row-reverse"
         >
           <v-col cols="12" sm="4" md="6">
             <a
@@ -133,6 +133,41 @@
           </v-col>
         </v-row>
       </v-container>
+    </v-sheet>
+    <v-sheet class="mb-16">
+      <v-container :class="$vuetify.breakpoint.xsOnly ? '' : 'px-16'">
+        <v-card-title>
+          <b>
+            교육, 라이프 스타일, IT 등
+            <br />
+            다양한 분야의 협업
+          </b>
+        </v-card-title>
+        <v-card-subtitle>
+          체계적인 영상 제작 프로세스를 기반으로 한
+          <br />
+          설탭, LG, 삼성, 키플링 등 당야한 기업과의 협업을 통해
+          <br />
+          다채로운 콘텐츠를 제작하고 있습니다.
+        </v-card-subtitle>
+      </v-container>
+      <!-- <div class="d-flex">
+        <v-card
+          v-show="item.snippet.title !== 'Private video'"
+          v-for="item in items.first"
+          :key="item.etag"
+          class="ma-2"
+          elevation="6"
+        >
+          <v-img
+            width="250px"
+            :aspect-ratio="16 / 8.9"
+            v-if="item.snippet.thumbnails.high"
+            :src="item.snippet.thumbnails.high.url"
+            :lazy-src="item.snippet.thumbnails.default.url"
+          />
+        </v-card>
+      </div> -->
     </v-sheet>
   </v-main>
 </template>
