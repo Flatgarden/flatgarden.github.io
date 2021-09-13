@@ -135,14 +135,22 @@
       </v-container>
     </v-sheet>
     <v-sheet class="mt-8 mb-16">
-      <v-img :src="require('@/assets/studiosha.png')" style="height: 300px">
+      <v-img :src="require('@/assets/studiosha.png')" style="height: 350px">
         <v-container
           fill-height
           :class="$vuetify.breakpoint.xsOnly ? '' : 'px-16'"
         >
           <v-layout fill-height align-center>
             <v-sheet class="white--text ml-4 d-flex" color="transparent">
-              <v-img :src="require('@/assets/studiosha_logo.png')" width="72" />
+              <a
+                href="https://www.youtube.com/channel/UCn0MK9vcIxinP4033UEHiUw"
+                target="_blank"
+              >
+                <v-img
+                  :src="require('@/assets/studiosha_logo.png')"
+                  width="72"
+                />
+              </a>
               <div class="d-inline-block ml-6">
                 <b>구독자</b>
                 118,735명
