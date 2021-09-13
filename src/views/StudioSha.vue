@@ -134,6 +134,30 @@
         </v-row>
       </v-container>
     </v-sheet>
+    <v-sheet class="mt-8 mb-16">
+      <v-img :src="require('@/assets/studiosha.png')" style="height: 300px">
+        <v-container
+          fill-height
+          :class="$vuetify.breakpoint.xsOnly ? '' : 'px-16'"
+        >
+          <v-layout fill-height align-center>
+            <v-sheet class="white--text ml-4 d-flex" color="transparent">
+              <v-img :src="require('@/assets/studiosha_logo.png')" width="72" />
+              <div class="d-inline-block ml-6">
+                <b>구독자</b>
+                118,735명
+                <br />
+                <b>조회수</b>
+                37,856,377명
+                <br />
+                <b>설립일</b>
+                2018. 10. 4.
+              </div>
+            </v-sheet>
+          </v-layout>
+        </v-container>
+      </v-img>
+    </v-sheet>
     <v-sheet class="mb-16">
       <v-container :class="$vuetify.breakpoint.xsOnly ? '' : 'px-16'">
         <v-card-title>
