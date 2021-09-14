@@ -43,6 +43,54 @@
       </v-row>
     </v-sheet>
     <v-sheet height="100vh"></v-sheet>
+    <v-sheet class="mt-8">
+      <v-img :src="require('@/assets/hakhak.png')">
+        <v-container
+          fill-height
+          :class="$vuetify.breakpoint.xsOnly ? '' : 'px-16'"
+        >
+          <v-layout fill-height align-center>
+            <v-sheet class="my-16 py-8" color="transparent" width="100%">
+              <div class="d-flex">
+                <a
+                  href="https://www.youtube.com/channel/UCn0MK9vcIxinP4033UEHiUw"
+                  target="_blank"
+                >
+                  <v-img
+                    :src="require('@/assets/hakhak_logo.png')"
+                    width="96"
+                  />
+                </a>
+                <div class="d-inline-block white--text ml-6 my-auto">
+                  - 2020년 8월 학학이 앱 출시
+                  <br />
+                  - 누적 질문 수 n개, 답변 n개로 입시를 바꾸는 데이터가 꾸준히
+                  쌓이는 중입니다.
+                  <br />
+                  - 누적 칼럼 조회수 n회로 콘텐츠의 영향력을 인정받고 있습니다.
+                  <br />
+                  - 학학이는 입시를 바꾸는 n명의 학생들과 n명의 멘토들이 함께
+                  합니다.
+                </div>
+              </div>
+              <v-row class="my-4">
+                <v-col cols="6">
+                  <v-btn block x-large><b>앱 다운로드</b></v-btn>
+                </v-col>
+                <v-col cols="6">
+                  <v-btn block x-large><b>앱 다운로드</b></v-btn>
+                </v-col>
+              </v-row>
+              <v-img
+                class="mt-8"
+                :src="require('@/assets/hakhak_preview.png')"
+                width="100%"
+              />
+            </v-sheet>
+          </v-layout>
+        </v-container>
+      </v-img>
+    </v-sheet>
   </v-main>
 </template>
 
