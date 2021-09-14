@@ -148,10 +148,10 @@
               >
                 <v-img
                   :src="require('@/assets/studiosha_logo.png')"
-                  width="72"
+                  width="96"
                 />
               </a>
-              <div class="d-inline-block ml-6">
+              <div class="d-inline-block ml-6 my-auto">
                 <b>구독자</b>
                 118,735명
                 <br />
