@@ -44,6 +44,59 @@
         </v-card>
       </v-row>
     </v-sheet>
+    <v-sheet class="pb-8">
+      <v-container :class="$vuetify.breakpoint.xsOnly ? 'pb-8' : 'pb-8 px-16'">
+        <v-row
+          class="text-center"
+          :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'"
+        >
+          <v-col cols="2" />
+          <v-col cols="4" v-for="counter in counters" :key="counter">
+            <v-sheet
+              rounded="circle"
+              style="
+                background: linear-gradient(#fff, rgba(196, 196, 196, 0.2));
+              "
+            >
+              <v-responsive aspect-ratio="1">
+                <v-layout
+                  fill-height
+                  align-center
+                  justify-center
+                  class="text-center"
+                >
+                  <h3
+                    :class="
+                      $vuetify.breakpoint.xsOnly
+                        ? 'text-subtitle-2 font-weight-medium'
+                        : $vuetify.breakpoint.mdAndDown
+                        ? 'text-subtitle-1 font-weight-medium'
+                        : 'text-h6 font-weight-medium'
+                    "
+                    style="position: absolute; top: 20%; opacity: 0.3"
+                  >
+                    {{ counter.name }}
+                  </h3>
+                  <div>
+                    <h3
+                      :class="
+                        $vuetify.breakpoint.xsOnly
+                          ? 'text-h6 font-weight-black'
+                          : $vuetify.breakpoint.mdAndDown
+                          ? 'text-h5 font-weight-black'
+                          : 'text-h4 font-weight-black'
+                      "
+                    >
+                      {{ counter.count }}
+                    </h3>
+                  </div>
+                </v-layout>
+              </v-responsive>
+            </v-sheet>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-sheet>
     <v-sheet class="mb-16">
       <v-container :class="$vuetify.breakpoint.xsOnly ? '' : 'px-16'">
         <v-card-title>
@@ -156,7 +209,7 @@
                 118,735명
                 <br />
                 <b>조회수</b>
-                37,856,377명
+                38,183,472회
                 <br />
                 <b>설립일</b>
                 2018. 10. 4.
@@ -218,6 +271,10 @@ export default Vue.extend({
     text: "입시의 끝에서 웃는\n그날까지\n스튜디오샤",
     title: "",
     blink: false,
+    counters: [
+      { name: "구독자 수", count: "118,735명" },
+      { name: "조회수", count: "38,183,472회" },
+    ],
   }),
 
   beforeCreate() {
