@@ -42,7 +42,78 @@
         </v-card>
       </v-row>
     </v-sheet>
-    <v-sheet height="100vh"></v-sheet>
+    <v-sheet class="pb-8">
+      <v-container :class="$vuetify.breakpoint.xsOnly ? 'pb-8' : 'pb-8 px-16'">
+        <v-row
+          class="text-center"
+          :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'"
+        >
+          <v-col cols="4" v-for="counter in counters" :key="counter">
+            <v-sheet
+              rounded="circle"
+              style="
+                background: linear-gradient(#fff, rgba(196, 196, 196, 0.2));
+              "
+            >
+              <v-responsive aspect-ratio="1">
+                <v-layout
+                  fill-height
+                  align-center
+                  justify-center
+                  class="text-center"
+                >
+                  <h3
+                    :class="
+                      $vuetify.breakpoint.xsOnly
+                        ? 'text-subtitle-2 font-weight-medium'
+                        : $vuetify.breakpoint.mdAndDown
+                        ? 'text-subtitle-1 font-weight-medium'
+                        : 'text-h6 font-weight-medium'
+                    "
+                    style="position: absolute; top: 20%; opacity: 0.3"
+                  >
+                    {{ counter.name }}
+                  </h3>
+                  <div>
+                    <h3
+                      :class="
+                        $vuetify.breakpoint.xsOnly
+                          ? 'text-h5 font-weight-black'
+                          : $vuetify.breakpoint.mdAndDown
+                          ? 'text-h4 font-weight-black'
+                          : 'text-h3 font-weight-black'
+                      "
+                    >
+                      {{ counter.count }}
+                    </h3>
+                  </div>
+                </v-layout>
+              </v-responsive>
+            </v-sheet>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-sheet>
+    <v-sheet class="pb-8">
+      <v-container :class="$vuetify.breakpoint.xsOnly ? 'py-8' : 'py-8 px-16'">
+        <v-card flat :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'">
+          <v-card-title class="pt-0">
+            <b>학학이를 사용중인 유저들의 후기</b>
+          </v-card-title>
+          <v-card-text style="color: #313131"></v-card-text>
+        </v-card>
+      </v-container>
+    </v-sheet>
+    <v-sheet class="pb-8">
+      <v-container :class="$vuetify.breakpoint.xsOnly ? 'py-8' : 'py-8 px-16'">
+        <v-card flat :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'">
+          <v-card-title class="pt-0">
+            <b>전국 대학생들이 답해주는 입시 질문</b>
+          </v-card-title>
+          <v-card-text style="color: #313131"></v-card-text>
+        </v-card>
+      </v-container>
+    </v-sheet>
     <v-sheet class="mt-8">
       <v-img :src="require('@/assets/hakhak.png')">
         <v-container
@@ -104,6 +175,11 @@ export default Vue.extend({
     text: "입시가 궁금할 땐\n학학이에게 물어봐",
     title: "",
     blink: false,
+    counters: [
+      { name: "구독자 수", count: "36,264명" },
+      { name: "평균 평점", count: "4.8점" },
+      { name: "해결한 입시 고민", count: "33,532건" },
+    ],
   }),
 
   beforeCreate() {
