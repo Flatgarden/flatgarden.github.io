@@ -97,7 +97,7 @@
         </v-row>
       </v-container>
     </v-sheet>
-    <v-sheet class="mb-16">
+    <v-sheet class="mb-16" style="overflow: hidden">
       <v-container :class="$vuetify.breakpoint.xsOnly ? '' : 'px-16'">
         <v-card-title>
           <b>스튜디오 샤가 만드는 영상</b>
