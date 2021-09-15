@@ -51,7 +51,7 @@
           :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'"
         >
           <v-col cols="2" />
-          <v-col cols="4" v-for="counter in counters" :key="counter">
+          <v-col cols="4" v-for="counter in counters" :key="counter.name">
             <v-sheet
               rounded="circle"
               style="
