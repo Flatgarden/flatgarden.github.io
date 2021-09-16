@@ -117,7 +117,15 @@
             v-if="item.snippet.thumbnails.high"
             :src="item.snippet.thumbnails.high.url"
             :lazy-src="item.snippet.thumbnails.default.url"
-          />
+            @mouseover="item.show = true"
+            @mouseleave="item.show = false"
+          >
+            <v-sheet v-show="item.show" color="#00000099" height="100%" dark>
+              <v-layout justify-center align-center fill-height class="pa-4">
+                <b>{{ item.snippet.title }}</b>
+              </v-layout>
+            </v-sheet>
+          </v-img>
         </v-card>
       </div>
       <div class="d-flex" style="position: relative; left: -16px">
@@ -134,7 +142,15 @@
             v-if="item.snippet.thumbnails.high"
             :src="item.snippet.thumbnails.high.url"
             :lazy-src="item.snippet.thumbnails.default.url"
-          />
+            @mouseover="item.show = true"
+            @mouseleave="item.show = false"
+          >
+            <v-sheet v-show="item.show" color="#00000099" height="100%" dark>
+              <v-layout justify-center align-center fill-height class="pa-4">
+                <b>{{ item.snippet.title }}</b>
+              </v-layout>
+            </v-sheet>
+          </v-img>
         </v-card>
       </div>
     </v-sheet>
@@ -231,7 +247,7 @@
         <v-card-subtitle>
           체계적인 영상 제작 프로세스를 기반으로 한
           <br />
-          설탭, LG, 삼성, 키플링 등 당야한 기업과의 협업을 통해
+          설탭, LG, 삼성, 키플링 등 다양한 기업과의 협업을 통해
           <br />
           다채로운 콘텐츠를 제작하고 있습니다.
         </v-card-subtitle>
