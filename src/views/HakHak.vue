@@ -146,10 +146,19 @@
               </div>
               <v-row class="my-4">
                 <v-col cols="6">
-                  <v-btn block x-large><b>앱 다운로드</b></v-btn>
+                  <v-btn block x-large href="" target="_blank">
+                    <b>앱 다운로드</b>
+                  </v-btn>
                 </v-col>
                 <v-col cols="6">
-                  <v-btn block x-large><b>앱 다운로드</b></v-btn>
+                  <v-btn
+                    block
+                    x-large
+                    href="https://www.instagram.com/studystudyee/"
+                    target="_blank"
+                  >
+                    <b>학학이 인스타그램</b>
+                  </v-btn>
                 </v-col>
               </v-row>
               <v-img
