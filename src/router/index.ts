@@ -19,6 +19,24 @@ const routes: Array<RouteConfig> = [
     name: "StudioSha",
     component: () => import("@/views/StudioSha.vue"),
   },
+  {
+    path: "/:dialog",
+    name: "Home",
+    component: () => import("@/views/Home.vue"),
+    props: true,
+  },
+  {
+    path: "/hakhak/:dialog",
+    name: "HakHak",
+    component: () => import("@/views/HakHak.vue"),
+    props: true,
+  },
+  {
+    path: "/studiosha/:dialog",
+    name: "StudioSha",
+    component: () => import("@/views/StudioSha.vue"),
+    props: true,
+  },
 ]
 
 const router = new VueRouter({

@@ -14,7 +14,7 @@
         <v-row :class="$vuetify.breakpoint.xsOnly ? 'ma-1' : 'ml-8'">
           <v-col cols="12">
             <b>문의하기</b>
-            <a class="ml-4" href="mailto:superman@test.com" target="_blank">
+            <a class="ml-4" href="mailto:tech@flatgarden.kr" target="_blank">
               <u>메일로 문의</u>
             </a>
             <a
@@ -44,7 +44,7 @@
   </v-sheet>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from "vue"
 import Dialog from "@/components/Dialog.vue"
 
@@ -53,6 +53,19 @@ export default Vue.extend({
 
   components: {
     Dialog,
+  },
+
+  watch: {
+    "$store.state.dialog": function () {
+      switch (this.$store.state.dialog) {
+        case "privacy-policy":
+          this.$refs.dialog.open("PrivacyPolicy")
+          break
+        case "terms-of-service":
+          this.$refs.dialog.open("TermsOfService")
+          break
+      }
+    },
   },
 })
 </script>

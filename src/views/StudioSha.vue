@@ -301,6 +301,8 @@ export default Vue.extend({
   },
 
   mounted() {
+    this.$store.state.dialog = this.$route.params.dialog
+
     window.scrollTo(0, 0)
 
     let index = 0
