@@ -104,17 +104,30 @@
         </v-card>
       </v-container>
     </v-sheet>
-    <v-sheet class="pb-8">
-      <v-container :class="$vuetify.breakpoint.xsOnly ? 'py-8' : 'py-8 px-16'">
-        <v-card flat :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'">
-          <v-card-title class="pt-0">
+    <v-sheet>
+      <v-container :class="$vuetify.breakpoint.xsOnly ? '' : 'pb-0 px-16'">
+        <v-card flat :class="$vuetify.breakpoint.smAndDown ? '' : 'pb-0 mx-16'">
+          <v-card-title class="pb-0">
             <b>전국 대학생들이 답해주는 입시 질문</b>
           </v-card-title>
-          <v-card-text style="color: #313131"></v-card-text>
         </v-card>
       </v-container>
+      <v-img height="500px" :src="require('@/assets/hakhak_letter.png')">
+        <v-container fill-height class="pl-16">
+          <v-layout
+            align-center
+            :class="$vuetify.breakpoint.smAndDown ? '' : 'pl-16 ml-16'"
+          >
+            <div
+              class="text-h5"
+              style="color: #a26c00"
+              v-html="`지금까지<br /><b>${letter}개의 답변</b>이<br />모였어요`"
+            />
+          </v-layout>
+        </v-container>
+      </v-img>
     </v-sheet>
-    <v-sheet class="mt-8">
+    <v-sheet>
       <v-img :src="require('@/assets/hakhak.png')">
         <v-container
           fill-height
@@ -146,7 +159,13 @@
               </div>
               <v-row class="my-4">
                 <v-col cols="6">
-                  <v-btn block x-large href="" target="_blank">
+                  <v-btn
+                    block
+                    x-large
+                    href=""
+                    target="_blank"
+                    @click="download"
+                  >
                     <b>앱 다운로드</b>
                   </v-btn>
                 </v-col>
@@ -189,6 +208,7 @@ export default Vue.extend({
       { name: "평균 평점", count: "4.8점" },
       { name: "해결한 입시 고민", count: "33,532건" },
     ],
+    letter: 0,
   }),
 
   beforeCreate() {
@@ -196,6 +216,29 @@ export default Vue.extend({
     document
       .querySelector("meta[name='theme-color']")
       ?.setAttribute("content", "#ffd600")
+  },
+
+  methods: {
+    download() {
+      const device = navigator.userAgent.toLowerCase()
+
+      if (device.indexOf("win") > -1 || device.indexOf("android") > -1) {
+        window.open(
+          "https://play.google.com/store/apps/details?id=kr.flatgarden.hakhak&hl=ko",
+          "_blank"
+        )
+      } else if (
+        device.indexOf("mac") > -1 ||
+        device.indexOf("iphone") > -1 ||
+        device.indexOf("ipad") > -1 ||
+        device.indexOf("ipod") > -1
+      ) {
+        window.open(
+          "https://apps.apple.com/kr/app/%ED%95%99%ED%95%99%EC%9D%B4/id1509380462",
+          "_blank"
+        )
+      }
+    },
   },
 
   mounted() {
