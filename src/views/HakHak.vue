@@ -89,6 +89,7 @@
                           ? 'text-h4 font-weight-black'
                           : 'text-h3 font-weight-black'
                       "
+                      v-html="counter.count"
                     >
                       {{ counter.count }}
                     </h3>
@@ -108,7 +109,7 @@
           </v-card-title>
         </v-card>
       </v-container>
-      <v-card-text style="color: #313131" class="d-flex">
+      <div class="d-flex">
         <v-col
           v-for="(review, index) in reviews"
           :key="index"
@@ -138,7 +139,7 @@
             </v-card-text>
           </v-card>
         </v-col>
-      </v-card-text>
+      </div>
     </v-sheet>
     <v-sheet>
       <v-container :class="$vuetify.breakpoint.xsOnly ? '' : 'pb-0 px-16'">
@@ -157,7 +158,9 @@
             <div
               class="text-h5"
               style="color: #a26c00"
-              v-html="`지금까지<br /><b>${letter}개의 답변</b>이<br />모였어요`"
+              v-html="
+                `지금까지<br /><b>${coreReplyCount}개의 답변</b>이<br />모였어요`
+              "
             />
           </v-layout>
         </v-container>
@@ -231,6 +234,7 @@
 
 <script lang="ts">
 import Vue from "vue"
+import axios from "axios"
 
 export default Vue.extend({
   name: "HakHak",
@@ -240,9 +244,9 @@ export default Vue.extend({
     title: "",
     blink: false,
     counters: [
-      { name: "구독자 수", count: "36,264명" },
+      { name: "구독자 수", count: "0명" },
       { name: "평균 평점", count: "4.8점" },
-      { name: "해결한 입시 고민", count: "33,532건" },
+      { name: "해결한 입시 고민", count: "0건" },
     ],
     reviews: [
       {
@@ -287,6 +291,9 @@ export default Vue.extend({
       },
     ],
     letter: 0,
+    userCount: 0,
+    questionCount: 0,
+    coreReplyCount: 0,
   }),
 
   beforeCreate() {
@@ -339,6 +346,33 @@ export default Vue.extend({
         }, 500)
       }
     }, Math.floor(Math.random() * 100) + 100)
+
+    const getUserCountQuery = `query getUserCount {
+       getUserCount
+     }`
+
+    const questionCountInitQuery = `query questionCountInit {
+       questionCountInit{
+         questionCount
+         coreReplyCount
+       }
+     }`
+
+    axios
+      .post("https://hakhak.io/graphql", { query: getUserCountQuery })
+      .then((res) => {
+        this.counters[0].count =
+          res.data.data.getUserCount.toLocaleString("ko-KR") + "명"
+      })
+
+    axios
+      .post("https://hakhak.io/graphql", { query: questionCountInitQuery })
+      .then((res) => {
+        const result = res.data.data.questionCountInit
+        this.counters[2].count =
+          result.questionCount.toLocaleString("ko-KR") + "건"
+        this.coreReplyCount = result.coreReplyCount
+      })
   },
 })
 </script>
