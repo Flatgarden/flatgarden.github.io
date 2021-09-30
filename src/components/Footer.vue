@@ -8,7 +8,8 @@
           contain
           :src="require('@/assets/greyscale_logo.svg')"
           transition="scale-transition"
-          width="100"
+          width="100px"
+          height="100px"
         />
 
         <v-row :class="$vuetify.breakpoint.xsOnly ? 'ma-1' : 'ml-8'">
