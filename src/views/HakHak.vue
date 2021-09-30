@@ -45,10 +45,16 @@
     <v-sheet class="pb-8">
       <v-container :class="$vuetify.breakpoint.xsOnly ? 'pb-8' : 'pb-8 px-16'">
         <v-row
+          justify="center"
           class="text-center"
           :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'"
         >
-          <v-col cols="4" v-for="counter in counters" :key="counter.name">
+          <v-col
+            cols="4"
+            xl="3"
+            v-for="counter in counters"
+            :key="counter.name"
+          >
             <v-sheet
               rounded="circle"
               style="
