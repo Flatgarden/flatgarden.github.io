@@ -56,8 +56,8 @@ export default defineComponent({
           .then(
             (response) => {
               const items = response.result.items
-              this.items.second = items.sort(() => Math.random() - 0.5)
-              this.items.first = this.items.second.slice().reverse()
+              state.items.second = items.sort(() => Math.random() - 0.5)
+              state.items.first = state.items.second.slice().reverse()
             },
             (reason) => {
               console.log("Error: " + reason.result.error.message)
@@ -79,7 +79,7 @@ export default defineComponent({
           )
           .then(
             (response) => {
-              this.items.third = response.result.items
+              state.items.third = response.result.items
             },
             (reason) => {
               console.log("Error: " + reason.result.error.message)
