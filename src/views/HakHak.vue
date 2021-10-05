@@ -69,26 +69,26 @@
                   class="text-center"
                 >
                   <h3
-                    :class="
+                    :class="`${
                       $vuetify.breakpoint.xsOnly
-                        ? 'text-subtitle-2 font-weight-medium'
+                        ? 'text-subtitle-2'
                         : $vuetify.breakpoint.mdAndDown
-                        ? 'text-subtitle-1 font-weight-medium'
-                        : 'text-h6 font-weight-medium'
-                    "
+                        ? 'text-subtitle-1'
+                        : 'text-h6'
+                    } font-weight-medium`"
                     style="position: absolute; top: 20%; opacity: 0.3"
                   >
                     {{ counter.name }}
                   </h3>
                   <div>
                     <h3
-                      :class="
+                      :class="`${
                         $vuetify.breakpoint.xsOnly
-                          ? 'text-h5 font-weight-black'
+                          ? 'text-h5'
                           : $vuetify.breakpoint.mdAndDown
-                          ? 'text-h4 font-weight-black'
-                          : 'text-h3 font-weight-black'
-                      "
+                          ? 'text-h4'
+                          : 'text-h3'
+                      } font-weight-black`"
                       v-html="counter.count"
                     >
                       {{ counter.count }}
@@ -198,13 +198,7 @@
               </div>
               <v-row class="my-4">
                 <v-col cols="6">
-                  <v-btn
-                    block
-                    x-large
-                    href=""
-                    target="_blank"
-                    @click="download"
-                  >
+                  <v-btn block x-large @click="download">
                     <b>앱 다운로드</b>
                   </v-btn>
                 </v-col>

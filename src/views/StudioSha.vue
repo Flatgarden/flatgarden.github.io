@@ -71,26 +71,26 @@
                   class="text-center"
                 >
                   <h3
-                    :class="
+                    :class="`${
                       $vuetify.breakpoint.xsOnly
-                        ? 'text-subtitle-2 font-weight-medium'
+                        ? 'text-subtitle-2'
                         : $vuetify.breakpoint.mdAndDown
-                        ? 'text-subtitle-1 font-weight-medium'
-                        : 'text-h6 font-weight-medium'
-                    "
+                        ? 'text-subtitle-1'
+                        : 'text-h6'
+                    } font-weight-medium`"
                     style="position: absolute; top: 20%; opacity: 0.3"
                   >
                     {{ counter.name }}
                   </h3>
                   <div>
                     <h3
-                      :class="
+                      :class="`${
                         $vuetify.breakpoint.xsOnly
-                          ? 'text-h6 font-weight-black'
+                          ? 'text-h6'
                           : $vuetify.breakpoint.mdAndDown
-                          ? 'text-h5 font-weight-black'
-                          : 'text-h4 font-weight-black'
-                      "
+                          ? 'text-h5'
+                          : 'text-h4'
+                      } font-weight-black`"
                     >
                       {{ counter.count }}
                     </h3>
