@@ -1,93 +1,84 @@
 <template>
   <v-main>
-    <v-sheet height="100vh" color="#7ff0d4">
-      <v-parallax :src="require('@/assets/home.jpg')" style="height: 100vh">
+    <v-sheet height="100vh">
+      <v-parallax
+        :src="require('@/assets/home.jpg')"
+        height="100vh"
+        style="height: 100vh"
+      >
         <v-container fill-height>
           <v-layout fill-height align-center>
-            <v-sheet
-              color="transparent"
-              :height="$vuetify.breakpoint.xsOnly ? '375' : null"
-              style="color: #313131"
-            >
-              <h1 class="font-weight-black">
-                <span v-html="title" />
-                <span :style="blink ? 'visibility: hidden' : null">|</span>
-              </h1>
+            <v-sheet color="transparent" style="color: white">
+              <h3 class="font-weight-black">MISSION</h3>
+              <h1 class="font-weight-black">입시의 주체를 학생으로</h1>
+              <h3 class="font-weight-black mb-3">
+                입시의 주체가 학생이 되는 그날까지 플랫가든이 함께 하겠습니다.
+              </h3>
+              <v-btn dark outlined rounded to="/hakhak">
+                <b>학학이</b>
+                <v-icon>mdi-chevron-right</v-icon>
+              </v-btn>
+              <v-btn dark outlined rounded to="/studiosha" class="ml-3">
+                <b>스튜디오 샤</b>
+                <v-icon>mdi-chevron-right</v-icon>
+              </v-btn>
             </v-sheet>
           </v-layout>
         </v-container>
       </v-parallax>
-      <v-row
-        justify="center"
-        no-gutters
-        :style="
-          $vuetify.breakpoint.xsOnly ? 'position: relative; top: -220px' : null
-        "
-      >
-        <v-card
-          to="/hakhak"
-          style="top: -110px"
-          :class="$vuetify.breakpoint.smAndDown ? 'ma-2' : 'my-2 mx-4'"
-          width="284px"
-          elevation="4"
-        >
-          <v-img height="120px" :src="require('@/assets/hakhak_card.jpg')" />
-          <v-card-title style="color: #313131">
-            <b>입시친구 학학이</b>
-          </v-card-title>
-          <v-card-subtitle style="color: #313131; font-size: 12px">
-            입시 종합 콘텐츠 어플리케이션
-          </v-card-subtitle>
-        </v-card>
-        <v-card
-          to="/studiosha"
-          style="top: -110px"
-          :class="$vuetify.breakpoint.smAndDown ? 'ma-2' : 'my-2 mx-4'"
-          width="284px"
-          elevation="4"
-        >
-          <v-img height="120px" :src="require('@/assets/studiosha_card.jpg')" />
-          <v-card-title style="color: #313131"><b>스튜디오 샤</b></v-card-title>
-          <v-card-subtitle style="color: #313131; font-size: 12px">
-            서울대생들의 공부법과 일상을 알 수 있는 유튜브 채널
-          </v-card-subtitle>
-        </v-card>
-      </v-row>
     </v-sheet>
-    <v-sheet class="pt-16 pb-8 mt-16">
-      <v-container :class="$vuetify.breakpoint.xsOnly ? 'py-8' : 'py-8 px-16'">
-        <v-card flat :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'">
-          <v-card-subtitle class="pb-0" style="color: #00b9ae">
-            <b>플랫가든 Spirit</b>
-          </v-card-subtitle>
-          <v-card-title class="pt-0">
+
+    <v-sheet class="my-16">
+      <v-container>
+        <v-card flat>
+          <v-card-title class="display-1">
             <b>
-              입시의 주체가 학생이 되는 그날까지 플랫가든이 함께 하겠습니다.
+              언제나 학생의 편에 서는,
+              <br />
+              입시 선봉장
             </b>
           </v-card-title>
-          <v-card-text style="color: #313131">
-            <ul>
-              <li>플랫가든은 10대를 위한 목소리를 냅니다.</li>
-              <li>학생들이 즐길 수 있는 입시 콘텐츠를 만듭니다.</li>
-              <li>
+          <v-card-text style="color: #535353">
+            <v-row>
+              <v-col cols="4">
+                <v-card flat rounded="lg">
+                  <v-img :src="require('@/assets/employ_1.png')" />
+                </v-card>
+              </v-col>
+              <v-col cols="4">
+                <v-card flat rounded="lg">
+                  <v-img :src="require('@/assets/employ_2.png')" />
+                </v-card>
+              </v-col>
+              <v-col cols="4">
+                <v-card flat rounded="lg">
+                  <v-img :src="require('@/assets/employ_3.png')" />
+                </v-card>
+              </v-col>
+            </v-row>
+
+            <div class="mt-8">
+              <p>플랫가든은 10대를 위한 목소리를 냅니다.</p>
+              <p>학생들이 즐길 수 있는 입시 콘텐츠를 만듭니다.</p>
+              <p>
                 교육 콘텐츠를 무료로, 혹은 저렴하게 공유할 수 있는 방법에 대해
                 연구합니다.
-              </li>
-              <li>
+              </p>
+              <p>
                 다양한 사람들과의 협업으로, 기술과 데이터로, 혹은 아예 새로운
                 방식으로 가능하게 합니다.
-              </li>
-              <li>
+              </p>
+              <p>
                 새로운 선생님들, 대학생들, 선배들, 그리고 무엇보다 가장
                 힘들어하고 있을 학생들과 함께합니다.
-              </li>
-            </ul>
+              </p>
+            </div>
           </v-card-text>
         </v-card>
       </v-container>
     </v-sheet>
     <v-sheet color="#f7f7f7">
-      <v-container :class="$vuetify.breakpoint.xsOnly ? 'py-8' : 'py-8 px-16'">
+      <v-container class="py-8">
         <v-card
           flat
           :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'"
@@ -136,54 +127,20 @@
       <v-container
         :class="$vuetify.breakpoint.xsOnly ? 'py-16' : 'py-16 px-16'"
       >
-        <v-card flat :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'">
-          <v-card-subtitle class="pb-0" style="color: #00b9ae">
-            <b>채용</b>
-          </v-card-subtitle>
+        <v-card flat>
           <v-card-title class="pt-0">
-            <b>플랫가든과 함께할 입시파괴자를 구합니다.</b>
+            <b>
+              학생들에게
+              <br />
+              먼저 다가갑니다.
+            </b>
           </v-card-title>
-          <v-card-text style="color: #313131" class="pt-4">
-            <v-row>
-              <v-col cols="4">
-                <v-card flat rounded="lg">
-                  <v-img :src="require('@/assets/employ_1.png')" />
-                </v-card>
-              </v-col>
-              <v-col cols="4">
-                <v-card flat rounded="lg">
-                  <v-img :src="require('@/assets/employ_2.png')" />
-                </v-card>
-              </v-col>
-              <v-col cols="4">
-                <v-card flat rounded="lg">
-                  <v-img :src="require('@/assets/employ_3.png')" />
-                </v-card>
-              </v-col>
-            </v-row>
-
-            <ul class="pa-5">
-              <li>현 대한민국의 입시 제도에 할 말이 많은 사람</li>
-              <li>입시, 공부에서 소외된 친구들에게 도움을 주고 싶은 사람</li>
-              <li>스타트업 문화에 흥미를 가지고 있는 사람</li>
-            </ul>
-
-            <a
-              href="https://www.rocketpunch.com/companies/flatgarden/jobs"
-              target="_blank"
-            >
-              <v-btn depressed block x-large color="#00ffd7">
-                <b style="color: #005f37">자세한 채용내용 확인하러 가기</b>
-              </v-btn>
-            </a>
-          </v-card-text>
+          <v-card-text style="color: #313131" class="pt-4"></v-card-text>
         </v-card>
       </v-container>
     </v-sheet>
     <v-sheet>
-      <v-container
-        :class="$vuetify.breakpoint.xsOnly ? 'pb-16' : 'pb-16 px-16'"
-      >
+      <v-container class="pb-16">
         <v-card flat :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'">
           <v-card-subtitle class="pb-0" style="color: #00b9ae">
             <b>고객사 및 협력사</b>
@@ -259,10 +216,10 @@ export default Vue.extend({
   }),
 
   beforeCreate() {
-    document.querySelector("body")?.setAttribute("style", "background: #7ff0d4")
+    document.querySelector("body")?.setAttribute("style", "background: black")
     document
       .querySelector("meta[name='theme-color']")
-      ?.setAttribute("content", "#7ff0d4")
+      ?.setAttribute("content", "black")
   },
 
   mounted() {
@@ -288,6 +245,10 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
+p {
+  line-height: 100%;
+}
+
 .v-timeline-item__dot {
   background: none !important;
   box-shadow: none !important;
