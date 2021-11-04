@@ -2,20 +2,28 @@
   <v-main>
     <v-sheet>
       <v-sheet height="100vh" color="#ffd600">
-        <v-parallax :src="require('@/assets/hakhak.jpg')" style="height: 100vh">
+        <v-parallax style="height: 100vh" src>
           <v-container fill-height>
             <v-layout fill-height align-center>
               <v-sheet
                 color="transparent"
-                :height="$vuetify.breakpoint.xsOnly ? '375' : null"
-                style="color: #313131"
+                style="color: #313131; z-index: 1 !important"
               >
-                <h1 class="font-weight-black">
-                  <span v-html="title" />
-                  <span :style="blink ? 'visibility: hidden' : null">|</span>
-                </h1>
+                <h3 class="font-weight-black mt-16" style="color: #ff5c00">
+                  MOBILE SERVICE
+                </h3>
+                <h1 class="font-weight-black">입시친구 학학이</h1>
+                <h3 class="font-weight-black mb-3">
+                  입시 정보를 가볍고 재미있게.
+                </h3>
               </v-sheet>
             </v-layout>
+            <img
+              class="hidden-xs-only"
+              height="70%"
+              style="position: absolute; bottom: 0; right: -50px"
+              :src="require('@/assets/hakhak.png')"
+            />
           </v-container>
         </v-parallax>
       </v-sheet>
@@ -167,7 +175,7 @@
       </v-img>
     </v-sheet>
     <v-sheet>
-      <v-img :src="require('@/assets/hakhak.png')">
+      <v-img :src="require('@/assets/hakhak_block.png')">
         <v-container
           fill-height
           :class="$vuetify.breakpoint.xsOnly ? '' : 'px-16'"

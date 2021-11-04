@@ -1,24 +1,29 @@
 <template>
   <v-main>
     <v-sheet>
-      <v-sheet height="100vh" color="#f5f5f5">
-        <v-parallax
-          :src="require('@/assets/studiosha.jpg')"
-          style="height: 100vh"
-        >
+      <v-sheet height="100vh" color="#c1ffef">
+        <v-parallax style="height: 100vh" src>
           <v-container fill-height>
             <v-layout fill-height align-center>
               <v-sheet
                 color="transparent"
-                :height="$vuetify.breakpoint.xsOnly ? '375' : null"
-                style="color: #313131"
+                style="color: #313131; z-index: 1 !important"
               >
-                <h1 class="font-weight-black">
-                  <span v-html="title" />
-                  <span :style="blink ? 'visibility: hidden' : null">|</span>
-                </h1>
+                <h3 class="font-weight-black mt-16" style="color: #0038ff">
+                  YOUTUBE CHANNEL
+                </h3>
+                <h1 class="font-weight-black">관악산 영상공방 스튜디오 샤</h1>
+                <h3 class="font-weight-black mb-3">
+                  선배들의 ‘진짜' 입시 이야기
+                </h3>
               </v-sheet>
             </v-layout>
+            <img
+              class="hidden-xs-only"
+              height="70%"
+              style="position: absolute; bottom: 0; right: -100px"
+              :src="require('@/assets/studiosha.png')"
+            />
           </v-container>
         </v-parallax>
       </v-sheet>
@@ -209,7 +214,10 @@
       </v-container>
     </v-sheet>
     <v-sheet class="mt-8 mb-16">
-      <v-img :src="require('@/assets/studiosha.png')" style="height: 350px">
+      <v-img
+        :src="require('@/assets/studiosha_block.png')"
+        style="height: 350px"
+      >
         <v-container
           fill-height
           :class="$vuetify.breakpoint.xsOnly ? '' : 'px-16'"

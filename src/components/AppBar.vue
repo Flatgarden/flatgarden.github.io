@@ -1,19 +1,6 @@
 <template>
   <v-app-bar fixed flat color="transparent" style="backdrop-filter: blur(3px)">
-    <router-link to="/">
-      <v-img
-        alt="Flatgarden Logo"
-        contain
-        :src="
-          $route.name === 'Home'
-            ? require('@/assets/logo_white.svg')
-            : require('@/assets/logo.svg')
-        "
-        transition="scale-transition"
-        width="100"
-      />
-    </router-link>
-    <v-app-bar fixed flat color="transparent" class="container pa-0">
+    <v-app-bar absolute flat color="transparent" class="container pa-0">
       <v-spacer />
 
       <v-btn
@@ -34,6 +21,19 @@
         <b>스튜디오샤</b>
       </v-btn>
     </v-app-bar>
+
+    <router-link to="/" style="z-index: 1 !important">
+      <v-img
+        alt="Flatgarden Logo"
+        contain
+        :src="
+          $route.name === 'Home'
+            ? require('@/assets/logo_white.svg')
+            : require('@/assets/logo.svg')
+        "
+        width="100"
+      />
+    </router-link>
   </v-app-bar>
 </template>
 
