@@ -1,14 +1,14 @@
 <template>
-  <v-sheet height="273px" color="#f5f5f5">
+  <v-sheet height="273px" color="#222529" dark>
     <v-container fill-height>
       <v-layout fill-height align-center>
         <v-img
-          class="ml-8 hidden-xs-only"
+          class="hidden-xs-only"
           alt="Flatgarden Logo"
           contain
           :src="require('@/assets/greyscale_logo.svg')"
           transition="scale-transition"
-          width="100px"
+          width="200px"
           height="100px"
         />
 
@@ -16,27 +16,26 @@
           <v-col cols="12">
             <b>문의하기</b>
             <a class="ml-4" href="mailto:tech@flatgarden.kr" target="_blank">
-              <u>메일로 문의</u>
+              메일로 문의
             </a>
             <a
               class="ml-4"
               href="https://pf.kakao.com/_vcxeYT/chat"
               target="_blank"
             >
-              <u>카카오 플러스친구로 문의</u>
-            </a>
-          </v-col>
-          <v-col cols="12">
-            <b>정책정보</b>
-            <a class="ml-4" @click="$refs.dialog.open('TermsOfService')">
-              <u>서비스 이용약관</u>
-            </a>
-            <a class="ml-4" @click="$refs.dialog.open('PrivacyPolicy')">
-              <u>개인정보처리방침</u>
+              카카오 플러스친구로 문의
             </a>
           </v-col>
           <v-col cols="12">
             서울특별시 관악구 호암로 597 DIGICO KT Open Lap 4층 402호
+          </v-col>
+          <v-col cols="12">
+            <a @click="$refs.dialog.open('TermsOfService')">
+              <b>서비스 이용약관</b>
+            </a>
+            <a class="ml-4" @click="$refs.dialog.open('PrivacyPolicy')">
+              <b>개인정보처리방침</b>
+            </a>
           </v-col>
         </v-row>
       </v-layout>

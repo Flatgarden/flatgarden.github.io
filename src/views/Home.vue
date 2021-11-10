@@ -16,11 +16,11 @@
               </h3>
               <v-btn dark outlined rounded to="/hakhak">
                 <b>학학이</b>
-                <v-icon>mdi-chevron-right</v-icon>
+                <v-icon small>mdi-chevron-right</v-icon>
               </v-btn>
               <v-btn dark outlined rounded to="/studiosha" class="ml-3">
                 <b>스튜디오 샤</b>
-                <v-icon>mdi-chevron-right</v-icon>
+                <v-icon small>mdi-chevron-right</v-icon>
               </v-btn>
             </v-sheet>
           </v-layout>
@@ -31,7 +31,7 @@
     <v-sheet class="my-16">
       <v-container>
         <v-card flat>
-          <v-card-title class="display-1">
+          <v-card-title class="display-1 font-weight-bold black--text">
             <b>
               언제나 학생의 편에 서는,
               <br />
@@ -78,19 +78,176 @@
       </v-container>
     </v-sheet>
     <v-sheet color="#f7f7f7">
-      <v-container class="py-8">
-        <v-card
-          flat
-          :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'"
-          color="transparent"
-        >
-          <v-card-subtitle class="pb-0" style="color: #00b9ae">
-            <b>성장스토리</b>
+      <v-container class="py-16">
+        <v-card flat color="transparent">
+          <v-card-subtitle class="title black--text pb-2">
+            <b>KEY POINT</b>
           </v-card-subtitle>
-          <v-card-title class="pt-0">
-            <b>발전을 즐기는, 성장을 멈추지 않는, 끊임없이 도전하는</b>
+          <v-card-text class="d-flex">
+            <div class="display-1 font-weight-bold black--text mr-16 mb-4">
+              플랫가든은
+              <br />
+              새로운 입시를
+              <br />
+              만들어나갑니다.
+            </div>
+            <div>
+              지금까지 계속되었던 입시를 완전히 바꾸겠습니다.
+              <br />
+              학생들이 즐거운 입시,
+              <br />
+              합리적인 소비가 가능한 입시,
+              <br />
+              정확한 분석이 가능한 입시를 만들겠습니다.
+            </div>
+          </v-card-text>
+          <v-card-text>
+            <v-row>
+              <v-col cols="4">
+                <v-card flat>
+                  <v-responsive aspect-ratio="1.16" class="d-flex align-top">
+                    <v-img
+                      class="mx-auto"
+                      width="70%"
+                      contain
+                      :src="require('@/assets/box_1.png')"
+                    />
+                  </v-responsive>
+                </v-card>
+                <v-card-actions>
+                  <b class="mx-auto">즐거운 입시</b>
+                </v-card-actions>
+              </v-col>
+              <v-col cols="4">
+                <v-card flat>
+                  <v-responsive aspect-ratio="1.16" class="d-flex align-center">
+                    <v-img
+                      class="mx-auto"
+                      width="70%"
+                      contain
+                      :src="require('@/assets/box_2.png')"
+                    />
+                  </v-responsive>
+                </v-card>
+                <v-card-actions>
+                  <b class="mx-auto">합리적인 입시</b>
+                </v-card-actions>
+              </v-col>
+              <v-col cols="4">
+                <v-card flat>
+                  <v-responsive aspect-ratio="1.16" class="d-flex align-center">
+                    <v-img
+                      class="mx-auto"
+                      width="60%"
+                      contain
+                      :src="require('@/assets/box_3.png')"
+                    />
+                  </v-responsive>
+                </v-card>
+                <v-card-actions>
+                  <b class="mx-auto">정확한 입시</b>
+                </v-card-actions>
+              </v-col>
+            </v-row>
+          </v-card-text>
+        </v-card>
+      </v-container>
+    </v-sheet>
+    <v-sheet>
+      <v-container class="py-16">
+        <v-card flat>
+          <v-card-subtitle class="title black--text pb-2">
+            <b>ACTION</b>
+          </v-card-subtitle>
+          <v-card-title class="display-1 font-weight-bold black--text pt-0">
+            <b>
+              학생들에게
+              <br />
+              먼저 다가갑니다.
+            </b>
           </v-card-title>
-          <v-card-text style="color: #313131" class="pl-0">
+          <v-card-text style="color: #313131" class="mt-16">
+            <v-card flat color="#ffd90f" to="/hakhak">
+              <v-row align="center" no-gutters>
+                <v-col cols="6">
+                  <v-img
+                    style="position: relative; top: -50px; margin-bottom: -50px"
+                    class="ml-6"
+                    :src="require('@/assets/hakhak_card.png')"
+                  />
+                </v-col>
+                <v-col cols="1" />
+                <v-col cols="4">
+                  <b style="color: #ff5c00">MOBILE SERVICE</b>
+                  <br />
+                  <b class="title font-weight-black">입시친구 학학이</b>
+                  <br />
+                  입시 정보를 가볍고 재미있게!
+                </v-col>
+                <v-col cols="1">
+                  <v-img
+                    height="30"
+                    contain
+                    src="@/assets/icons/arrow-right-orange.svg"
+                  />
+                </v-col>
+              </v-row>
+            </v-card>
+            <v-card
+              flat
+              color="#CEFFF0"
+              class="mt-8"
+              :img="require('@/assets/studiosha_card_back.png')"
+              to="/studiosha"
+            >
+              <v-row align="center" no-gutters class="mt-8">
+                <v-col cols="6">
+                  <v-img
+                    style="position: relative; top: -50px; margin-bottom: -50px"
+                    class="ml-6"
+                    :src="require('@/assets/studiosha_card.png')"
+                  />
+                </v-col>
+                <v-col cols="1" />
+                <v-col cols="4">
+                  <b style="color: #0038ff">YOUTUBE CHANNEL</b>
+                  <br />
+                  <b class="title font-weight-black">
+                    관악산 영상공방 스튜디오 샤
+                  </b>
+                  <br />
+                  서울대 멘토들의 ‘진짜' 입시 이야기
+                </v-col>
+                <v-col cols="1">
+                  <v-img
+                    style="fill: #7f00ff"
+                    height="30"
+                    contain
+                    src="@/assets/icons/arrow-right-mint.svg"
+                  />
+                </v-col>
+              </v-row>
+            </v-card>
+          </v-card-text>
+        </v-card>
+      </v-container>
+    </v-sheet>
+    <v-sheet color="#f7f7f7">
+      <v-container class="py-16">
+        <v-card flat color="transparent">
+          <v-card-subtitle class="title black--text pb-2">
+            <b>HISTORY & AWARDS</b>
+          </v-card-subtitle>
+          <v-card-title class="display-1 font-weight-bold black--text pt-0">
+            <span>
+              <u class="line">발전</u>을 즐기는
+              <br />
+              <u class="line">성장</u>을 멈추지 않는
+              <br />
+              끊임없이 <u class="line">도전</u>하는
+            </span>
+          </v-card-title>
+          <v-card-text class="pl-0">
             <v-timeline dense align-top class="pt-2">
               <v-timeline-item
                 v-for="year in years"
@@ -124,32 +281,44 @@
       </v-container>
     </v-sheet>
     <v-sheet>
-      <v-container
-        :class="$vuetify.breakpoint.xsOnly ? 'py-16' : 'py-16 px-16'"
-      >
+      <v-container class="py-16 mb-8">
         <v-card flat>
-          <v-card-title class="pt-0">
-            <b>
-              학생들에게
-              <br />
-              먼저 다가갑니다.
-            </b>
-          </v-card-title>
-          <v-card-text style="color: #313131" class="pt-4"></v-card-text>
+          <v-card-subtitle class="title black--text pb-2">
+            <b>협력사</b>
+          </v-card-subtitle>
+          <v-card-text style="color: #313131" class="pt-6">
+            <v-img class="mx-16" contain :src="require('@/assets/group.png')" />
+          </v-card-text>
         </v-card>
       </v-container>
     </v-sheet>
     <v-sheet>
-      <v-container class="pb-16">
-        <v-card flat :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'">
-          <v-card-subtitle class="pb-0" style="color: #00b9ae">
-            <b>고객사 및 협력사</b>
+      <v-parallax :src="require('@/assets/employment.png')">
+        <v-container>
+          <v-card-subtitle style="color: #0038ff" class="title pb-2">
+            <b>RECRUITMENT</b>
           </v-card-subtitle>
-          <v-card-text style="color: #313131" class="pt-6">
-            <v-img :src="require('@/assets/brand_logo.jpg')" />
+          <v-card-title
+            class="mt-2 display-1 font-weight-bold black--text pt-0"
+          >
+            <h1>We're Hiring</h1>
+          </v-card-title>
+          <v-card-text class="mt-2 subtitle-1 font-weight-bold black--text">
+            <h2>플랫가든과 함께 입시를 바꿔봐요</h2>
+
+            <v-btn
+              depressed
+              rounded
+              class="mt-8"
+              color="#fff"
+              href="https://flatgarden.notion.site/RECRUITING-49c24e37811d4875a712176a3d6bf721"
+            >
+              <b>채용공고 노션으로</b>
+              <v-icon small>mdi-chevron-right</v-icon>
+            </v-btn>
           </v-card-text>
-        </v-card>
-      </v-container>
+        </v-container>
+      </v-parallax>
     </v-sheet>
   </v-main>
 </template>
@@ -245,6 +414,11 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
+.line {
+  text-decoration: none;
+  background: linear-gradient(to top, #7cffe0 50%, transparent 50%);
+}
+
 p {
   line-height: 100%;
 }

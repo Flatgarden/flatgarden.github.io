@@ -3,21 +3,15 @@
     <v-app-bar absolute flat color="transparent" class="container pa-0">
       <v-spacer />
 
-      <v-btn
-        text
-        to="/hakhak"
-        class="px-2"
-        :color="$route.name === 'Home' ? 'white' : ''"
-      >
+      <v-btn text to="/" class="px-2 mx-2" :color="color">
+        <b>회사소개</b>
+      </v-btn>
+
+      <v-btn text to="/hakhak" class="px-2 mx-2" :color="color">
         <b>학학이</b>
       </v-btn>
 
-      <v-btn
-        text
-        to="/studiosha"
-        class="px-2 ml-2"
-        :color="$route.name === 'Home' ? 'white' : ''"
-      >
+      <v-btn text to="/studiosha" class="px-2 ml-2" :color="color">
         <b>스튜디오샤</b>
       </v-btn>
     </v-app-bar>
@@ -27,7 +21,7 @@
         alt="Flatgarden Logo"
         contain
         :src="
-          $route.name === 'Home'
+          innerHeight
             ? require('@/assets/logo_white.svg')
             : require('@/assets/logo.svg')
         "
@@ -38,13 +32,46 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue"
+import {
+  reactive,
+  defineComponent,
+  onMounted,
+  computed,
+  toRefs,
+  watch,
+} from "@vue/composition-api"
 
-export default Vue.extend({
+export default defineComponent({
   name: "AppBar",
 
-  data: () => ({
-    //
-  }),
+  setup(_, { root }) {
+    const state = reactive({
+      innerHeight: true,
+    })
+
+    const color = computed(() => {
+      if (state.innerHeight) return "white"
+    })
+
+    const scroll = () => {
+      if (
+        root.$route.name === "Home" &&
+        window.scrollY < window.innerHeight - 30
+      )
+        state.innerHeight = true
+      else state.innerHeight = false
+    }
+
+    watch(() => root.$route.name, scroll)
+
+    onMounted(() => {
+      window.addEventListener("scroll", scroll)
+    })
+
+    return {
+      ...toRefs(state),
+      color,
+    }
+  },
 })
 </script>
