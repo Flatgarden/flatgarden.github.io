@@ -109,7 +109,7 @@
         </v-row>
       </v-container>
     </v-sheet>
-    <v-sheet class="pb-8">
+    <v-sheet class="pb-8" style="overflow-y: hidden">
       <v-container :class="$vuetify.breakpoint.xsOnly ? 'pt-8' : 'pt-8 px-16'">
         <v-card flat :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'">
           <v-card-title class="py-0">
@@ -231,6 +231,44 @@
         </v-container>
       </v-img>
     </v-sheet>
+    <v-bottom-sheet v-model="bottomSheet" hide-overlay persistent>
+      <v-sheet height="200px">
+        <v-container>
+          <v-row no-gutters>
+            <v-card width="100px" flat>
+              <v-img
+                height="100px"
+                aspect-ratio="1"
+                :src="require('@/assets/hakhak.webp')"
+              />
+            </v-card>
+            <div>
+              <v-card-title class="pt-0">학학이 - 입시고민 해결사</v-card-title>
+              <v-card-subtitle class="pb-0">
+                입시가 고민될 땐 학학이를 찾아와
+              </v-card-subtitle>
+              <v-card-subtitle class="pt-0">
+                <v-rating
+                  class="d-inline"
+                  length="5"
+                  size="10"
+                  value="5"
+                  readonly
+                  dense
+                  color="orange"
+                />
+                <span class="ml-2 caption">4.8 • 910개의 평가</span>
+              </v-card-subtitle>
+            </div>
+          </v-row>
+
+          <v-btn outlined block large class="mt-4" @click="download">
+            <v-icon left small>mdi-download</v-icon>
+            설치하기
+          </v-btn>
+        </v-container>
+      </v-sheet>
+    </v-bottom-sheet>
   </v-main>
 </template>
 
@@ -296,34 +334,34 @@ export default Vue.extend({
     userCount: 0,
     questionCount: 0,
     coreReplyCount: 0,
+    bottomSheet: false,
   }),
 
-  beforeCreate() {
+  beforeMount() {
     document.querySelector("body")?.setAttribute("style", "background: #ffd600")
     document
       .querySelector("meta[name='theme-color']")
       ?.setAttribute("content", "#ffd600")
+
+    const userAgent = navigator.userAgent
+
+    if (/Android|iPhone|iPad|iPod/i.test(userAgent)) this.bottomSheet = true
   },
 
   methods: {
     download() {
-      const device = navigator.userAgent.toLowerCase()
+      const userAgent = navigator.userAgent
 
-      if (device.indexOf("win") > -1 || device.indexOf("android") > -1) {
-        window.open(
-          "https://play.google.com/store/apps/details?id=kr.flatgarden.hakhak&hl=ko",
-          "_blank"
-        )
-      } else if (
-        device.indexOf("mac") > -1 ||
-        device.indexOf("iphone") > -1 ||
-        device.indexOf("ipad") > -1 ||
-        device.indexOf("ipod") > -1
-      ) {
-        window.open(
-          "https://apps.apple.com/kr/app/%ED%95%99%ED%95%99%EC%9D%B4/id1509380462",
-          "_blank"
-        )
+      const isAndroid = /Win|Android/i.test(userAgent)
+      const isIos = /Mac|iPhone|iPad|iPod/i.test(userAgent)
+
+      if (isAndroid) {
+        location.href =
+          "intent://www.hakhak.io/#Intent;scheme=hakhak;package=kr.flatgarden.hakhak;end"
+        location.href = "market://details?id=kr.flatgarden.hakhak"
+      } else if (isIos) {
+        location.href =
+          "https://apps.apple.com/kr/app/%ED%95%99%ED%95%99%EC%9D%B4/id1509380462"
       }
     },
   },
@@ -361,14 +399,14 @@ export default Vue.extend({
      }`
 
     axios
-      .post("https://hakhak.io/graphql", { query: getUserCountQuery })
+      .post("https://api.hakhak.io/graphql", { query: getUserCountQuery })
       .then((res) => {
         this.counters[0].count =
           res.data.data.getUserCount.toLocaleString("ko-KR") + "명"
       })
 
     axios
-      .post("https://hakhak.io/graphql", { query: questionCountInitQuery })
+      .post("https://api.hakhak.io/graphql", { query: questionCountInitQuery })
       .then((res) => {
         const result = res.data.data.questionCountInit
         this.counters[2].count =

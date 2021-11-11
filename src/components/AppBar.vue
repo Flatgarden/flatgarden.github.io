@@ -3,10 +3,6 @@
     <v-app-bar absolute flat color="transparent" class="container pa-0">
       <v-spacer />
 
-      <v-btn text to="/" class="px-2 mx-2" :color="color">
-        <b>회사소개</b>
-      </v-btn>
-
       <v-btn text to="/hakhak" class="px-2 mx-2" :color="color">
         <b>학학이</b>
       </v-btn>
