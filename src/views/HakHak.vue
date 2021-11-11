@@ -27,28 +27,36 @@
           </v-container>
         </v-parallax>
       </v-sheet>
-      <v-row justify="center" no-gutters>
-        <v-card
-          style="top: -110px"
-          :class="$vuetify.breakpoint.smAndDown ? 'ma-2' : 'my-2 mx-4'"
-          width="584px"
-          elevation="4"
+      <div
+        class="d-flex"
+        style="position: relative; top: -100px; overflow-y: hidden"
+      >
+        <v-col
+          v-for="(review, index) in reviews"
+          :key="index"
+          lg="2"
+          md="2"
+          sm="3"
+          cols="4"
         >
-          <v-card-title class="headline">
-            <b>학학이는 뭔가요?</b>
-          </v-card-title>
-          <v-card-text style="color: #313131">
-            학학이 앱은 다양한 입시 정보를 제공하고 있습니다. 모두가 읽을 수
-            있는 범용적인 콘텐츠뿐만 아니라, 질문답변 시스템을 통해 개개인에
-            맞는 정보도 제공해주고 있습니다.
-            <br />
-            입시를 위해서는 학교생활, 성적, 생기부 등 신경 써야할 것이 정말
-            많습니다. 학학이 앱에서는 시간표, 급식 등 평소 학교생활에 필요한
-            정보부터 학교 성적, 생활기록부 정보까지 입시의 전 영역에 도움을 받을
-            수 있습니다.
-          </v-card-text>
-        </v-card>
-      </v-row>
+          <v-card color="#fafafa" elevation="4">
+            <v-card-subtitle>
+              <v-img :src="require('@/assets/stars.svg')" width="80%" />
+              <span class="mt-2 text-subtitle-1 black--text font-weight-bold">
+                {{ review.title }}
+              </span>
+              <br />
+              {{ review.name }}
+            </v-card-subtitle>
+            <v-card-text
+              class="text-caption black--text font-weight-bold mb-4"
+              style="height: 100px; overflow: hidden"
+            >
+              {{ review.text }}
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </div>
     </v-sheet>
     <v-sheet class="pb-8">
       <v-container :class="$vuetify.breakpoint.xsOnly ? 'pb-8' : 'pb-8 px-16'">
@@ -109,46 +117,6 @@
         </v-row>
       </v-container>
     </v-sheet>
-    <v-sheet class="pb-8" style="overflow-y: hidden">
-      <v-container :class="$vuetify.breakpoint.xsOnly ? 'pt-8' : 'pt-8 px-16'">
-        <v-card flat :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'">
-          <v-card-title class="py-0">
-            <b>학학이를 사용중인 유저들의 후기</b>
-          </v-card-title>
-        </v-card>
-      </v-container>
-      <div class="d-flex">
-        <v-col
-          v-for="(review, index) in reviews"
-          :key="index"
-          lg="3"
-          md="4"
-          sm="6"
-          cols="8"
-        >
-          <v-card class="pa-4" color="#fafafa" elevation="4">
-            <v-img
-              :src="require('@/assets/stars.svg')"
-              width="50%"
-              class="mx-auto mt-4"
-            />
-            <v-card-subtitle class="text-center pt-1">
-              <span class="text-subtitle-1 black--text font-weight-bold">
-                {{ review.title }}
-              </span>
-              <br />
-              {{ review.name }}
-            </v-card-subtitle>
-            <v-card-text
-              class="text-caption black--text font-weight-bold mb-4"
-              style="height: 100px; overflow: hidden"
-            >
-              {{ review.text }}
-            </v-card-text>
-          </v-card>
-        </v-col>
-      </div>
-    </v-sheet>
     <v-sheet>
       <v-container :class="$vuetify.breakpoint.xsOnly ? '' : 'pb-0 px-16'">
         <v-card flat :class="$vuetify.breakpoint.smAndDown ? '' : 'pb-0 mx-16'">
@@ -174,58 +142,55 @@
         </v-container>
       </v-img>
     </v-sheet>
-    <v-sheet>
+    <v-sheet dark>
       <v-img :src="require('@/assets/hakhak_block.png')">
         <v-container
           fill-height
           :class="$vuetify.breakpoint.xsOnly ? '' : 'px-16'"
         >
           <v-layout fill-height align-center>
-            <v-sheet class="my-16 py-8" color="transparent" width="100%">
-              <div class="d-flex">
-                <a
-                  href="https://www.youtube.com/channel/UCn0MK9vcIxinP4033UEHiUw"
-                  target="_blank"
-                >
-                  <v-img
-                    :src="require('@/assets/hakhak_logo.png')"
-                    width="96"
-                  />
-                </a>
-                <div class="d-inline-block white--text ml-6 my-auto">
-                  - 2020년 8월 학학이 앱 출시
-                  <br />
-                  - 누적 질문 수 n개, 답변 n개로 입시를 바꾸는 데이터가 꾸준히
-                  쌓이는 중입니다.
-                  <br />
-                  - 누적 칼럼 조회수 n회로 콘텐츠의 영향력을 인정받고 있습니다.
-                  <br />
-                  - 학학이는 입시를 바꾸는 n명의 학생들과 n명의 멘토들이 함께
-                  합니다.
+            <v-sheet class="my-16" color="transparent" width="100%">
+              <h2 style="color: #ffffff88">학학이와 함께</h2>
+
+              <h2>성공적인 입시를</h2>
+
+              <div class="d-flex mt-16">
+                <v-card flat>
+                  <v-img :src="require('@/assets/hakhak.webp')" width="52" />
+                </v-card>
+
+                <div>
+                  <v-card-title class="pt-0 pb-3">
+                    <b>학학이 - 입시고민 해결사</b>
+                  </v-card-title>
+
+                  <v-card-subtitle class="pb-0">
+                    입시가 고민될 땐 학학이를 찾아와
+                  </v-card-subtitle>
                 </div>
+
+                <v-spacer />
+
+                <v-btn @click="download" outlined rounded>
+                  <b>앱스토어 ></b>
+                </v-btn>
+
+                <v-btn class="ml-4" @click="download" outlined rounded>
+                  <b>구글플레이 ></b>
+                </v-btn>
               </div>
-              <v-row class="my-4">
-                <v-col cols="6">
-                  <v-btn block x-large @click="download">
-                    <b>앱 다운로드</b>
-                  </v-btn>
+
+              <v-row class="mt-2">
+                <v-col cols="4">
+                  <v-img contain :src="require('@/assets/hakhak_app_1.png')" />
                 </v-col>
-                <v-col cols="6">
-                  <v-btn
-                    block
-                    x-large
-                    href="https://www.instagram.com/studystudyee/"
-                    target="_blank"
-                  >
-                    <b>학학이 인스타그램</b>
-                  </v-btn>
+                <v-col cols="4">
+                  <v-img contain :src="require('@/assets/hakhak_app_2.png')" />
+                </v-col>
+                <v-col cols="4">
+                  <v-img contain :src="require('@/assets/hakhak_app_3.png')" />
                 </v-col>
               </v-row>
-              <v-img
-                class="mt-8"
-                :src="require('@/assets/hakhak_preview.png')"
-                width="100%"
-              />
             </v-sheet>
           </v-layout>
         </v-container>

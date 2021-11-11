@@ -39,23 +39,23 @@
             </b>
           </v-card-title>
           <v-card-text style="color: #535353">
-            <v-row>
-              <v-col cols="4">
+            <div class="d-flex" style="overflow-y: hidden">
+              <v-col cols="11" sm="4">
                 <v-card flat rounded="lg">
                   <v-img :src="require('@/assets/employ_1.png')" />
                 </v-card>
               </v-col>
-              <v-col cols="4">
+              <v-col cols="11" sm="4">
                 <v-card flat rounded="lg">
                   <v-img :src="require('@/assets/employ_2.png')" />
                 </v-card>
               </v-col>
-              <v-col cols="4">
+              <v-col cols="11" sm="4">
                 <v-card flat rounded="lg">
                   <v-img :src="require('@/assets/employ_3.png')" />
                 </v-card>
               </v-col>
-            </v-row>
+            </div>
 
             <div class="mt-8">
               <p>플랫가든은 10대를 위한 목소리를 냅니다.</p>
@@ -83,7 +83,7 @@
           <v-card-subtitle class="title black--text pb-2">
             <b>KEY POINT</b>
           </v-card-subtitle>
-          <v-card-text class="d-flex">
+          <v-card-text :class="$vuetify.breakpoint.xsOnly ? '' : 'd-flex'">
             <div class="display-1 font-weight-bold black--text mr-16 mb-4">
               플랫가든은
               <br />
@@ -287,7 +287,11 @@
             <b>협력사</b>
           </v-card-subtitle>
           <v-card-text style="color: #313131" class="pt-6">
-            <v-img class="mx-16" contain :src="require('@/assets/group.png')" />
+            <v-img
+              :class="$vuetify.breakpoint.mdAndUp ? 'mx-16' : ''"
+              contain
+              :src="require('@/assets/group.png')"
+            />
           </v-card-text>
         </v-card>
       </v-container>
