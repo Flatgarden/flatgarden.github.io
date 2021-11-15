@@ -58,11 +58,68 @@
         </v-col>
       </div>
     </v-sheet>
-    <v-sheet class="pb-8">
-      <v-container :class="$vuetify.breakpoint.xsOnly ? 'pb-8' : 'pb-8 px-16'">
+
+    <v-sheet color="#FFD90F" class="py-8">
+      <v-container class="d-flex" align-center>
+        <h2>
+          <b>지금 학학이에서<br />무료로 입시 상담하세요</b>
+        </h2>
+
+        <v-spacer />
+
+        <v-btn @click="download" outlined rounded>
+          <b>앱스토어 ></b>
+        </v-btn>
+
+        <v-btn class="ml-4" @click="download" outlined rounded>
+          <b>구글플레이 ></b>
+        </v-btn>
+      </v-container>
+    </v-sheet>
+
+    <v-sheet class="py-16" color="#f3f3f3">
+      <v-container class="py-16">
+        <v-slide-group v-model="model" mandatory>
+          <v-slide-item
+            v-for="n in 4"
+            :key="n"
+            v-slot="{ active, toggle }"
+            class="mr-2"
+          >
+            <v-sheet
+              rounded="lg"
+              :color="active ? '#FFCB11' : '#C4C4C4'"
+              :width="active ? 80 : 10"
+              height="10"
+              @click="toggle"
+            />
+          </v-slide-item>
+        </v-slide-group>
+
+        <h2 class="mt-3">
+          <span style="color: #c0c0c0">고민이 너무 많아</span><br />끙끙 앓고
+          있는 학생들
+        </h2>
+
+        <h4 class="mt-5" style="color: #ff7a00">
+          학학이에선 아무리 많이 물어봐도 전부 무료
+        </h4>
+
+        <p class="mt-2">
+          어디에서 물어보긴 부끄럽고,<br />
+          혼자서 해결은 안 되고...<br />
+          그 어떤 질문이라도<br />
+          학학이에서는 무료로 해결할 수 있어요
+        </p>
+      </v-container>
+    </v-sheet>
+
+    <v-sheet class="py-16">
+      <v-container class="text-center">
+        <h1>학학이는 학생들을 신경쓰는<br />대학생들이 직접 만들어나갑니다.</h1>
+        <v-btn outlined rounded class="my-6">대학생 멘토 신청하기 ></v-btn>
         <v-row
           justify="center"
-          class="text-center"
           :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'"
         >
           <v-col
@@ -78,25 +135,20 @@
               "
             >
               <v-responsive aspect-ratio="1">
-                <v-layout
-                  fill-height
-                  align-center
-                  justify-center
-                  class="text-center"
-                >
-                  <h3
-                    :class="`${
-                      $vuetify.breakpoint.xsOnly
-                        ? 'text-subtitle-2'
-                        : $vuetify.breakpoint.mdAndDown
-                        ? 'text-subtitle-1'
-                        : 'text-h6'
-                    } font-weight-medium`"
-                    style="position: absolute; top: 20%; opacity: 0.3"
-                  >
-                    {{ counter.name }}
-                  </h3>
+                <v-layout fill-height justify-center align-center>
                   <div>
+                    <h3
+                      :class="`${
+                        $vuetify.breakpoint.xsOnly
+                          ? 'text-subtitle-2'
+                          : $vuetify.breakpoint.mdAndDown
+                          ? 'text-subtitle-1'
+                          : 'text-h6'
+                      } font-weight-medium`"
+                    >
+                      {{ counter.name }}
+                    </h3>
+
                     <h3
                       :class="`${
                         $vuetify.breakpoint.xsOnly
@@ -117,37 +169,10 @@
         </v-row>
       </v-container>
     </v-sheet>
-    <v-sheet>
-      <v-container :class="$vuetify.breakpoint.xsOnly ? '' : 'pb-0 px-16'">
-        <v-card flat :class="$vuetify.breakpoint.smAndDown ? '' : 'pb-0 mx-16'">
-          <v-card-title class="pb-0">
-            <b>전국 대학생들이 답해주는 입시 질문</b>
-          </v-card-title>
-        </v-card>
-      </v-container>
-      <v-img height="500px" :src="require('@/assets/hakhak_letter.png')">
-        <v-container fill-height class="pl-16">
-          <v-layout
-            align-center
-            :class="$vuetify.breakpoint.smAndDown ? '' : 'pl-16 ml-16'"
-          >
-            <div
-              class="text-h5"
-              style="color: #a26c00"
-              v-html="
-                `지금까지<br /><b>${coreReplyCount}개의 답변</b>이<br />모였어요`
-              "
-            />
-          </v-layout>
-        </v-container>
-      </v-img>
-    </v-sheet>
+
     <v-sheet dark>
       <v-img :src="require('@/assets/hakhak_block.png')">
-        <v-container
-          fill-height
-          :class="$vuetify.breakpoint.xsOnly ? '' : 'px-16'"
-        >
+        <v-container fill-height>
           <v-layout fill-height align-center>
             <v-sheet class="my-16" color="transparent" width="100%">
               <h2 style="color: #ffffff88">학학이와 함께</h2>
@@ -249,9 +274,8 @@ export default Vue.extend({
     title: "",
     blink: false,
     counters: [
-      { name: "구독자 수", count: "0명" },
-      { name: "평균 평점", count: "4.8점" },
-      { name: "해결한 입시 고민", count: "0건" },
+      { name: "입시를 바꾸는 학생들", count: "43,144명" },
+      { name: "입시를 바꾸는 멘토들", count: "30명" },
     ],
     reviews: [
       {
