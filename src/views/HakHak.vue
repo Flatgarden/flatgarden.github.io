@@ -259,7 +259,7 @@
                   class="d-inline"
                   length="5"
                   size="10"
-                  value="5"
+                  :value="5"
                   readonly
                   dense
                   color="orange"
@@ -421,15 +421,15 @@ export default Vue.extend({
     }, Math.floor(Math.random() * 100) + 100)
 
     const getUserCountQuery = `query getUserCount {
-       getUserCount
-     }`
+      getUserCount
+    }`
 
     const questionCountInitQuery = `query questionCountInit {
-       questionCountInit{
-         questionCount
-         coreReplyCount
-       }
-     }`
+      questionCountInit {
+        questionCount
+        coreReplyCount
+      }
+    }`
 
     axios
       .post("https://api.hakhak.io/graphql", { query: getUserCountQuery })
@@ -442,8 +442,8 @@ export default Vue.extend({
       .post("https://api.hakhak.io/graphql", { query: questionCountInitQuery })
       .then((res) => {
         const result = res.data.data.questionCountInit
-        this.counters[2].count =
-          result.questionCount.toLocaleString("ko-KR") + "건"
+        // this.counters[2].count =
+        //   result.questionCount.toLocaleString("ko-KR") + "건"
         this.coreReplyCount = result.coreReplyCount
       })
   },
