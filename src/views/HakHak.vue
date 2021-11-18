@@ -85,42 +85,69 @@
       </v-container>
     </v-sheet>
 
-    <v-sheet class="py-16" color="#f3f3f3">
-      <v-container class="py-16">
-        <v-slide-group v-model="slide" mandatory>
-          <v-slide-item
-            v-for="n in 4"
-            :key="n"
-            v-slot="{ active, toggle }"
-            class="mr-2"
+    <v-sheet color="#f3f3f3">
+      <v-parallax src>
+        <v-container class="py-16 black--text">
+          <v-slide-group v-model="slide" mandatory>
+            <v-slide-item
+              v-for="n in 4"
+              :key="n"
+              v-slot="{ active, toggle }"
+              class="mr-2"
+            >
+              <v-sheet
+                rounded="lg"
+                :color="active ? '#FFCB11' : '#C4C4C4'"
+                :width="active ? 80 : 10"
+                height="10"
+                @click="toggle"
+              />
+            </v-slide-item>
+          </v-slide-group>
+
+          <h2 class="mt-3">
+            <span style="color: #c0c0c0">{{ card[slide].top }}</span>
+            <br />
+            {{ card[slide].bottom }}
+          </h2>
+
+          <h4 class="mt-5" style="color: #ff7a00">
+            {{ card[slide].sub }}
+          </h4>
+
+          <p class="mt-2" v-html="card[slide].text" />
+
+          <div
+            class="d-flex"
+            style="position: absolute; bottom: -50px; left: 50%"
           >
-            <v-sheet
-              rounded="lg"
-              :color="active ? '#FFCB11' : '#C4C4C4'"
-              :width="active ? 80 : 10"
-              height="10"
-              @click="toggle"
+            <img class="hidden-xs-only" height="460px" :src="frame[slide]" />
+            <img
+              style="opacity: 0.2"
+              class="hidden-xs-only"
+              height="460px"
+              :src="frame[(slide + 1) % 4]"
             />
-          </v-slide-item>
-        </v-slide-group>
-
-        <h2 class="mt-3">
-          <span style="color: #c0c0c0">{{ card[slide].top }}</span>
-          <br />
-          {{ card[slide].bottom }}
-        </h2>
-
-        <h4 class="mt-5" style="color: #ff7a00">
-          {{ card[slide].sub }}
-        </h4>
-
-        <p class="mt-2" v-html="card[slide].text" />
-      </v-container>
+            <img
+              style="opacity: 0.2"
+              class="hidden-xs-only"
+              height="460px"
+              :src="frame[(slide + 2) % 4]"
+            />
+            <img
+              style="opacity: 0.2"
+              class="hidden-xs-only"
+              height="460px"
+              :src="frame[(slide + 3) % 4]"
+            />
+          </div>
+        </v-container>
+      </v-parallax>
     </v-sheet>
 
     <v-sheet class="py-16">
       <v-container class="text-center">
-        <h1>학학이는 학생들을 신경쓰는<br />대학생들이 직접 만들어나갑니다.</h1>
+        <h2>학학이는 학생들을 신경쓰는<br />대학생들이 직접 만들어나갑니다.</h2>
         <v-btn
           outlined
           rounded
@@ -228,7 +255,7 @@
                 style="overflow-y: auto"
               >
                 <v-col cols="9" sm="4" v-for="n in 6" :key="n">
-                  <v-card flat>
+                  <v-card flat rounded="lg">
                     <v-img
                       contain
                       :src="require(`@/assets/hakhak_app_${n}.png`)"
@@ -293,9 +320,16 @@ export default Vue.extend({
     text: "입시가 궁금할 땐\n학학이에게 물어봐",
     title: "",
     blink: false,
+    frame: [
+      require("@/assets/frame_1.png"),
+      require("@/assets/frame_2.png"),
+      require("@/assets/frame_3.png"),
+      require("@/assets/frame_4.png"),
+    ],
     counters: [
       { name: "입시를 바꾸는 학생들", count: "43,144명" },
       { name: "입시를 바꾸는 멘토들", count: "30명" },
+      { name: "평균 평점", count: "4.8점" },
     ],
     reviews: [
       {
@@ -403,6 +437,11 @@ export default Vue.extend({
   },
 
   mounted() {
+    setInterval(() => {
+      this.slide += 1
+      if (this.slide > 3) this.slide = 0
+    }, 7000)
+
     this.reviews.sort(() => Math.random() - 0.5)
 
     this.$store.state.dialog = this.$route.params.dialog
