@@ -5,6 +5,8 @@
     <router-view :items="items" />
 
     <Footer />
+
+    <v-sheet v-if="bottomSheet && $route.name === 'HakHak'" height="200px" />
   </v-app>
 </template>
 
@@ -33,6 +35,7 @@ export default defineComponent({
         second: [],
         third: [],
       },
+      bottomSheet: false,
     })
 
     onBeforeMount(() => {
@@ -88,6 +91,17 @@ export default defineComponent({
       }
 
       gapi.load("client", start)
+
+      document
+        .querySelector("body")
+        ?.setAttribute("style", "background: #ffd600")
+      document
+        .querySelector("meta[name='theme-color']")
+        ?.setAttribute("content", "#ffd600")
+
+      const userAgent = navigator.userAgent
+
+      if (/Android|iPhone|iPad|iPod/i.test(userAgent)) state.bottomSheet = true
     })
 
     return {
