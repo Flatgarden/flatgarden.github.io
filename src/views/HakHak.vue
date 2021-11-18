@@ -251,10 +251,10 @@
               </div>
 
               <div
-                :class="`${$vuetify.breakpoint.xsOnly ? 'd-flex' : 'row'}`"
+                :class="`${$vuetify.breakpoint.xsOnly ? 'row' : 'row'}`"
                 style="overflow-y: auto"
               >
-                <v-col cols="9" sm="4" v-for="n in 6" :key="n">
+                <v-col cols="12" sm="4" v-for="n in 6" :key="n">
                   <v-card flat rounded="lg">
                     <v-img
                       contain
