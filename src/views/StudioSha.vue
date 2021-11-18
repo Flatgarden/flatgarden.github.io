@@ -307,10 +307,10 @@ export default Vue.extend({
   }),
 
   beforeCreate() {
-    document.querySelector("body")?.setAttribute("style", "background: #f5f5f5")
+    document.querySelector("body")?.setAttribute("style", "background: #c1fff0")
     document
       .querySelector("meta[name='theme-color']")
-      ?.setAttribute("content", "#f5f5f5")
+      ?.setAttribute("content", "#c1fff0")
   },
 
   mounted() {

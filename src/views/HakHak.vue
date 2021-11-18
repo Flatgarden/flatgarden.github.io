@@ -37,7 +37,7 @@
           lg="2"
           md="2"
           sm="3"
-          cols="4"
+          cols="10"
         >
           <v-card color="#fafafa" elevation="4">
             <v-card-subtitle>
@@ -60,26 +60,34 @@
     </v-sheet>
 
     <v-sheet color="#FFD90F" class="py-8">
-      <v-container class="d-flex" align-center>
+      <v-container
+        :class="`${$vuetify.breakpoint.xsOnly ? '' : 'd-flex'}`"
+        align-center
+      >
         <h2>
-          <b>지금 학학이에서<br />무료로 입시 상담하세요</b>
+          <b>
+            <span style="color: #fca033">지금 학학이에서</span>
+            <br />무료로 입시 상담하세요
+          </b>
         </h2>
 
         <v-spacer />
 
-        <v-btn @click="download" outlined rounded>
-          <b>앱스토어 ></b>
-        </v-btn>
+        <div class="mt-1">
+          <v-btn @click="download" outlined rounded>
+            <b>앱스토어 ></b>
+          </v-btn>
 
-        <v-btn class="ml-4" @click="download" outlined rounded>
-          <b>구글플레이 ></b>
-        </v-btn>
+          <v-btn class="ml-4" @click="download" outlined rounded>
+            <b>구글플레이 ></b>
+          </v-btn>
+        </div>
       </v-container>
     </v-sheet>
 
     <v-sheet class="py-16" color="#f3f3f3">
       <v-container class="py-16">
-        <v-slide-group v-model="model" mandatory>
+        <v-slide-group v-model="slide" mandatory>
           <v-slide-item
             v-for="n in 4"
             :key="n"
@@ -97,27 +105,30 @@
         </v-slide-group>
 
         <h2 class="mt-3">
-          <span style="color: #c0c0c0">고민이 너무 많아</span><br />끙끙 앓고
-          있는 학생들
+          <span style="color: #c0c0c0">{{ card[slide].top }}</span>
+          <br />
+          {{ card[slide].bottom }}
         </h2>
 
         <h4 class="mt-5" style="color: #ff7a00">
-          학학이에선 아무리 많이 물어봐도 전부 무료
+          {{ card[slide].sub }}
         </h4>
 
-        <p class="mt-2">
-          어디에서 물어보긴 부끄럽고,<br />
-          혼자서 해결은 안 되고...<br />
-          그 어떤 질문이라도<br />
-          학학이에서는 무료로 해결할 수 있어요
-        </p>
+        <p class="mt-2" v-html="card[slide].text" />
       </v-container>
     </v-sheet>
 
     <v-sheet class="py-16">
       <v-container class="text-center">
         <h1>학학이는 학생들을 신경쓰는<br />대학생들이 직접 만들어나갑니다.</h1>
-        <v-btn outlined rounded class="my-6">대학생 멘토 신청하기 ></v-btn>
+        <v-btn
+          outlined
+          rounded
+          class="my-6"
+          href="https://hana.icu/ko"
+          target="_blank"
+          >대학생 멘토 신청하기 ></v-btn
+        >
         <v-row
           justify="center"
           :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'"
@@ -179,33 +190,39 @@
 
               <h2>성공적인 입시를</h2>
 
-              <div class="d-flex mt-16">
-                <v-card flat>
-                  <v-img :src="require('@/assets/hakhak.webp')" width="52" />
-                </v-card>
+              <div
+                :class="`${$vuetify.breakpoint.xsOnly ? '' : 'd-flex'} mt-16`"
+              >
+                <div class="d-flex mb-4">
+                  <v-card flat>
+                    <v-img :src="require('@/assets/hakhak.webp')" width="52" />
+                  </v-card>
 
-                <div>
-                  <v-card-title class="pt-0 pb-3">
-                    <b>학학이 - 입시고민 해결사</b>
-                  </v-card-title>
+                  <div>
+                    <v-card-title class="pt-0 pb-3">
+                      <b>학학이 - 입시고민 해결사</b>
+                    </v-card-title>
 
-                  <v-card-subtitle class="pb-0">
-                    입시가 고민될 땐 학학이를 찾아와
-                  </v-card-subtitle>
+                    <v-card-subtitle class="pb-0">
+                      입시가 고민될 땐 학학이를 찾아와
+                    </v-card-subtitle>
+                  </div>
                 </div>
 
                 <v-spacer />
 
-                <v-btn @click="download" outlined rounded>
-                  <b>앱스토어 ></b>
-                </v-btn>
+                <div class="d-flex mb-4">
+                  <v-btn @click="download" outlined rounded>
+                    <b>앱스토어 ></b>
+                  </v-btn>
 
-                <v-btn class="ml-4" @click="download" outlined rounded>
-                  <b>구글플레이 ></b>
-                </v-btn>
+                  <v-btn class="ml-4" @click="download" outlined rounded>
+                    <b>구글플레이 ></b>
+                  </v-btn>
+                </div>
               </div>
 
-              <v-row class="mt-2">
+              <v-row>
                 <v-col cols="4">
                   <v-img contain :src="require('@/assets/hakhak_app_1.png')" />
                 </v-col>
@@ -224,15 +241,15 @@
     <v-bottom-sheet v-model="bottomSheet" hide-overlay persistent>
       <v-sheet height="200px">
         <v-container>
-          <v-row no-gutters>
-            <v-card width="100px" flat>
+          <v-row no-gutters style="flex-wrap: nowrap">
+            <v-card width="80px" flat>
               <v-img
-                height="100px"
+                height="80px"
                 aspect-ratio="1"
                 :src="require('@/assets/hakhak.webp')"
               />
             </v-card>
-            <div>
+            <div style="overflow: hidden; white-space: nowrap">
               <v-card-title class="pt-0">학학이 - 입시고민 해결사</v-card-title>
               <v-card-subtitle class="pb-0">
                 입시가 고민될 땐 학학이를 찾아와
@@ -252,7 +269,7 @@
             </div>
           </v-row>
 
-          <v-btn outlined block large class="mt-4" @click="download">
+          <v-btn outlined block large @click="download" class="mt-4">
             <v-icon left small>mdi-download</v-icon>
             설치하기
           </v-btn>
@@ -324,6 +341,33 @@ export default Vue.extend({
     questionCount: 0,
     coreReplyCount: 0,
     bottomSheet: false,
+    slide: 0,
+    card: [
+      {
+        top: "고민이 너무 많아",
+        bottom: "끙끙 앓고있는 학생들",
+        sub: "학학이에선 아무리 많이 물어봐도 전부 무료",
+        text: "어디에서 물어보긴 부끄럽고,<br />혼자서 해결은 안 되고...<br />그 어떤 질문이라도<br />학학이에서는 무료로 해결할 수 있어요",
+      },
+      {
+        top: "어떻게 질문해야할지",
+        bottom: "시작부터 막히는 학생",
+        sub: "모든 질문들을 먼저 제시해주니까",
+        text: "가볍게 태그로 선택해서<br />내가 진짜 궁금한 것만<br />콕 찝어서<br />물어볼 수 있어요",
+      },
+      {
+        top: "어렵고 복잡한 입시",
+        bottom: "머리만 아픈 학생",
+        sub: "선배들이 친절하게 알려주니까",
+        text: "입시를 직접 겪어본 선배들이<br />어렵기만한 입시를<br />쉽게 우리들의 말로<br />풀어서 설명해줘요",
+      },
+      {
+        top: "외로운 학교생활",
+        bottom: "기댈 곳이 필요한 학생",
+        sub: "입시뿐만 아니라 학교생활도 챙겨주니까",
+        text: "오늘의 급식, 시간표 등<br />필수적으로 필요한 정보들을<br />누구보다 빠르게<br />먼저 알려줘요",
+      },
+    ],
   }),
 
   beforeMount() {
