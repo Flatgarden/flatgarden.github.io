@@ -29,7 +29,7 @@
       </v-sheet>
       <div
         class="d-flex"
-        style="position: relative; top: -100px; overflow-y: hidden"
+        style="position: relative; top: -100px; overflow-y: auto"
       >
         <v-col
           v-for="(review, index) in reviews"
@@ -37,7 +37,7 @@
           lg="2"
           md="2"
           sm="3"
-          cols="10"
+          cols="9"
         >
           <v-card color="#fafafa" elevation="4">
             <v-card-subtitle>
@@ -134,7 +134,8 @@
           :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'"
         >
           <v-col
-            cols="4"
+            cols="6"
+            sm="4"
             xl="3"
             v-for="counter in counters"
             :key="counter.name"
@@ -222,17 +223,19 @@
                 </div>
               </div>
 
-              <v-row>
-                <v-col cols="4">
-                  <v-img contain :src="require('@/assets/hakhak_app_1.png')" />
+              <div
+                :class="`${$vuetify.breakpoint.xsOnly ? 'd-flex' : 'row'}`"
+                style="overflow-y: auto"
+              >
+                <v-col cols="9" sm="4" v-for="n in 6" :key="n">
+                  <v-card flat>
+                    <v-img
+                      contain
+                      :src="require(`@/assets/hakhak_app_${n}.png`)"
+                    />
+                  </v-card>
                 </v-col>
-                <v-col cols="4">
-                  <v-img contain :src="require('@/assets/hakhak_app_2.png')" />
-                </v-col>
-                <v-col cols="4">
-                  <v-img contain :src="require('@/assets/hakhak_app_3.png')" />
-                </v-col>
-              </v-row>
+              </div>
             </v-sheet>
           </v-layout>
         </v-container>
