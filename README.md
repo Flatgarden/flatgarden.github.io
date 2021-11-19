@@ -35,7 +35,7 @@
   <h3><b>
     <a href="https://flatgarden.kr/hakhak"><img src="./src/assets/banner_hakhak.png"></a>
     <p>입시친구 학학이<p>
-    <a href="https://flatgarden.kr/studionsha"><img src="./src/assets/banner_studiosha.png"></a>
+    <a href="https://flatgarden.kr/studiosha"><img src="./src/assets/banner_studiosha.png"></a>
     <p>관악산 영상 공방, 스튜디오 샤</p>
   </b></h3>
 </div>
