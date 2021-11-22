@@ -15,7 +15,7 @@
         <v-row :class="$vuetify.breakpoint.xsOnly ? 'ma-1' : 'ml-8'">
           <v-col cols="12">
             <b>문의하기</b>
-            <a class="ml-4" href="mailto:tech@flatgarden.kr" target="_blank">
+            <a class="ml-4" href="mailto:contact@flatgarden.kr" target="_blank">
               메일로 문의
             </a>
             <a
