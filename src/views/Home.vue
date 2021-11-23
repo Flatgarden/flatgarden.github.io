@@ -167,63 +167,86 @@
             </b>
           </v-card-title>
           <v-card-text style="color: #313131" class="mt-16">
-            <v-card flat color="#ffd90f" to="/hakhak">
+            <v-card flat min-height="150px" color="#ffd90f" to="/hakhak">
               <v-row align="center" no-gutters>
-                <v-col cols="6">
+                <v-col cols="6" class="d-none d-md-flex">
                   <v-img
                     style="position: relative; top: -50px; margin-bottom: -50px"
                     class="ml-6"
                     :src="require('@/assets/hakhak_card.png')"
                   />
                 </v-col>
-                <v-col cols="1" />
-                <v-col cols="4">
-                  <b style="color: #ff5c00">MOBILE SERVICE</b>
-                  <br />
-                  <b class="title font-weight-black">입시친구 학학이</b>
-                  <br />
-                  입시 정보를 가볍고 재미있게!
-                </v-col>
-                <v-col cols="1">
-                  <v-img
-                    height="30"
-                    contain
-                    src="@/assets/icons/arrow-right-orange.svg"
-                  />
-                </v-col>
+
+                <v-row cols="12" md="6" class="py-6">
+                  <v-col cols="1" md="2" />
+                  <v-col cols="9" md="8">
+                    <b style="color: #ff5c00">MOBILE SERVICE</b>
+                    <br />
+                    <b class="title font-weight-black">입시친구 학학이</b>
+                    <br />
+                    입시 정보를 가볍고 재미있게!
+                  </v-col>
+                  <v-col cols="2" class="my-auto">
+                    <v-img
+                      height="30"
+                      contain
+                      src="@/assets/icons/arrow-right-orange.svg"
+                    />
+                  </v-col>
+                </v-row>
               </v-row>
+
+              <v-col cols="12" class="d-md-none pa-0">
+                <v-img
+                  style="position: relative; bottom: 0px"
+                  class="ml-6"
+                  :src="require('@/assets/hakhak_card.png')"
+                />
+              </v-col>
             </v-card>
             <v-card
               flat
+              min-height="150px"
               color="#CEFFF0"
               class="mt-8"
               :img="require('@/assets/studiosha_card_back.png')"
               to="/studiosha"
             >
               <v-row align="center" no-gutters class="mt-8">
-                <v-col cols="6">
+                <v-col cols="6" class="d-none d-md-flex">
                   <v-img
                     style="position: relative; top: -50px; margin-bottom: -50px"
                     class="ml-6"
                     :src="require('@/assets/studiosha_card.png')"
                   />
                 </v-col>
-                <v-col cols="1" />
-                <v-col cols="4">
-                  <b style="color: #0038ff">YOUTUBE CHANNEL</b>
-                  <br />
-                  <b class="title font-weight-black">
-                    관악산 영상공방 스튜디오 샤
-                  </b>
-                  <br />
-                  서울대 멘토들의 ‘진짜' 입시 이야기
-                </v-col>
-                <v-col cols="1">
+
+                <v-row cols="12" md="6" class="py-6">
+                  <v-col cols="1" md="2" />
+                  <v-col cols="9" md="8">
+                    <b style="color: #0038ff">YOUTUBE CHANNEL</b>
+                    <br />
+                    <b class="title font-weight-black">
+                      관악산 영상공방 스튜디오 샤
+                    </b>
+                    <br />
+                    서울대 멘토들의 ‘진짜' 입시 이야기
+                  </v-col>
+                  <v-col cols="2" class="my-auto">
+                    <v-img
+                      style="fill: #7f00ff"
+                      height="30"
+                      contain
+                      src="@/assets/icons/arrow-right-mint.svg"
+                    />
+                  </v-col>
+                </v-row>
+
+                <v-col cols="12" class="d-md-none">
                   <v-img
-                    style="fill: #7f00ff"
-                    height="30"
-                    contain
-                    src="@/assets/icons/arrow-right-mint.svg"
+                    style="position: relative; bottom: 0px"
+                    class="ml-6"
+                    :src="require('@/assets/studiosha_card.png')"
                   />
                 </v-col>
               </v-row>
