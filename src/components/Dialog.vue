@@ -1,5 +1,10 @@
 <template>
-  <v-dialog v-model="dialog" width="1000px" scrollable>
+  <v-dialog
+    v-model="dialog"
+    width="1000px"
+    :fullscreen="$vuetify.breakpoint.xsOnly"
+    scrollable
+  >
     <v-card>
       <v-app-bar flat color="white">
         <v-app-bar-title>
@@ -18,27 +23,33 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue"
-import PrivacyPolicy from "./PrivacyPolicy.vue"
-import TermsOfService from "./TermsOfService.vue"
+import { reactive, defineComponent, toRefs } from "@vue/composition-api"
+import PrivacyPolicy from "@/components/PrivacyPolicy.vue"
+import TermsOfService from "@/components/TermsOfService.vue"
 
-export default Vue.extend({
+export default defineComponent({
   components: { PrivacyPolicy, TermsOfService },
+
   name: "Dialog",
 
-  data: () => ({
-    dialog: false,
-    type: "",
-    title: "",
-  }),
+  setup() {
+    const state = reactive({
+      dialog: false,
+      type: "",
+      title: "",
+    })
 
-  methods: {
-    open: function (type: string) {
-      this.type = type
-      if (type === "TermsOfService") this.title = "서비스 이용약관"
-      else if (type === "PrivacyPolicy") this.title = "개인정보처리방침"
-      this.dialog = true
-    },
+    const open = (type: string) => {
+      state.type = type
+      if (type === "TermsOfService") state.title = "서비스 이용약관"
+      else if (type === "PrivacyPolicy") state.title = "개인정보처리방침"
+      state.dialog = true
+    }
+
+    return {
+      ...toRefs(state),
+      open,
+    }
   },
 })
 </script>
