@@ -351,91 +351,86 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue"
+import {
+  reactive,
+  defineComponent,
+  onMounted,
+  toRefs,
+  onBeforeMount,
+} from "@vue/composition-api"
 
-export default Vue.extend({
+export default defineComponent({
   name: "Home",
 
-  data: () => ({
-    text: "입시의 주체를\n학생으로",
-    title: "",
-    blink: false,
-    years: [
-      {
-        year: "2019년",
-        month: [
-          {
-            month: "10월",
-            text: "플랫가든 설립",
-          },
-          {
-            month: "12월",
-            text: "VC 스프링캠프 엑셀레이팅 프로그램 캠프파이어 2기 선정",
-          },
-        ],
-      },
-      {
-        year: "2020년",
-        month: [
-          {
-            month: "6월",
-            text: "서울대학교 SNU 해동주니어 스타트업 선정",
-          },
-        ],
-      },
-      {
-        year: "2021년",
-        month: [
-          {
-            month: "3월",
-            text: "8기 기보벤처캠프 선정",
-          },
-          {
-            month: "5월",
-            text: "VC 스프링캠프 추가 투자 유치",
-          },
-          {
-            month: "6월",
-            text: "구글 창구 프로그램 3기 선정",
-          },
-          {
-            month: "7월",
-            text: "KT DIGICO 공모전 선정 및 입주",
-          },
-          {
-            month: "8월",
-            text: "서울과학기술대학교 데이터사이언스대학원과 산학협력 체결",
-          },
-        ],
-      },
-    ],
-  }),
+  setup(_, { root }) {
+    const state = reactive({
+      years: [
+        {
+          year: "2019년",
+          month: [
+            {
+              month: "10월",
+              text: "플랫가든 설립",
+            },
+            {
+              month: "12월",
+              text: "VC 스프링캠프 엑셀레이팅 프로그램 캠프파이어 2기 선정",
+            },
+          ],
+        },
+        {
+          year: "2020년",
+          month: [
+            {
+              month: "6월",
+              text: "서울대학교 SNU 해동주니어 스타트업 선정",
+            },
+          ],
+        },
+        {
+          year: "2021년",
+          month: [
+            {
+              month: "3월",
+              text: "8기 기보벤처캠프 선정",
+            },
+            {
+              month: "5월",
+              text: "VC 스프링캠프 추가 투자 유치",
+            },
+            {
+              month: "6월",
+              text: "구글 창구 프로그램 3기 선정",
+            },
+            {
+              month: "7월",
+              text: "KT DIGICO 공모전 선정 및 입주",
+            },
+            {
+              month: "8월",
+              text: "서울과학기술대학교 데이터사이언스대학원과 산학협력 체결",
+            },
+          ],
+        },
+      ],
+    })
 
-  beforeCreate() {
-    document.querySelector("body")?.setAttribute("style", "background: black")
-    document
-      .querySelector("meta[name='theme-color']")
-      ?.setAttribute("content", "black")
-  },
+    onBeforeMount(() => {
+      document.querySelector("body")?.setAttribute("style", "background: black")
+      document
+        .querySelector("meta[name='theme-color']")
+        ?.setAttribute("content", "black")
+    })
 
-  mounted() {
-    this.$store.state.dialog = this.$route.params.dialog
+    onMounted(() => {
+      root.$store.state.dialog = root.$route.params.dialog
 
-    window.scrollTo(0, 0)
+      window.scrollTo(0, 0)
+    })
 
-    let index = 0
-    const interval = setInterval(() => {
-      let char = this.text[index++]
-      this.title += char === "\n" ? "<br/>" : char
-
-      if (index >= this.text.length) {
-        clearInterval(interval)
-
-        setInterval(() => {
-          this.blink = !this.blink
-        }, 500)
-      }
-    }, Math.floor(Math.random() * 100) + 100)
+    return {
+      ...toRefs(state),
+    }
   },
 })
 </script>
