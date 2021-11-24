@@ -1,6 +1,6 @@
 <template>
   <v-main>
-    <v-sheet color="white">
+    <v-sheet color="white" v-if="false">
       <v-sheet height="100vh" color="#ffd600">
         <v-parallax style="height: 100vh" src>
           <v-container fill-height>
@@ -59,9 +59,7 @@
       </div>
     </v-sheet>
 
-    <v-dialog v-model="dialog">
-      <v-img :src="require('@/assets/hakhak_event.jpg')" />
-    </v-dialog>
+    <v-sheet height="100px" />
 
     <v-sheet>
       <v-img :src="require('@/assets/hakhak_event.jpg')" />
