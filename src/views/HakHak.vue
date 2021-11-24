@@ -1,6 +1,6 @@
 <template>
   <v-main>
-    <v-sheet color="#f9f9f9">
+    <v-sheet color="white">
       <v-sheet height="100vh" color="#ffd600">
         <v-parallax style="height: 100vh" src>
           <v-container fill-height>
@@ -59,7 +59,15 @@
       </div>
     </v-sheet>
 
-    <v-sheet color="#f9f9f9">
+    <v-dialog v-model="dialog">
+      <v-img :src="require('@/assets/hakhak_event.jpg')" />
+    </v-dialog>
+
+    <v-sheet>
+      <v-img :src="require('@/assets/hakhak_event.jpg')" />
+    </v-sheet>
+
+    <v-sheet color="#f9f9f9" v-if="null">
       <v-container fill-height>
         <v-layout row fill-height align-center>
           <v-col cols="12" sm="6">
@@ -126,9 +134,9 @@
       <v-img :src="require('@/assets/hakhak_books.png')" />
     </v-sheet>
 
-    <v-sheet color="#FFD90F" class="py-8">
+    <v-sheet color="white" class="text-center">
       <v-container
-        :class="`${$vuetify.breakpoint.xsOnly ? '' : 'd-flex'}`"
+        :class="`${$vuetify.breakpoint.xsOnly ? 'py-8' : 'py-8 d-flex'}`"
         align-center
       >
         <h2>
@@ -385,6 +393,7 @@ export default Vue.extend({
   name: "HakHak",
 
   data: () => ({
+    dialog: false,
     text: "입시가 궁금할 땐\n학학이에게 물어봐",
     title: "",
     blink: false,
