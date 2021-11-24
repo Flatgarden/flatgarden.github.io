@@ -1,6 +1,6 @@
 <template>
   <v-main>
-    <v-sheet>
+    <v-sheet color="#f9f9f9">
       <v-sheet height="100vh" color="#ffd600">
         <v-parallax style="height: 100vh" src>
           <v-container fill-height>
@@ -57,6 +57,73 @@
           </v-card>
         </v-col>
       </div>
+    </v-sheet>
+
+    <v-sheet color="#f9f9f9">
+      <v-container fill-height>
+        <v-layout row fill-height align-center>
+          <v-col cols="12" sm="6">
+            <h2>260만<br />중고등학생의<br />입시 고민 해결사</h2>
+
+            <h2>성공적인 입시를</h2>
+
+            <p class="mt-2">
+              입시가 매년 반복됨에도 불구하고<br />
+              쌓이는 정보들은 한정적입니다.<br />
+              숨겨져 있거나 누군가가 독점하고 있는 ‘입시정보',<br />
+              학학이가 싹싹 긁어 모아<br />
+              모든 학생들에게 전부 보여주겠습니다.
+            </p>
+          </v-col>
+
+          <v-col cols="12" sm="6">
+            <v-col>
+              <v-card height="100px" color="#f3f3f3" flat>
+                <v-layout fill-height align-center class="ml-8">
+                  <div class="caption" style="line-height: 110%">
+                    지금까지<br /><span
+                      class="headline"
+                      style="line-height: 110%"
+                      ><b>3,028개의 질문을</b><br />처리했어요</span
+                    >
+                  </div>
+                </v-layout>
+              </v-card>
+            </v-col>
+            <v-col>
+              <v-card
+                height="100px"
+                :img="require('@/assets/hakhak_letter.jpg')"
+                flat
+              >
+                <v-layout fill-height align-center class="ml-8">
+                  <div class="caption" style="line-height: 110%">
+                    지금까지<br /><span
+                      class="headline"
+                      style="line-height: 110%"
+                      ><b>2,195개의 답변이</b><br />모였어요</span
+                    >
+                  </div>
+                </v-layout>
+              </v-card>
+            </v-col>
+            <v-col>
+              <v-card height="100px" color="#f3f3f3" flat>
+                <v-layout fill-height align-center class="ml-8">
+                  <div class="caption" style="line-height: 110%">
+                    지금까지<br />
+                    <span class="headline" style="line-height: 110%">
+                      <b>575,873번 칼럼을</b><br />전달했어요</span
+                    >
+                  </div>
+                </v-layout>
+              </v-card>
+            </v-col>
+          </v-col>
+        </v-layout>
+      </v-container>
+
+      <v-img :src="require('@/assets/hakhak_books.png')" />
     </v-sheet>
 
     <v-sheet color="#FFD90F" class="py-8">
@@ -268,6 +335,7 @@
         </v-container>
       </v-img>
     </v-sheet>
+
     <v-bottom-sheet v-model="bottomSheet" hide-overlay persistent>
       <v-sheet height="200px">
         <v-container>
