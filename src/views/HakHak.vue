@@ -1,6 +1,6 @@
 <template>
   <v-main>
-    <v-sheet color="white" v-if="false">
+    <v-sheet color="#f9f9f9">
       <v-sheet height="100vh" color="#ffd600">
         <v-parallax style="height: 100vh" src>
           <v-container fill-height>
@@ -59,13 +59,7 @@
       </div>
     </v-sheet>
 
-    <v-sheet height="100px" />
-
-    <v-sheet>
-      <v-img :src="require('@/assets/hakhak_event.jpg')" />
-    </v-sheet>
-
-    <v-sheet color="#f9f9f9" v-if="null">
+    <v-sheet color="#f9f9f9">
       <v-container fill-height>
         <v-layout row fill-height align-center>
           <v-col cols="12" sm="6">
@@ -132,7 +126,7 @@
       <v-img :src="require('@/assets/hakhak_books.png')" />
     </v-sheet>
 
-    <v-sheet color="white" class="text-center">
+    <v-sheet color="#ffd700">
       <v-container
         :class="`${$vuetify.breakpoint.xsOnly ? 'py-8' : 'py-8 d-flex'}`"
         align-center
