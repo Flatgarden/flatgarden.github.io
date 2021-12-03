@@ -41,7 +41,7 @@
         >
           <v-card color="#fafafa" elevation="4">
             <v-card-subtitle>
-              <v-img :src="require('@/assets/stars.svg')" width="80%" />
+              <v-img :src="require('@/assets/hakhak/stars.svg')" width="80%" />
               <span class="mt-2 text-subtitle-1 black--text font-weight-bold">
                 {{ review.title }}
               </span>
@@ -64,8 +64,6 @@
         <v-layout row fill-height align-center>
           <v-col cols="12" sm="6">
             <h2>260만<br />중고등학생의<br />입시 고민 해결사</h2>
-
-            <h2>성공적인 입시를</h2>
 
             <p class="mt-2">
               입시가 매년 반복됨에도 불구하고<br />
@@ -123,7 +121,7 @@
         </v-layout>
       </v-container>
 
-      <v-img :src="require('@/assets/hakhak_books.png')" />
+      <v-img :src="require('@/assets/hakhak/bottom_block.png')" />
     </v-sheet>
 
     <v-sheet color="#ffd700">
