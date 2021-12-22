@@ -22,67 +22,31 @@
               class="hidden-xs-only"
               height="70%"
               style="position: absolute; bottom: 0; right: -100px"
-              :src="require('@/assets/studiosha/main.png')"
+              :src="require('@/assets/studiosha.png')"
             />
           </v-container>
         </v-parallax>
       </v-sheet>
-
-      <v-row
-        class="pb-8"
-        no-gutters
-        style="position: relative; top: -75px; overflow-y: auto"
-      >
-        <div class="d-flex" style="position: relative; left: -150px">
-          <v-card
-            v-show="item.snippet.title !== 'Private video'"
-            v-for="item in items.first"
-            :key="item.etag"
-            class="ma-2"
-            elevation="6"
-          >
-            <v-img
-              width="250px"
-              :aspect-ratio="16 / 8.9"
-              v-if="item.snippet.thumbnails.high"
-              :src="item.snippet.thumbnails.high.url"
-              :lazy-src="item.snippet.thumbnails.default.url"
-              @mouseover="item.show = true"
-              @mouseleave="item.show = false"
-            >
-              <v-sheet v-show="item.show" color="#00000099" height="100%" dark>
-                <v-layout justify-center align-center fill-height class="pa-4">
-                  <b>{{ item.snippet.title }}</b>
-                </v-layout>
-              </v-sheet>
-            </v-img>
-          </v-card>
-        </div>
-        <div class="d-flex" style="position: relative; left: -16px">
-          <v-card
-            v-show="item.snippet.title !== 'Private video'"
-            v-for="item in items.second"
-            :key="item.etag"
-            class="ma-2"
-            elevation="6"
-          >
-            <v-img
-              width="250px"
-              :aspect-ratio="16 / 8.9"
-              v-if="item.snippet.thumbnails.high"
-              :src="item.snippet.thumbnails.high.url"
-              :lazy-src="item.snippet.thumbnails.default.url"
-              @mouseover="item.show = true"
-              @mouseleave="item.show = false"
-            >
-              <v-sheet v-show="item.show" color="#00000099" height="100%" dark>
-                <v-layout justify-center align-center fill-height class="pa-4">
-                  <b>{{ item.snippet.title }}</b>
-                </v-layout>
-              </v-sheet>
-            </v-img>
-          </v-card>
-        </div>
+      <v-row justify="center" no-gutters>
+        <v-card
+          style="top: -110px"
+          :class="$vuetify.breakpoint.smAndDown ? 'ma-2' : 'my-2 mx-4'"
+          width="584px"
+          elevation="4"
+        >
+          <v-card-title class="headline">
+            <b>관악산 영상공방</b>
+          </v-card-title>
+          <v-card-text style="color: #313131">
+            스튜디오 샤는 생생한 대학생들의 이야기를 통해 입시를 준비하는
+            중고생들에게 정보를 전달하거나, 동기부여를 함으로써 긴 입시를 즐겁게
+            버틸 수 있도록 함께하는 유튜브 채널입니다.
+            <br />
+            서울대학교 안의 다양한 이야기들을 영상을 통해 재미있게 전달함으로써
+            입시에 대한 유익한 정보는 물론 재미까지 제공할 수 있는 채널이 되고자
+            합니다.
+          </v-card-text>
+        </v-card>
       </v-row>
     </v-sheet>
     <v-sheet class="pb-8">
@@ -143,68 +107,181 @@
         </v-row>
       </v-container>
     </v-sheet>
-
-    <v-sheet class="my-16">
-      <v-container>
-        <h2>영상으로 풀어내는<br />그들만의 입시 스토리</h2>
-
-        <v-row
-          class="mt-8"
-          v-for="item in third"
+    <v-sheet class="pb-16" style="overflow: hidden">
+      <v-container :class="$vuetify.breakpoint.xsOnly ? '' : 'px-16'">
+        <v-card-title>
+          <b>스튜디오 샤가 만드는 영상</b>
+        </v-card-title>
+      </v-container>
+      <div class="d-flex" style="position: relative; left: -150px">
+        <v-card
+          v-show="item.snippet.title !== 'Private video'"
+          v-for="item in items.first"
           :key="item.etag"
-          :class="`d-flex ${item.reverse ? 'flex-row-reverse' : ''}`"
+          class="ma-2"
+          elevation="6"
         >
-          <v-col cols="12" sm="7" md="6">
+          <v-img
+            width="250px"
+            :aspect-ratio="16 / 8.9"
+            v-if="item.snippet.thumbnails.high"
+            :src="item.snippet.thumbnails.high.url"
+            :lazy-src="item.snippet.thumbnails.default.url"
+            @mouseover="item.show = true"
+            @mouseleave="item.show = false"
+          >
+            <v-sheet v-show="item.show" color="#00000099" height="100%" dark>
+              <v-layout justify-center align-center fill-height class="pa-4">
+                <b>{{ item.snippet.title }}</b>
+              </v-layout>
+            </v-sheet>
+          </v-img>
+        </v-card>
+      </div>
+      <div class="d-flex" style="position: relative; left: -16px">
+        <v-card
+          v-show="item.snippet.title !== 'Private video'"
+          v-for="item in items.second"
+          :key="item.etag"
+          class="ma-2"
+          elevation="6"
+        >
+          <v-img
+            width="250px"
+            :aspect-ratio="16 / 8.9"
+            v-if="item.snippet.thumbnails.high"
+            :src="item.snippet.thumbnails.high.url"
+            :lazy-src="item.snippet.thumbnails.default.url"
+            @mouseover="item.show = true"
+            @mouseleave="item.show = false"
+          >
+            <v-sheet v-show="item.show" color="#00000099" height="100%" dark>
+              <v-layout justify-center align-center fill-height class="pa-4">
+                <b>{{ item.snippet.title }}</b>
+              </v-layout>
+            </v-sheet>
+          </v-img>
+        </v-card>
+      </div>
+    </v-sheet>
+    <v-sheet class="py-16">
+      <v-container :class="$vuetify.breakpoint.xsOnly ? '' : 'px-16'">
+        <v-row
+          v-for="item in items.third"
+          :key="item.etag"
+          class="d-flex flex-row-reverse"
+        >
+          <v-col cols="12" sm="4" md="6">
             <a
-              :href="'https://www.youtube.com/watch?v=' + item.videoId"
+              :href="
+                'https://www.youtube.com/watch?v=' +
+                item.snippet.resourceId.videoId
+              "
               target="_blank"
             >
-              <v-card flat rounded="lg">
+              <v-card outlined rounded="lg">
                 <v-img
                   :aspect-ratio="16 / 8.9"
-                  v-if="item.thumbnail"
-                  :src="item.thumbnail"
-                />
+                  v-if="item.snippet.thumbnails.high"
+                  :src="item.snippet.thumbnails.high.url"
+                  :lazy-src="item.snippet.thumbnails.default.url"
+                >
+                  <v-layout fill-height align-center justify-center>
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="#000000aa"
+                      style="pointer-events: none"
+                    >
+                      <v-icon dark large>mdi-play</v-icon>
+                    </v-btn>
+                  </v-layout>
+                </v-img>
               </v-card>
             </a>
           </v-col>
-          <v-col cols="12" sm="5" md="6">
-            <v-card-title class="py-8">
-              <div>
-                <b>{{ item.title }}</b>
-                <br />
-                <b class="line">{{ item.subtitle }}</b>
-              </div>
+          <v-col cols="12" sm="8" md="6">
+            <v-card-title class="pt-0">
+              <b>{{ item.snippet.title }}</b>
             </v-card-title>
-
-            <v-card-subtitle v-html="item.description" />
+            <v-card-subtitle>
+              {{ item.snippet.description.slice(0, 100) }}...
+            </v-card-subtitle>
           </v-col>
         </v-row>
       </v-container>
     </v-sheet>
-
-    <v-sheet class="pt-16" color="#f7f7f7">
-      <v-container>
-        <h2>
+    <v-sheet class="mt-8 mb-16">
+      <v-img
+        :src="require('@/assets/studiosha_block.png')"
+        style="height: 350px"
+      >
+        <v-container
+          fill-height
+          :class="$vuetify.breakpoint.xsOnly ? '' : 'px-16'"
+        >
+          <v-layout fill-height align-center>
+            <v-sheet class="white--text ml-4 d-flex" color="transparent">
+              <a
+                href="https://www.youtube.com/channel/UCn0MK9vcIxinP4033UEHiUw"
+                target="_blank"
+              >
+                <v-img
+                  :src="require('@/assets/studiosha_logo.png')"
+                  width="96"
+                />
+              </a>
+              <div class="d-inline-block ml-6 my-auto">
+                <b>구독자</b>
+                118,735명
+                <br />
+                <b>조회수</b>
+                38,183,472회
+                <br />
+                <b>설립일</b>
+                2018. 10. 4.
+              </div>
+            </v-sheet>
+          </v-layout>
+        </v-container>
+      </v-img>
+    </v-sheet>
+    <v-sheet class="mb-16">
+      <v-container :class="$vuetify.breakpoint.xsOnly ? '' : 'px-16'">
+        <v-card-title>
           <b>
-            교육, 라이프 스타일.
+            교육, 라이프 스타일, IT 등
             <br />
-            다양한 분야와
-            <br />
-            함께합니다
+            다양한 분야의 협업
           </b>
-        </h2>
-
-        <p class="pt-8">
+        </v-card-title>
+        <v-card-subtitle>
           체계적인 영상 제작 프로세스를 기반으로 한
           <br />
-          설탭, LG, 삼성, 키플링 등 당야한 기업과의 협업을 통해
+          설탭, LG, 삼성, 키플링 등 다양한 기업과의 협업을 통해
           <br />
           다채로운 콘텐츠를 제작하고 있습니다.
-        </p>
+        </v-card-subtitle>
       </v-container>
-
-      <v-img :src="require('@/assets/studiosha/works.png')" />
+      <!-- <div class="d-flex">
+        <v-card
+          v-show="item.snippet.title !== 'Private video'"
+          v-for="item in items.first"
+          :key="item.etag"
+          class="ma-2"
+          elevation="6"
+        >
+          <v-img
+            width="250px"
+            :aspect-ratio="16 / 8.9"
+            v-if="item.snippet.thumbnails.high"
+            :src="item.snippet.thumbnails.high.url"
+            :lazy-src="item.snippet.thumbnails.default.url"
+          />
+        </v-card>
+      </div> -->
     </v-sheet>
   </v-main>
 </template>
@@ -226,33 +303,6 @@ export default Vue.extend({
     counters: [
       { name: "구독자 수", count: "118,735명" },
       { name: "조회수", count: "38,183,472회" },
-    ],
-    third: [
-      {
-        videoId: "",
-        title: "자유로운 대학생들의",
-        subtitle: "생생한 대학생활",
-        description:
-          "대학생들의 전공, 대외활동, 학과생활 등<br />학생들의 로망을 자극하는 영상으로<br />동기부여를 제공합니다.",
-        thumbnail: require("@/assets/studiosha/block_1.png"),
-      },
-      {
-        videoId: "",
-        title: "대한민국 TOP 수험생들의",
-        subtitle: "성공 스토리와 공부법",
-        description:
-          "가장 생생한 최근 입시를 경험한<br />대학생 멘토들의<br />합격할 수 있었던 공부 비법과<br />성공 스토리를 알아봅니다.",
-        thumbnail: require("@/assets/studiosha/block_2.png"),
-        reverse: true,
-      },
-      {
-        videoId: "",
-        title: "외로운 입시의",
-        subtitle: "친구이자 멘토",
-        description:
-          "스터디 윗미, 시험 응원 등<br />외로운 입시 생활을 항상 함께하는<br />든든한 친구이자 듬직한 선배가<br />되어줍니다.",
-        thumbnail: require("@/assets/studiosha/block_3.png"),
-      },
     ],
   }),
 
@@ -284,3 +334,9 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style lang="scss">
+.theme--light.v-sheet--outlined {
+  border: 4px solid black !important;
+}
+</style>

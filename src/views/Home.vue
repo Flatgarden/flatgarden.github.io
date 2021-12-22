@@ -209,7 +209,7 @@
               min-height="150px"
               color="#CEFFF0"
               class="mt-8"
-              :img="require('@/assets/home/studiosha_card_back.png')"
+              :img="require('@/assets/studiosha_card_back.png')"
               to="/studiosha"
             >
               <v-row align="center" no-gutters class="mt-8">
@@ -217,7 +217,7 @@
                   <v-img
                     style="position: relative; top: -50px; margin-bottom: -50px"
                     class="ml-6"
-                    :src="require('@/assets/home/studiosha_card.png')"
+                    :src="require('@/assets/studiosha_card.png')"
                   />
                 </v-col>
 
@@ -246,7 +246,7 @@
                   <v-img
                     style="position: relative; bottom: 0px"
                     class="ml-6"
-                    :src="require('@/assets/home/studiosha_card.png')"
+                    :src="require('@/assets/studiosha_card.png')"
                   />
                 </v-col>
               </v-row>
@@ -436,6 +436,11 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+.line {
+  text-decoration: none;
+  background: linear-gradient(to top, #7cffe0 50%, transparent 50%);
+}
+
 p {
   line-height: 100%;
 }

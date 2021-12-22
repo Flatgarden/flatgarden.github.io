@@ -33,6 +33,7 @@ export default defineComponent({
       items: {
         first: [],
         second: [],
+        third: [],
       },
       bottomSheet: false,
     })
@@ -56,12 +57,32 @@ export default defineComponent({
             })
           )
           .then(
-            ({ result }) => {
-              const items = result.items
-                .sort(() => Math.random() - 0.5)
-                .map((e) => ({ ...e, show: false }))
-              state.items.first = items.splice(items.length / 2)
-              state.items.second = items
+            (response) => {
+              const items = response.result.items
+              state.items.second = items.sort(() => Math.random() - 0.5)
+              state.items.first = state.items.second.slice().reverse()
+            },
+            (reason) => {
+              console.log("Error: " + reason.result.error.message)
+            }
+          )
+        gapi.client
+          .init({
+            apiKey: "AIzaSyAKGWz-vDUt9GIagEck0_9dzOM22V6tqdw",
+          })
+          .then(() =>
+            gapi.client.request({
+              path: "https://www.googleapis.com/youtube/v3/playlistItems",
+              params: {
+                part: "snippet",
+                playlistId: "PLpM0VV5-ga-o5N3W0DuMEnLb0XuEJPfZO",
+                maxResults: 3,
+              },
+            })
+          )
+          .then(
+            (response) => {
+              state.items.third = response.result.items
             },
             (reason) => {
               console.log("Error: " + reason.result.error.message)

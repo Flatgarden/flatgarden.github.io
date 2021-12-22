@@ -29,7 +29,7 @@
       </v-sheet>
       <div
         class="d-flex"
-        style="position: relative; top: -75px; overflow-y: auto"
+        style="position: relative; top: -100px; overflow-y: auto"
       >
         <v-col
           v-for="(review, index) in reviews"
@@ -321,7 +321,7 @@
                 :class="`${$vuetify.breakpoint.xsOnly ? 'row' : 'row'}`"
                 style="overflow-y: auto"
               >
-                <v-col cols="12" sm="4" v-for="n in 3" :key="n">
+                <v-col cols="12" sm="4" v-for="n in 6" :key="n">
                   <v-card flat rounded="lg">
                     <v-img
                       contain
@@ -398,6 +398,7 @@ export default Vue.extend({
     counters: [
       { name: "입시를 바꾸는 학생들", count: "43,144명" },
       { name: "입시를 바꾸는 멘토들", count: "30명" },
+      { name: "평균 평점", count: "4.8점" },
     ],
     reviews: [
       {
