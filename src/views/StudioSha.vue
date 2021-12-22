@@ -1,6 +1,6 @@
 <template>
   <v-main>
-    <v-sheet color="#f9f9f9">
+    <v-sheet>
       <v-sheet height="100vh" color="#c1ffef">
         <v-parallax style="height: 100vh" src>
           <v-container fill-height>
@@ -39,7 +39,7 @@
             v-for="item in items.first"
             :key="item.etag"
             class="ma-2"
-            elevation="4"
+            elevation="6"
           >
             <v-img
               width="250px"
@@ -64,7 +64,7 @@
             v-for="item in items.second"
             :key="item.etag"
             class="ma-2"
-            elevation="4"
+            elevation="6"
           >
             <v-img
               width="250px"
@@ -85,67 +85,63 @@
         </div>
       </v-row>
     </v-sheet>
-
-    <v-sheet color="#f9f9f9">
-      <v-container fill-height>
-        <v-layout row fill-height align-center>
-          <v-col cols="12" sm="6">
-            <h2>진솔한 입시,<br />재미있는 입시,<br />생생한 입시!</h2>
-
-            <p class="mt-2">
-              선생님보다도 친근한 대학교 선배들이 직접<br />
-              유튜브를 통해 누구나 쉽고 재미있게<br />
-              입시를 접하고 이해할 수 있도록<br />
-              콘텐츠를 제작합니다.
-            </p>
-          </v-col>
-
-          <v-col cols="2" sm="1" />
-
-          <v-col cols="10" sm="5">
-            <v-row>
-              <v-col cols="7">
-                <v-card height="120px" rounded="lg" elevation="4">
-                  <v-layout
-                    fill-height
-                    align-center
-                    justify-center
-                    class="text-center"
+    <v-sheet class="pb-8">
+      <v-container :class="$vuetify.breakpoint.xsOnly ? 'pb-8' : 'pb-8 px-16'">
+        <v-row
+          justify="center"
+          class="text-center"
+          :class="$vuetify.breakpoint.smAndDown ? '' : 'mx-16'"
+        >
+          <v-col
+            cols="4"
+            xl="3"
+            v-for="counter in counters"
+            :key="counter.name"
+          >
+            <v-sheet
+              rounded="circle"
+              style="
+                background: linear-gradient(#fff, rgba(196, 196, 196, 0.2));
+              "
+            >
+              <v-responsive aspect-ratio="1">
+                <v-layout
+                  fill-height
+                  align-center
+                  justify-center
+                  class="text-center"
+                >
+                  <h3
+                    :class="`${
+                      $vuetify.breakpoint.xsOnly
+                        ? 'text-subtitle-2'
+                        : $vuetify.breakpoint.mdAndDown
+                        ? 'text-subtitle-1'
+                        : 'text-h6'
+                    } font-weight-medium`"
+                    style="position: absolute; top: 20%; opacity: 0.3"
                   >
-                    <h2 style="line-height: 130%">
-                      <span style="color: #999">구독자 수</span><br /><b
-                        >138,000명</b
-                      >
-                    </h2>
-                  </v-layout>
-                </v-card>
-              </v-col>
-
-              <v-col cols="4" />
-              <v-col cols="4" />
-
-              <v-col cols="7">
-                <v-card height="120px" rounded="lg" elevation="4">
-                  <v-layout
-                    fill-height
-                    align-center
-                    justify-center
-                    class="text-center"
-                  >
-                    <h2 style="line-height: 130%">
-                      <span style="color: #999">조회수</span><br /><b
-                        >38,183,472회</b
-                      >
-                    </h2>
-                  </v-layout>
-                </v-card>
-              </v-col>
-            </v-row>
+                    {{ counter.name }}
+                  </h3>
+                  <div>
+                    <h3
+                      :class="`${
+                        $vuetify.breakpoint.xsOnly
+                          ? 'text-h6'
+                          : $vuetify.breakpoint.mdAndDown
+                          ? 'text-h5'
+                          : 'text-h4'
+                      } font-weight-black`"
+                    >
+                      {{ counter.count }}
+                    </h3>
+                  </div>
+                </v-layout>
+              </v-responsive>
+            </v-sheet>
           </v-col>
-        </v-layout>
+        </v-row>
       </v-container>
-
-      <v-img :src="require('@/assets/studiosha/bottom_block.png')" />
     </v-sheet>
 
     <v-sheet class="my-16">
@@ -188,33 +184,27 @@
     </v-sheet>
 
     <v-sheet class="pt-16" color="#f7f7f7">
-      <v-container class="pb-0">
-        <v-row no-gutters>
-          <v-col cols="12" md="6" class="mb-8">
-            <h2>
-              <b>
-                교육, 라이프 스타일.
-                <br />
-                다양한 분야와
-                <br />
-                함께합니다
-              </b>
-            </h2>
+      <v-container>
+        <h2>
+          <b>
+            교육, 라이프 스타일.
+            <br />
+            다양한 분야와
+            <br />
+            함께합니다
+          </b>
+        </h2>
 
-            <p class="pt-8">
-              체계적인 영상 제작 프로세스를 기반으로 한
-              <br />
-              설탭, LG, 삼성, 키플링 등 당야한 기업과의 협업을 통해
-              <br />
-              다채로운 콘텐츠를 제작하고 있습니다.
-            </p>
-          </v-col>
-
-          <v-col cols="12" md="6">
-            <v-img :src="require('@/assets/studiosha/works.png')" />
-          </v-col>
-        </v-row>
+        <p class="pt-8">
+          체계적인 영상 제작 프로세스를 기반으로 한
+          <br />
+          설탭, LG, 삼성, 키플링 등 당야한 기업과의 협업을 통해
+          <br />
+          다채로운 콘텐츠를 제작하고 있습니다.
+        </p>
       </v-container>
+
+      <v-img :src="require('@/assets/studiosha/works.png')" />
     </v-sheet>
   </v-main>
 </template>

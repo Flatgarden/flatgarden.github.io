@@ -110,7 +110,7 @@
                       class="mx-auto"
                       width="70%"
                       contain
-                      :src="require('@/assets/home/box_1.png')"
+                      :src="require('@/assets/box_1.png')"
                     />
                   </v-responsive>
                 </v-card>
@@ -125,7 +125,7 @@
                       class="mx-auto"
                       width="70%"
                       contain
-                      :src="require('@/assets/home/box_2.png')"
+                      :src="require('@/assets/box_2.png')"
                     />
                   </v-responsive>
                 </v-card>
@@ -140,7 +140,7 @@
                       class="mx-auto"
                       width="60%"
                       contain
-                      :src="require('@/assets/home/box_3.png')"
+                      :src="require('@/assets/box_3.png')"
                     />
                   </v-responsive>
                 </v-card>
