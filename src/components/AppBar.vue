@@ -3,11 +3,11 @@
     <v-app-bar absolute flat color="transparent" class="container pa-0">
       <v-spacer />
 
-      <v-btn text to="/hakhak" class="px-2 mx-2" :color="color">
+      <v-btn text to="/hakhak" class="px-2 mx-2">
         <b>학학이</b>
       </v-btn>
 
-      <v-btn text to="/studiosha" class="px-2 ml-2" :color="color">
+      <v-btn text to="/studiosha" class="px-2 ml-2">
         <b>스튜디오샤</b>
       </v-btn>
     </v-app-bar>
@@ -16,11 +16,7 @@
       <v-img
         alt="Flatgarden Logo"
         contain
-        :src="
-          innerHeight
-            ? require('@/assets/logo_white.svg')
-            : require('@/assets/logo.svg')
-        "
+        :src="require('@/assets/logo.svg')"
         width="100"
       />
     </router-link>

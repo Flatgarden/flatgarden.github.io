@@ -2,6 +2,8 @@
   <v-app>
     <AppBar />
 
+    <img :src="require('@/assets/20220330.jpg')" />
+
     <router-view :items="items" />
 
     <Footer />
