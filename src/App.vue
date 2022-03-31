@@ -4,6 +4,8 @@
 
     <img :src="require('@/assets/20220330.jpg')" />
 
+    <img :src="require('@/assets/202203300.jpg')" />
+
     <router-view :items="items" />
 
     <Footer />
